@@ -3218,7 +3218,7 @@
   •  Copy the current word (space‐delimited) to the cut buffer by
      double‐clicking the left button.
 
-  •  Copy the current line to the cut buffer by tripple‐clicking the
+  •  Copy the current line to the cut buffer by triple‐clicking the
      left button.
 
   •  Copy a linear region to the cut buffer as follows:

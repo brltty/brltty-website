@@ -92,11 +92,11 @@ new=$file.rpmnew
 
 # Update the configuration file template via the Bootdisks/bp2cf script.
 # Include it right within this scriptlet so that it needn't be installed.
-# Imbed it within a subshell to ensure that it won't impact this scriptlet.
+# Embed it within a subshell to ensure that it won't impact this scriptlet.
 (
    # First, set bp2cf's command line arguments.
    set -- -u -f $file
 
-   # Now run it by simply imbedding it right here.
+   # Now run it by simply embedding it right here.
 )
 </PRE>
