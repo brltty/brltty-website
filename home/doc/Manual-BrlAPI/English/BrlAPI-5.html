@@ -50,7 +50,7 @@ for now.</P>
 <BLOCKQUOTE><CODE>
 <HR>
 <PRE>
-  if (brlapi_openConnection(NULL, NULL)&lt;0) {
+  if (brlapi_openConnection(NULL, NULL)==BRLAPI_INVALID_FILE_DESCRIPTOR) {
     brlapi_perror("brlapi_openConnection");
     exit(1);
   }
@@ -312,7 +312,7 @@ int main()
   unsigned int x, y;
 
 /* Connect to BrlAPI */
-  if (brlapi_openConnection(NULL, NULL)&lt;0)
+  if (brlapi_openConnection(NULL, NULL)==BRLAPI_INVALID_FILE_DESCRIPTOR)
   {
     brlapi_perror("brlapi_openConnection");
     exit(1);

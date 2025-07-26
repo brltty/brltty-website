@@ -681,7 +681,7 @@
 
 
        ______________________________________________________________________
-        if (brlapi_openConnection(NULL, NULL)<0) {
+        if (brlapi_openConnection(NULL, NULL)==BRLAPI_INVALID_FILE_DESCRIPTOR) {
         brlapi_perror("brlapi_openConnection");
         exit(1);
         }
@@ -908,7 +908,7 @@
         unsigned int x, y;
 
        /* Connect to BrlAPI */
-        if (brlapi_openConnection(NULL, NULL)<0)
+        if (brlapi_openConnection(NULL, NULL)==BRLAPI_INVALID_FILE_DESCRIPTOR)
         {
         brlapi_perror("brlapi_openConnection");
         exit(1);
