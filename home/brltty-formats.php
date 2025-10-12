@@ -170,7 +170,7 @@ Partial build packages include:
    <dd>Units that allow <b>BRLTTY</b> processes to be managed by <b>Systemd</b>.</dd>
 
    <dt>brltty-udev</dt>
-   <dd>Rules that allow <b>BRLTTY</b> processes to be manged by <b>Udev</b>.</dd>
+   <dd>Rules that allow <b>BRLTTY</b> processes to be managed by <b>Udev</b>.</dd>
 
    <dt>brltty-utils</dt>
    <dd>Commands that perform various <b>BRLTTY</b>-related functions.</dd>
