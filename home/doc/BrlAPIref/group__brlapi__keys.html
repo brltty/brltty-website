@@ -704,7 +704,7 @@ Functions</h2></td></tr>
 <li>in an Xt/Xaw/motif-based application, use <code>XtAppAddInput</code>(app_context, <code>fileDescriptor</code>, <code>XtInputReadMask|XtInputExceptMask</code>, <code>f</code>, <code>data</code>)</li>
 <li>etc.</li>
 </ul>
-<p>and then, when you detect inbound trafic on the file descriptor, do something like this:</p>
+<p>and then, when you detect inbound traffic on the file descriptor, do something like this:</p>
 <p>while (brlapi_readKey(0, &amp;code) { // process keycode code // ... }</p>
 <p>The <code>while</code> loop is needed for processing <em>all</em> pending key presses, else some of them may be left in libbrlapi's internal key buffer and you wouldn't get them immediately.</p>
 <dl class="section note"><dt>Note</dt><dd>If the read is interrupted by a signal or by a parameter change notification, <a class="el" href="#ga3b5ba0c43d48792e7071e772b50b9cbe">brlapi_readKey()</a> will return -1, brlapi_errno will be BRLAPI_ERROR_LIBCERR and errno will be EINTR. </dd></dl>

@@ -83,7 +83,7 @@ on top of the two previous ones.  It means that the <EM>BrlAPI</EM> server will 
 server will record it (on <EM>A</EM>'s sheet which hence becomes opaque again), but
 it won't be displayed on the braille device, since <EM>B</EM>'s sheet is still at
 the top and opaque (i.e. with some text on it).  But if <EM>B</EM> issues a void
-write, the server clears its ouput buffer (i.e. <EM>B</EM>'s sheet becomes
+write, the server clears its output buffer (i.e. <EM>B</EM>'s sheet becomes
 transparent), and as a result <EM>A</EM>'s output appear on the braille display (by
 transparency through <EM>B</EM>'s sheet).</P>
 
@@ -126,7 +126,7 @@ the the <EM>BrlAPI</EM> client library will automatically perform all that.</P>
 that <EM>screen</EM> told to be active.  If it was window 1, it then displays
 <EM>C</EM>'s output (if any).  Else <EM>brltty</EM>'s usual screen reading is shown.
 Of course, several clients may be run in window 1 as well, and the "sheet pile"
-mecanism applies: <EM>brltty</EM>'s sheet first (at the root of the Ttys tree), then
+mechanism applies: <EM>brltty</EM>'s sheet first (at the root of the Ttys tree), then
 <EM>screen</EM>'s sheet (which is transparent, on VT 3), then <EM>C</EM>'s sheet (on
 window 1 of VT 3), then other clients' sheets (on the same window).</P>
 

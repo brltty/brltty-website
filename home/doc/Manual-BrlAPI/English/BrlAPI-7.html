@@ -179,7 +179,7 @@ authorization method.</P>
 <LI><CODE>NONE</CODE>: the client doesn't need to send an authorization packet.</LI>
 <LI><CODE>KEY</CODE>: data holds a secret key, the authorization is successful only
 if the key matches the server secret key.</LI>
-<LI><CODE>CREDENTIALS</CODE>: Operating-System-specific credentials are explicitely
+<LI><CODE>CREDENTIALS</CODE>: Operating-System-specific credentials are explicitly
 sent over the socket, the authorization is successful if the server considers
 the credentials sufficient.</LI>
 </UL>
@@ -210,8 +210,8 @@ first a series of integers: the first one gives the number of following
 integers, which are the numbers of ttys that leads to the tty that
 the application wants to take control of (it can be empty if the tty is 
 one of the machine's VT). The last integer of this series tells the number of
-the tty to get control of. Finaly, how key presses should be reported is sent:
-either a driver name or "", preceded by the number of caracters in the driver
+the tty to get control of. Finally, how key presses should be reported is sent:
+either a driver name or "", preceded by the number of characters in the driver
 name (0 in the case of ""), as an unsigned byte. This packet is then
 acknowledged by the server.</P>
 
@@ -220,7 +220,7 @@ acknowledged by the server.</P>
 <P>As soon as the client gets a tty, it must be prepared to handle
 <CODE>BRLAPI_PACKET_KEY</CODE> incoming packets
 at any time (as soon as the key
-was pressed on the braille terminal, hopefuly).
+was pressed on the braille terminal, hopefully).
 The data holds a key code as 2 integers, or
 the key flags then the command code
 as 2 integers, depending on what has been request in the

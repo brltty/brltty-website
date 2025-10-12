@@ -266,7 +266,7 @@
   Here is explained what BrlAPI is, and what it precisely does.  These
   explanations should be simple enough to be accessible to every user.
   For a more technical review of BrlAPI’s functionalities, please see
-  chapter ‘‘Libary description’’.
+  chapter ‘‘Library description’’.
 
   2.1.  Historical notes.
 
@@ -519,9 +519,9 @@
   some text, the server will record it (on A’s sheet which hence becomes
   opaque again), but it won’t be displayed on the braille device, since
   B’s sheet is still at the top and opaque (i.e. with some text on it).
-  But if B issues a void write, the server clears its ouput buffer (i.e.
-  B’s sheet becomes transparent), and as a result A’s output appear on
-  the braille display (by transparency through B’s sheet).
+  But if B issues a void write, the server clears its output buffer
+  (i.e. B’s sheet becomes transparent), and as a result A’s output
+  appear on the braille display (by transparency through B’s sheet).
 
   The sheet order is by default determined by the Tty "get"ting order.
   Clients can however change their priority (which by default is 50) to
@@ -562,7 +562,7 @@
   window that screen told to be active. If it was window 1, it then
   displays C’s output (if any). Else brltty’s usual screen reading is
   shown.  Of course, several clients may be run in window 1 as well, and
-  the "sheet pile" mecanism applies: brltty’s sheet first (at the root
+  the "sheet pile" mechanism applies: brltty’s sheet first (at the root
   of the Ttys tree), then screen’s sheet (which is transparent, on VT
   3), then C’s sheet (on window 1 of VT 3), then other clients’ sheets
   (on the same window).
@@ -804,8 +804,8 @@
 
   The command is returned, as described in <brlapi_constants.h> and
   <brlapi_keycodes.h>.  It is not transmitted to brltty: it is up to the
-  application to define the behavior, here cleanly exitting, as
-  described below.
+  application to define the behavior, here cleanly exiting, as described
+  below.
 
   The first parameter tells the lib to block until a key press is indeed
   read.
@@ -1081,7 +1081,7 @@
   argument, and to configure the associated communication port. The
   parameters argument contains parameters passed to the driver with the
   ‐B command‐line option. It’s up to the driver’s author to decide
-  wether or not he/she wants to use this argument, and what for. The
+  whether or not he/she wants to use this argument, and what for. The
   function can perform some additional tasks such as trying to identify
   precisely which braille terminal model is connected to the computer,
   by sending it a request and analyzing its answer. The value that is
@@ -1109,7 +1109,7 @@
   The brl_writeStatus() function is very similar to brl_writeWindow().
   The only difference is that whereas brl_writeWindow() writes on the
   main braille display, brl_writeStatus() writes on an auxiliary braille
-  display, which occasionaly appears on some braille terminals. The
+  display, which occasionally appears on some braille terminals. The
   remarks that have been done concerning optimizations for refreshing
   the display still apply here.
 
@@ -1404,7 +1404,7 @@
   •  KEY: data holds a secret key, the authorization is successful only
      if the key matches the server secret key.
 
-  •  CREDENTIALS: Operating‐System‐specific credentials are explicitely
+  •  CREDENTIALS: Operating‐System‐specific credentials are explicitly
      sent over the socket, the authorization is successful if the server
      considers the credentials sufficient.
 
@@ -1436,19 +1436,20 @@
   following integers, which are the numbers of ttys that leads to the
   tty that the application wants to take control of (it can be empty if
   the tty is one of the machine’s VT). The last integer of this series
-  tells the number of the tty to get control of. Finaly, how key presses
-  should be reported is sent: either a driver name or "", preceded by
-  the number of caracters in the driver name (0 in the case of ""), as
-  an unsigned byte. This packet is then acknowledged by the server.
+  tells the number of the tty to get control of. Finally, how key
+  presses should be reported is sent: either a driver name or "",
+  preceded by the number of characters in the driver name (0 in the case
+  of ""), as an unsigned byte. This packet is then acknowledged by the
+  server.
 
   7.4.7.  BRLAPI_PACKET_KEY (see brlapi_readKey() )
 
   As soon as the client gets a tty, it must be prepared to handle
   BRLAPI_PACKET_KEY incoming packets at any time (as soon as the key was
-  pressed on the braille terminal, hopefuly).  The data holds a key code
-  as 2 integers, or the key flags then the command code as 2 integers,
-  depending on what has been request in the BRLAPI_PACKET_ENTERTTYMODE
-  packet.
+  pressed on the braille terminal, hopefully).  The data holds a key
+  code as 2 integers, or the key flags then the command code as 2
+  integers, depending on what has been request in the
+  BRLAPI_PACKET_ENTERTTYMODE packet.
 
   7.4.8.  BRLAPI_PACKET_SETFOCUS (see brlapi_setFocus() )
 

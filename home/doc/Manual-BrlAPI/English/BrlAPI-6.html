@@ -109,7 +109,7 @@ terminal. Generally, this function has to open the file referred to by
 the <CODE>tty</CODE> argument, and to configure the associated communication
 port. The <CODE>parameters</CODE> argument contains parameters passed to the
 driver with the -B command-line option. It's up to the driver's
-author to decide wether or not he/she wants to use this argument,
+author to decide whether or not he/she wants to use this argument,
 and what for. The function can perform some additional tasks such
 as trying to identify precisely which braille terminal model is
 connected to the computer, by sending it a request and analyzing its
@@ -134,7 +134,7 @@ displayed should be done in this function.</P>
 <P>The <CODE>brl_writeStatus()</CODE> function is very similar to <CODE>brl_writeWindow()</CODE>.
 The only difference is that whereas <CODE>brl_writeWindow()</CODE> writes on the
 main braille display, <CODE>brl_writeStatus()</CODE> writes on an auxiliary braille
-display, which occasionaly appears on some braille terminals. The
+display, which occasionally appears on some braille terminals. The
 remarks that have been done concerning optimizations for refreshing
 the display still apply here.</P>
 <P>The <CODE>brl_readCommand()</CODE> function takes two arguments, and returns an
