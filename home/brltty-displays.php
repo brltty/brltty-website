@@ -66,7 +66,8 @@ then please <A HREF="contact.html">let us know</A>.
       ),
 
       array("EuroBraille",
-         "AzerBraille", "Clio", "Esys", "Iris", "NoteBraille", "Scriba"
+         "AzerBraille", "Clio", "NoteBraille", "Scriba",
+         "Esys", "Esytime", "Iris", "b.note", "b.book"
       ),
 
       array("FrankAudiodata",
