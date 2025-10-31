@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
-<title>Key Table: EuroBraille Esys 40,64</title>
+<title>Key Table: EuroBraille B.Note</title>
 <style type="text/css">
 
 /*
@@ -360,11 +360,11 @@ ul.auto-toc {
 </style>
 </head>
 <body>
-<div class="document" id="key-table-eurobraille-esys-40-64">
-<h1 class="title">Key Table: EuroBraille Esys 40,64</h1>
+<div class="document" id="key-table-eurobraille-b-note">
+<h1 class="title">Key Table: EuroBraille B.Note</h1>
 
 <ul class="simple">
-<li><a class="reference external" href="brl-eu-esys_medium.txt">Help Screen Version</a></li>
+<li><a class="reference external" href="brl-eu-bnote.txt">Help Screen Version</a></li>
 </ul>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
@@ -377,8 +377,13 @@ ul.auto-toc {
 <li><a class="reference internal" href="#horizontal-navigation" id="toc-entry-6">Horizontal Navigation</a></li>
 <li><a class="reference internal" href="#clipboard-functions" id="toc-entry-7">Clipboard Functions</a></li>
 <li><a class="reference internal" href="#configuration-functions" id="toc-entry-8">Configuration Functions</a></li>
-<li><a class="reference internal" href="#speech-functions" id="toc-entry-9">Speech Functions</a></li>
-<li><a class="reference internal" href="#keyboard-input" id="toc-entry-10">Keyboard Input</a></li>
+<li><a class="reference internal" href="#keyboard-input" id="toc-entry-9">Keyboard Input</a></li>
+<li><a class="reference internal" href="#special-functions" id="toc-entry-10">Special Functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#menu-bindings" id="toc-entry-11">Menu Bindings</a><ul>
+<li><a class="reference internal" href="#special-modes-1" id="toc-entry-12">Special Modes</a></li>
+<li><a class="reference internal" href="#menu-operations" id="toc-entry-13">Menu Operations</a></li>
 </ul>
 </li>
 </ul>
@@ -386,18 +391,19 @@ ul.auto-toc {
 <div class="section" id="notes">
 <h2><a class="toc-backref" href="#toc-entry-1">Notes</a></h2>
 <ul class="simple">
+<li>For this key table to work correctly, ensure that Keyboard USB-HID-A is set to Send to Screen Reader.
+This setting can be found within the USB section of the device's internal settings menu.</li>
 <li>The eight dot keys of the braille keyboard are behind the cursor routing keys.</li>
 <li>From left to right, they are: Dot7, Dot3, Dot2, Dot1, Dot4, Dot5, Dot6, Dot8.</li>
 <li>The two keys of the braille keyboard in front of the braille cells, from left to right, are: Backspace, Space.</li>
 <li>The cursor routing keys are the small, round buttons just behind the braille cells.</li>
 <li>RoutingKey1 means pressing a cursor routing key once (a single click).</li>
 <li>RoutingKey2 means pressing a cursor routing key twice quickly (a double click).</li>
-<li>The five-way joysticks (Left, Right, Up, Down, Press) are to the left and right of the cursor routing keys.</li>
-<li>The switches are three-way (left, right, press) controls on the front surface.</li>
-<li>Switch1 is the left outer switch.</li>
-<li>Switch2 is the right outer switch.</li>
-<li>Switch3 is the left inner switch.</li>
-<li>Switch4 is the right inner switch.</li>
+<li>The keypads are the four small keys (Left, Right, Up, Down) to the left and right of the braille display.</li>
+<li>Some keys have been reserved for internal use:<ul>
+<li>LeftKeypadUp: go to the internal menu</li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="default-bindings">
@@ -405,78 +411,89 @@ ul.auto-toc {
 <div class="section" id="special-modes">
 <h3><a class="toc-backref" href="#toc-entry-3">Special Modes</a></h3>
 <ul class="simple">
-<li>enter/leave help display: LeftJoystickRight+RightJoystickDown</li>
-<li>enter/leave command learn mode: LeftJoystickRight+RightJoystickUp</li>
-<li>enter/leave preferences menu: LeftJoystickRight+Switch1Left+Switch1Right</li>
-<li>describe character: RoutingKey2</li>
+<li>enter/leave help display: long LeftKeypadLeft</li>
+<li>enter/leave preferences menu: long LeftKeypadRight</li>
+<li>enter/leave status display: long LeftKeypadDown</li>
+<li>describe character:<ul>
+<li>RoutingKey2</li>
+<li>LeftKeypadRight+RoutingKey1</li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="cursor-functions">
 <h3><a class="toc-backref" href="#toc-entry-4">Cursor Functions</a></h3>
 <ul class="simple">
-<li>go to screen cursor: RightJoystickPress</li>
+<li>go to screen cursor: RightKeypadLeft+RightKeypadRight</li>
+<li>go back after cursor tracking: LeftKeypadLeft+LeftKeypadRight</li>
 <li>bring screen cursor to character: RoutingKey1</li>
+<li>bring screen cursor to current line: LeftKeypadDown+LeftKeypadUp</li>
 </ul>
 </div>
 <div class="section" id="vertical-navigation">
 <h3><a class="toc-backref" href="#toc-entry-5">Vertical Navigation</a></h3>
 <ul class="simple">
-<li>go up one line: RightJoystickUp</li>
-<li>go down one line: RightJoystickDown</li>
-<li>go to beginning of top line: LeftJoystickUp</li>
-<li>go to beginning of bottom line: LeftJoystickDown</li>
-<li>go up to previous command prompt: LeftJoystickLeft</li>
-<li>go down to next command prompt: LeftJoystickRight</li>
+<li>go up one line: RightKeypadUp</li>
+<li>go down one line: RightKeypadDown</li>
+<li>go to top line: long RightKeypadUp</li>
+<li>go to bottom line: long RightKeypadDown</li>
+<li>go to beginning of top line: RightKeypadLeft+RightKeypadUp</li>
+<li>go to beginning of bottom line: RightKeypadLeft+RightKeypadDown</li>
+<li>go up to nearest line with different content: LeftKeypadLeft+RightKeypadUp</li>
+<li>go down to nearest line with different content: LeftKeypadRight+RightKeypadUp</li>
+<li>go up to nearest line with different highlighting: LeftKeypadLeft+RightKeypadDown</li>
+<li>go down to nearest line with different highlighting: LeftKeypadRight+RightKeypadDown</li>
+<li>go up to first line of paragraph: LeftKeypadLeft+RightKeypadRight</li>
+<li>go down to first line of next paragraph: LeftKeypadRight+RightKeypadRight</li>
+<li>go up to previous command prompt: LeftKeypadLeft+RightKeypadLeft</li>
+<li>go down to next command prompt: LeftKeypadRight+RightKeypadLeft</li>
+<li>go up to nearest line with less indent than character: RightKeypadLeft+RightKeypadUp+RoutingKey1</li>
+<li>go down to nearest line with less indent than character: RightKeypadLeft+RightKeypadDown+RoutingKey1</li>
+<li>go up to nearest line with different character: RightKeypadRight+RightKeypadUp+RoutingKey1</li>
+<li>go down to nearest line with different character: RightKeypadRight+RightKeypadDown+RoutingKey1</li>
 </ul>
 </div>
 <div class="section" id="horizontal-navigation">
 <h3><a class="toc-backref" href="#toc-entry-6">Horizontal Navigation</a></h3>
 <ul class="simple">
-<li>go backward one braille window:<ul>
-<li>Switch1Left</li>
-<li>RightJoystickLeft</li>
-</ul>
-</li>
-<li>go forward one braille window:<ul>
-<li>Switch1Right</li>
-<li>RightJoystickRight</li>
-</ul>
-</li>
-<li>go to beginning of line: LeftJoystickRight+Switch1Left</li>
-<li>go to end of line: LeftJoystickRight+Switch1Right</li>
+<li>go backward one braille window: RightKeypadLeft</li>
+<li>go forward one braille window: RightKeypadRight</li>
+<li>go backward skipping blank braille windows: LeftKeypadLeft</li>
+<li>go forward skipping blank braille windows: LeftKeypadRight</li>
+<li>go to beginning of line: long RightKeypadLeft</li>
+<li>go to end of line: long RightKeypadRight</li>
+<li>go left one character: LeftKeypadLeft+LeftKeypadUp</li>
+<li>go right one character: LeftKeypadRight+LeftKeypadUp</li>
+<li>go left half a braille window: LeftKeypadLeft+LeftKeypadDown</li>
+<li>go right half a braille window: LeftKeypadRight+LeftKeypadDown</li>
+<li>place left end of braille window at character: LeftKeypadLeft+RoutingKey1</li>
 </ul>
 </div>
 <div class="section" id="clipboard-functions">
 <h3><a class="toc-backref" href="#toc-entry-7">Clipboard Functions</a></h3>
 <ul class="simple">
-<li>start new clipboard at character: LeftJoystickDown+RightJoystickLeft, RoutingKey1</li>
-<li>append to clipboard from character: LeftJoystickDown+RightJoystickUp, RoutingKey1</li>
-<li>linear copy to character: LeftJoystickDown+RightJoystickRight, RoutingKey1</li>
-<li>rectangular copy to character: LeftJoystickDown+RightJoystickDown, RoutingKey1</li>
-<li>insert the clipboard content before the screen cursor: LeftJoystickDown+RightJoystickPress</li>
+<li>start new clipboard at character: RightKeypadLeft+RoutingKey1</li>
+<li>append to clipboard from character: RightKeypadUp+RoutingKey1</li>
+<li>linear copy to character: RightKeypadRight+RoutingKey1</li>
+<li>rectangular copy to character: RightKeypadDown+RoutingKey1</li>
+<li>insert the clipboard content before the screen cursor: RightKeypadUp+RightKeypadDown</li>
+<li>insert the clipboard content before the screen cursor using the alternate paste mode: long RightKeypadUp+RightKeypadDown</li>
+<li>search backward for clipboard text: RightKeypadRight+RightKeypadUp</li>
+<li>search forward for clipboard text: RightKeypadRight+RightKeypadDown</li>
 </ul>
 </div>
 <div class="section" id="configuration-functions">
 <h3><a class="toc-backref" href="#toc-entry-8">Configuration Functions</a></h3>
 <ul class="simple">
-<li>set track screen cursor on/off: LeftJoystickRight+Switch2Left+Switch2Right</li>
-</ul>
-</div>
-<div class="section" id="speech-functions">
-<h3><a class="toc-backref" href="#toc-entry-9">Speech Functions</a></h3>
-<ul class="simple">
-<li>stop speaking: LeftJoystickLeft+Switch1Left+Switch1Right</li>
-<li>speak current line: LeftJoystickLeft+RightJoystickPress</li>
-<li>speak from top of screen through current line: LeftJoystickLeft+RightJoystickUp</li>
-<li>speak from current line through bottom of screen: LeftJoystickLeft+RightJoystickDown</li>
-<li>decrease speaking volume: LeftJoystickLeft+RightJoystickLeft</li>
-<li>increase speaking volume: LeftJoystickLeft+RightJoystickRight</li>
-<li>decrease speaking rate: LeftJoystickLeft+Switch1Left</li>
-<li>increase speaking rate: LeftJoystickLeft+Switch1Right</li>
+<li>set text style 6-dot: LeftKeypadDown+RightKeypadUp</li>
+<li>set text style 8-dot: LeftKeypadDown+RightKeypadDown</li>
+<li>set track screen cursor on/off: LeftKeypadDown</li>
+<li>set screen cursor visibility on/off: LeftKeypadDown+RightKeypadLeft</li>
+<li>set attribute underlining on/off: LeftKeypadDown+RightKeypadRight</li>
 </ul>
 </div>
 <div class="section" id="keyboard-input">
-<h3><a class="toc-backref" href="#toc-entry-10">Keyboard Input</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-9">Keyboard Input</a></h3>
 <ul class="simple">
 <li>braille keyboard dot1: Dot1</li>
 <li>braille keyboard dot2: Dot2</li>
@@ -517,6 +534,37 @@ ul.auto-toc {
 <li>cycle the Shift sticky input modifier (next, on, off): Space+Dot7</li>
 <li>cycle the Control sticky input modifier (next, on, off): Space+Dots78</li>
 <li>cycle the Meta (Left Alt) sticky input modifier (next, on, off): Space+Dot8</li>
+<li>switch to specific virtual terminal: LeftKeypadDown+RoutingKey1</li>
+</ul>
+</div>
+<div class="section" id="special-functions">
+<h3><a class="toc-backref" href="#toc-entry-10">Special Functions</a></h3>
+<ul class="simple">
+<li>remember current braille window position: LeftKeypadDown+LeftKeypadLeft+RoutingKey1</li>
+<li>go to remembered braille window position: LeftKeypadDown+LeftKeypadRight+RoutingKey1</li>
+</ul>
+</div>
+</div>
+<div class="section" id="menu-bindings">
+<h2><a class="toc-backref" href="#toc-entry-11">Menu Bindings</a></h2>
+<div class="section" id="special-modes-1">
+<h3><a class="toc-backref" href="#toc-entry-12">Special Modes</a></h3>
+<ul class="simple">
+<li>enter/leave preferences menu: RightKeypadUp+RightKeypadRight</li>
+</ul>
+</div>
+<div class="section" id="menu-operations">
+<h3><a class="toc-backref" href="#toc-entry-13">Menu Operations</a></h3>
+<ul class="simple">
+<li>go up to previous item: RightKeypadUp</li>
+<li>go down to next item: RightKeypadDown</li>
+<li>go up to first item: long RightKeypadUp</li>
+<li>go down to last item: long RightKeypadDown</li>
+<li>select previous choice: RightKeypadLeft</li>
+<li>select next choice: RightKeypadRight</li>
+<li>go to previous menu level: RightKeypadUp+RightKeypadLeft</li>
+<li>save preferences to disk: RightKeypadDown+RightKeypadRight</li>
+<li>restore preferences from disk: RightKeypadDown+RightKeypadLeft</li>
 </ul>
 </div>
 </div>

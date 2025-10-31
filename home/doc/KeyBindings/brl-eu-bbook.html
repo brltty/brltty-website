@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
-<title>Key Table: EuroBraille Esys 40,64</title>
+<title>Key Table: EuroBraille B.Book</title>
 <style type="text/css">
 
 /*
@@ -360,11 +360,11 @@ ul.auto-toc {
 </style>
 </head>
 <body>
-<div class="document" id="key-table-eurobraille-esys-40-64">
-<h1 class="title">Key Table: EuroBraille Esys 40,64</h1>
+<div class="document" id="key-table-eurobraille-b-book">
+<h1 class="title">Key Table: EuroBraille B.Book</h1>
 
 <ul class="simple">
-<li><a class="reference external" href="brl-eu-esys_medium.txt">Help Screen Version</a></li>
+<li><a class="reference external" href="brl-eu-bbook.txt">Help Screen Version</a></li>
 </ul>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
@@ -376,9 +376,8 @@ ul.auto-toc {
 <li><a class="reference internal" href="#vertical-navigation" id="toc-entry-5">Vertical Navigation</a></li>
 <li><a class="reference internal" href="#horizontal-navigation" id="toc-entry-6">Horizontal Navigation</a></li>
 <li><a class="reference internal" href="#clipboard-functions" id="toc-entry-7">Clipboard Functions</a></li>
-<li><a class="reference internal" href="#configuration-functions" id="toc-entry-8">Configuration Functions</a></li>
-<li><a class="reference internal" href="#speech-functions" id="toc-entry-9">Speech Functions</a></li>
-<li><a class="reference internal" href="#keyboard-input" id="toc-entry-10">Keyboard Input</a></li>
+<li><a class="reference internal" href="#speech-functions" id="toc-entry-8">Speech Functions</a></li>
+<li><a class="reference internal" href="#keyboard-input" id="toc-entry-9">Keyboard Input</a></li>
 </ul>
 </li>
 </ul>
@@ -386,6 +385,8 @@ ul.auto-toc {
 <div class="section" id="notes">
 <h2><a class="toc-backref" href="#toc-entry-1">Notes</a></h2>
 <ul class="simple">
+<li>For this key table to work correctly, ensure that Keyboard USB-HID-A is set to Send to Screen Reader.
+This setting can be found within the USB section of the device's internal settings menu.</li>
 <li>The eight dot keys of the braille keyboard are behind the cursor routing keys.</li>
 <li>From left to right, they are: Dot7, Dot3, Dot2, Dot1, Dot4, Dot5, Dot6, Dot8.</li>
 <li>The two keys of the braille keyboard in front of the braille cells, from left to right, are: Backspace, Space.</li>
@@ -393,11 +394,10 @@ ul.auto-toc {
 <li>RoutingKey1 means pressing a cursor routing key once (a single click).</li>
 <li>RoutingKey2 means pressing a cursor routing key twice quickly (a double click).</li>
 <li>The five-way joysticks (Left, Right, Up, Down, Press) are to the left and right of the cursor routing keys.</li>
-<li>The switches are three-way (left, right, press) controls on the front surface.</li>
-<li>Switch1 is the left outer switch.</li>
-<li>Switch2 is the right outer switch.</li>
-<li>Switch3 is the left inner switch.</li>
-<li>Switch4 is the right inner switch.</li>
+<li>The two Forward/Backward key pairs are the arrow-shaped keys at either end of the braille display.</li>
+<li>The control keys are the curved keys to the left of the Dot7 key and to the right of the Dot8 key.
+The ones on the left, from top to bottom, are: C1, C2, C3.
+The ones on the right, from top to bottom, are: C6, C5, C4.</li>
 </ul>
 </div>
 <div class="section" id="default-bindings">
@@ -407,7 +407,6 @@ ul.auto-toc {
 <ul class="simple">
 <li>enter/leave help display: LeftJoystickRight+RightJoystickDown</li>
 <li>enter/leave command learn mode: LeftJoystickRight+RightJoystickUp</li>
-<li>enter/leave preferences menu: LeftJoystickRight+Switch1Left+Switch1Right</li>
 <li>describe character: RoutingKey2</li>
 </ul>
 </div>
@@ -433,17 +432,15 @@ ul.auto-toc {
 <h3><a class="toc-backref" href="#toc-entry-6">Horizontal Navigation</a></h3>
 <ul class="simple">
 <li>go backward one braille window:<ul>
-<li>Switch1Left</li>
+<li>Backward</li>
 <li>RightJoystickLeft</li>
 </ul>
 </li>
 <li>go forward one braille window:<ul>
-<li>Switch1Right</li>
+<li>Forward</li>
 <li>RightJoystickRight</li>
 </ul>
 </li>
-<li>go to beginning of line: LeftJoystickRight+Switch1Left</li>
-<li>go to end of line: LeftJoystickRight+Switch1Right</li>
 </ul>
 </div>
 <div class="section" id="clipboard-functions">
@@ -456,28 +453,22 @@ ul.auto-toc {
 <li>insert the clipboard content before the screen cursor: LeftJoystickDown+RightJoystickPress</li>
 </ul>
 </div>
-<div class="section" id="configuration-functions">
-<h3><a class="toc-backref" href="#toc-entry-8">Configuration Functions</a></h3>
-<ul class="simple">
-<li>set track screen cursor on/off: LeftJoystickRight+Switch2Left+Switch2Right</li>
-</ul>
-</div>
 <div class="section" id="speech-functions">
-<h3><a class="toc-backref" href="#toc-entry-9">Speech Functions</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-8">Speech Functions</a></h3>
 <ul class="simple">
-<li>stop speaking: LeftJoystickLeft+Switch1Left+Switch1Right</li>
 <li>speak current line: LeftJoystickLeft+RightJoystickPress</li>
 <li>speak from top of screen through current line: LeftJoystickLeft+RightJoystickUp</li>
 <li>speak from current line through bottom of screen: LeftJoystickLeft+RightJoystickDown</li>
 <li>decrease speaking volume: LeftJoystickLeft+RightJoystickLeft</li>
 <li>increase speaking volume: LeftJoystickLeft+RightJoystickRight</li>
-<li>decrease speaking rate: LeftJoystickLeft+Switch1Left</li>
-<li>increase speaking rate: LeftJoystickLeft+Switch1Right</li>
 </ul>
 </div>
 <div class="section" id="keyboard-input">
-<h3><a class="toc-backref" href="#toc-entry-10">Keyboard Input</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-9">Keyboard Input</a></h3>
 <ul class="simple">
+<li>braille keyboard upper: C3</li>
+<li>braille keyboard control: C4</li>
+<li>braille keyboard meta: C5</li>
 <li>braille keyboard dot1: Dot1</li>
 <li>braille keyboard dot2: Dot2</li>
 <li>braille keyboard dot3: Dot3</li>
@@ -488,7 +479,11 @@ ul.auto-toc {
 <li>braille keyboard dot8: Dot8</li>
 <li>braille keyboard space: Space</li>
 <li>backspace key: Backspace</li>
-<li>escape key: Space+Dots1245</li>
+<li>escape key:<ul>
+<li>C1</li>
+<li>Space+Dots1245</li>
+</ul>
+</li>
 <li>cursor-left key: Space+Dot2</li>
 <li>cursor-right key: Space+Dot5</li>
 <li>cursor-up key: Space+Dot4</li>
@@ -497,7 +492,11 @@ ul.auto-toc {
 <li>page-down key: Space+Dots46</li>
 <li>home key: Space+Dots123</li>
 <li>end key: Space+Dots456</li>
-<li>insert key: Space+Dots135</li>
+<li>insert key:<ul>
+<li>C6</li>
+<li>Space+Dots135</li>
+</ul>
+</li>
 <li>delete key: Space+Dots36</li>
 <li>function key #1: Backspace+Dot1</li>
 <li>function key #2: Backspace+Dots12</li>
@@ -512,11 +511,24 @@ ul.auto-toc {
 <li>function key #11: Backspace+Dots13</li>
 <li>function key #12: Backspace+Dots123</li>
 <li>enter key: Backspace+Space</li>
-<li>tab key: Space+Dots256</li>
+<li>tab key:<ul>
+<li>C2</li>
+<li>Space+Dots256</li>
+</ul>
+</li>
 <li>tab key + shift: Space+Dots236</li>
+<li>cycle the Upper sticky input modifier (next, on, off): C3</li>
 <li>cycle the Shift sticky input modifier (next, on, off): Space+Dot7</li>
-<li>cycle the Control sticky input modifier (next, on, off): Space+Dots78</li>
-<li>cycle the Meta (Left Alt) sticky input modifier (next, on, off): Space+Dot8</li>
+<li>cycle the Control sticky input modifier (next, on, off):<ul>
+<li>C4</li>
+<li>Space+Dots78</li>
+</ul>
+</li>
+<li>cycle the Meta (Left Alt) sticky input modifier (next, on, off):<ul>
+<li>C5</li>
+<li>Space+Dot8</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>

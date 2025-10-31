@@ -1,0 +1,146 @@
+Key Table: EuroBraille B.Note
+=============================
+
+Notes
+* For this key table to work correctly, ensure that Keyboard USB-HID-A is set to Send to Screen Reader.
+  This setting can be found within the USB section of the device's internal settings menu.
+* The eight dot keys of the braille keyboard are behind the cursor routing keys.
+* From left to right, they are: Dot7, Dot3, Dot2, Dot1, Dot4, Dot5, Dot6, Dot8.
+* The two keys of the braille keyboard in front of the braille cells, from left to right, are: Backspace, Space.
+* The cursor routing keys are the small, round buttons just behind the braille cells.
+* RoutingKey1 means pressing a cursor routing key once (a single click).
+* RoutingKey2 means pressing a cursor routing key twice quickly (a double click).
+* The keypads are the four small keys (Left, Right, Up, Down) to the left and right of the braille display.
+* Some keys have been reserved for internal use:
+  + LeftKeypadUp: go to the internal menu
+
+Default Bindings
+----------------
+
+Special Modes
+* enter/leave help display: long LeftKeypadLeft
+* enter/leave preferences menu: long LeftKeypadRight
+* enter/leave status display: long LeftKeypadDown
+* describe character:
+  + RoutingKey2
+  + LeftKeypadRight+RoutingKey1
+
+Cursor Functions
+* go to screen cursor: RightKeypadLeft+RightKeypadRight
+* go back after cursor tracking: LeftKeypadLeft+LeftKeypadRight
+* bring screen cursor to character: RoutingKey1
+* bring screen cursor to current line: LeftKeypadDown+LeftKeypadUp
+
+Vertical Navigation
+* go up one line: RightKeypadUp
+* go down one line: RightKeypadDown
+* go to top line: long RightKeypadUp
+* go to bottom line: long RightKeypadDown
+* go to beginning of top line: RightKeypadLeft+RightKeypadUp
+* go to beginning of bottom line: RightKeypadLeft+RightKeypadDown
+* go up to nearest line with different content: LeftKeypadLeft+RightKeypadUp
+* go down to nearest line with different content: LeftKeypadRight+RightKeypadUp
+* go up to nearest line with different highlighting: LeftKeypadLeft+RightKeypadDown
+* go down to nearest line with different highlighting: LeftKeypadRight+RightKeypadDown
+* go up to first line of paragraph: LeftKeypadLeft+RightKeypadRight
+* go down to first line of next paragraph: LeftKeypadRight+RightKeypadRight
+* go up to previous command prompt: LeftKeypadLeft+RightKeypadLeft
+* go down to next command prompt: LeftKeypadRight+RightKeypadLeft
+* go up to nearest line with less indent than character: RightKeypadLeft+RightKeypadUp+RoutingKey1
+* go down to nearest line with less indent than character: RightKeypadLeft+RightKeypadDown+RoutingKey1
+* go up to nearest line with different character: RightKeypadRight+RightKeypadUp+RoutingKey1
+* go down to nearest line with different character: RightKeypadRight+RightKeypadDown+RoutingKey1
+
+Horizontal Navigation
+* go backward one braille window: RightKeypadLeft
+* go forward one braille window: RightKeypadRight
+* go backward skipping blank braille windows: LeftKeypadLeft
+* go forward skipping blank braille windows: LeftKeypadRight
+* go to beginning of line: long RightKeypadLeft
+* go to end of line: long RightKeypadRight
+* go left one character: LeftKeypadLeft+LeftKeypadUp
+* go right one character: LeftKeypadRight+LeftKeypadUp
+* go left half a braille window: LeftKeypadLeft+LeftKeypadDown
+* go right half a braille window: LeftKeypadRight+LeftKeypadDown
+* place left end of braille window at character: LeftKeypadLeft+RoutingKey1
+
+Clipboard Functions
+* start new clipboard at character: RightKeypadLeft+RoutingKey1
+* append to clipboard from character: RightKeypadUp+RoutingKey1
+* linear copy to character: RightKeypadRight+RoutingKey1
+* rectangular copy to character: RightKeypadDown+RoutingKey1
+* insert the clipboard content before the screen cursor: RightKeypadUp+RightKeypadDown
+* insert the clipboard content before the screen cursor using the alternate paste mode: long RightKeypadUp+RightKeypadDown
+* search backward for clipboard text: RightKeypadRight+RightKeypadUp
+* search forward for clipboard text: RightKeypadRight+RightKeypadDown
+
+Configuration Functions
+* set text style 6-dot: LeftKeypadDown+RightKeypadUp
+* set text style 8-dot: LeftKeypadDown+RightKeypadDown
+* set track screen cursor on/off: LeftKeypadDown
+* set screen cursor visibility on/off: LeftKeypadDown+RightKeypadLeft
+* set attribute underlining on/off: LeftKeypadDown+RightKeypadRight
+
+Keyboard Input
+* braille keyboard dot1: Dot1
+* braille keyboard dot2: Dot2
+* braille keyboard dot3: Dot3
+* braille keyboard dot4: Dot4
+* braille keyboard dot5: Dot5
+* braille keyboard dot6: Dot6
+* braille keyboard dot7: Dot7
+* braille keyboard dot8: Dot8
+* braille keyboard space: Space
+* backspace key: Backspace
+* escape key: Space+Dots1245
+* cursor-left key: Space+Dot2
+* cursor-right key: Space+Dot5
+* cursor-up key: Space+Dot4
+* cursor-down key: Space+Dot6
+* page-up key: Space+Dots13
+* page-down key: Space+Dots46
+* home key: Space+Dots123
+* end key: Space+Dots456
+* insert key: Space+Dots135
+* delete key: Space+Dots36
+* function key #1: Backspace+Dot1
+* function key #2: Backspace+Dots12
+* function key #3: Backspace+Dots14
+* function key #4: Backspace+Dots145
+* function key #5: Backspace+Dots15
+* function key #6: Backspace+Dots124
+* function key #7: Backspace+Dots1245
+* function key #8: Backspace+Dots125
+* function key #9: Backspace+Dots24
+* function key #10: Backspace+Dots245
+* function key #11: Backspace+Dots13
+* function key #12: Backspace+Dots123
+* enter key: Backspace+Space
+* tab key: Space+Dots256
+* tab key + shift: Space+Dots236
+* cycle the Shift sticky input modifier (next, on, off): Space+Dot7
+* cycle the Control sticky input modifier (next, on, off): Space+Dots78
+* cycle the Meta (Left Alt) sticky input modifier (next, on, off): Space+Dot8
+* switch to specific virtual terminal: LeftKeypadDown+RoutingKey1
+
+Special Functions
+* remember current braille window position: LeftKeypadDown+LeftKeypadLeft+RoutingKey1
+* go to remembered braille window position: LeftKeypadDown+LeftKeypadRight+RoutingKey1
+
+Menu Bindings
+-------------
+
+Special Modes
+* enter/leave preferences menu: RightKeypadUp+RightKeypadRight
+
+Menu Operations
+* go up to previous item: RightKeypadUp
+* go down to next item: RightKeypadDown
+* go up to first item: long RightKeypadUp
+* go down to last item: long RightKeypadDown
+* select previous choice: RightKeypadLeft
+* select next choice: RightKeypadRight
+* go to previous menu level: RightKeypadUp+RightKeypadLeft
+* save preferences to disk: RightKeypadDown+RightKeypadRight
+* restore preferences from disk: RightKeypadDown+RightKeypadLeft
+

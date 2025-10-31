@@ -422,7 +422,7 @@ While we always endeavour to ensure that BRLTTY isn't abusing this freedom,
 we also don't feel that it's worth risking the possibility
 that our code might be hacked.
 To reduce this possibility, therefore, BRLTTY first
-establishes a <a class="reference internal" href="#safer-execution-environment">safer execution environment</a> within which It only has
+establishes a <a class="reference internal" href="#safer-execution-environment">safer execution environment</a> within which it only has
 access to those <a class="reference internal" href="#privileged-host-operations">privileged host operations</a> that it actually needs.
 This is a best security practice known as <strong>least privilege</strong>.</p>
 <div class="section" id="safer-execution-environment">
@@ -622,7 +622,7 @@ that can only be written to by the super user (<tt class="docutils literal">root
 e.g. <tt class="docutils literal">/var/lib/</tt>.</li>
 <li>Its owning user and group are changed to be
 the user and the primary group of the user
-that BRLTTY Is executing as.
+that BRLTTY is executing as.
 The same change is also made to whatever the directory contains.
 This requires the <em>cap_chown</em> (temporary) capability
 for a directory or file that's owned by a different user.</li>
@@ -659,7 +659,7 @@ if the last component of its path is its expected name:</p>
 <p>This is a protective measure, given that command line options, etc
 can be used to change the location of a state directory
 to a non-BRLTTY-specific location.
-It prevents BRLTTY from Attempting to gain full access
+It prevents BRLTTY from attempting to gain full access
 to another program's data, or, even worse, to a public directory.
 If it's really necessary to use such a directory
 then it's far better to let a human being take care of it.</p>
@@ -872,9 +872,9 @@ See the <tt class="docutils literal">PR_SET_NO_NEW_PRIVS</tt> section of the man
 for details.
 The quick summary is that, when executing any host command:</p>
 <ul class="simple">
-<li>It's set-user-ID bit will be ignored.</li>
-<li>It's set-group-ID bit will be ignored.</li>
-<li>It's file capabilities will be ignored.</li>
+<li>Its set-user-ID bit will be ignored.</li>
+<li>Its set-group-ID bit will be ignored.</li>
+<li>Its file capabilities will be ignored.</li>
 </ul>
 <p>The current list of approved system calls
 is in the <tt class="docutils literal">syscalls_linux.h</tt> header,
@@ -1438,7 +1438,7 @@ it's impossible for BRLTTY to access it
 after having switched to <a class="reference internal" href="#the-unprivileged-user">the unprivileged user</a>.</p>
 <p>This situation could be easily resolved
 by granting group read and write permissions to the device.
-This shouldn't be problematic because its owned by the <tt class="docutils literal">root</tt> group.
+This shouldn't be problematic because it's owned by the <tt class="docutils literal">root</tt> group.
 Even better, of course, would be to give the device its own group
 (e.g. named <tt class="docutils literal">uinput</tt>).</p>
 <p>BRLTTY currently gets around this problem by including the following
@@ -1449,7 +1449,7 @@ RUN+=&quot;/usr/bin/setfacl -m u:brltty:rw /dev/$name&quot;
 </pre>
 <p>If BRLTTY finds that it isn't permitted to open the device
 (perhaps because the Udev rule isn't present)
-then its fallback method Is to create a private copy of the device file
+then its fallback method is to create a private copy of the device file
 within its writable directory (usually <tt class="docutils literal">/var/run/brltty/</tt>).
 This requires the <strong>cap_mknod</strong> capability.</p>
 <p>Other alternatives include:</p>
@@ -1494,7 +1494,7 @@ For example, a blind person can't see a visual bell.</li>
 <li>Creating a virtual LED device in order to
 monitor what the keyboard LEDs are showing.
 This is done to support the generation of
-An audio-based rendering of LED state changes.</li>
+an audio-based rendering of LED state changes.</li>
 </ul>
 </div>
 <div class="section" id="creating-private-copies-of-device-files">

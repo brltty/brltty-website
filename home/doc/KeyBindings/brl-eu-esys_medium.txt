@@ -8,7 +8,7 @@ Notes
 * The cursor routing keys are the small, round buttons just behind the braille cells.
 * RoutingKey1 means pressing a cursor routing key once (a single click).
 * RoutingKey2 means pressing a cursor routing key twice quickly (a double click).
-* The joysticks are the small, round, five-way (left, right, up, down, press) controls to the left and right of the cursor routing keys.
+* The five-way joysticks (Left, Right, Up, Down, Press) are to the left and right of the cursor routing keys.
 * The switches are three-way (left, right, press) controls on the front surface.
 * Switch1 is the left outer switch.
 * Switch2 is the right outer switch.

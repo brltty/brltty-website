@@ -429,8 +429,8 @@ of the form <tt class="docutils literal">*.cti</tt> are contraction subtables. T
 translate character sequences on the screen into their corresponding contracted
 braille representations.</p>
 <p>Contraction tables can usually be found in the <tt class="docutils literal">/etc/brltty/Contraction/</tt>
-directory (see <a class="reference external" href="Customize.html">Local Customization</a> for more details). SEe
-<a class="reference internal" href="#contraction-table-list">Contraction Table list</a> for a list of BRLTTY's contraction tables.</p>
+directory (see <a class="reference external" href="Customize.html">Local Customization</a> for more details). See
+<a class="reference internal" href="#contraction-table-list">Contraction Table List</a> for a list of BRLTTY's contraction tables.</p>
 <p>A contraction table consists of a sequence of directives, one per line, that
 define how character sequences are to be represented in contracted braille.
 UTF-8 character encoding must be used. Whitespace (blanks, tabs) at the
@@ -458,7 +458,7 @@ same character sequence then their original table ordering is maintained.</p>
 within the <em>representation</em> operand of every contraction directive should be
 explicitly defined via <a class="reference internal" href="#the-always-directive">The Always Directive</a>. If a character's representation
 hasn't been defined then the Unicode Replacement Character (U+FFFD) is used -
-if it's representation hasn't been defined then all eight dots are used.</p>
+if its representation hasn't been defined then all eight dots are used.</p>
 <div class="section" id="the-literal-directive">
 <h3><a class="toc-backref" href="#toc-entry-3">The Literal Directive</a></h3>
 <pre class="literal-block">
@@ -709,7 +709,7 @@ language. The language operand is an ISO 639 two-letter language code.</p>
 <p>This directive only works if at least ICU version 57 is installed.</p>
 <p>This directive relies on data provided by the CLDR package.
 CLDR stands for the Common Locale Data Repository project.
-Knoqwn names for this package include:</p>
+Known names for this package include:</p>
 <ul class="simple">
 <li>cldr-emoji-annotation</li>
 <li>unicode-cldr</li>
@@ -819,7 +819,7 @@ within the range <tt class="docutils literal">1</tt>-<tt class="docutils literal
 convention (see <a class="reference external" href="BrailleDots.html">Braille Dots</a> for details). The special dot number
 <tt class="docutils literal">0</tt> means no dots, and may not be used in conjunction with any other dot
 numbers.</p>
-<p>The equals (<tt class="docutils literal">=</tt>) sign , when used all by itself, means that the <em>characters</em>
+<p>The equals (<tt class="docutils literal">=</tt>) sign, when used all by itself, means that the <em>characters</em>
 operand of the contraction directive is to be written without any translation.</p>
 </div>
 </div>

@@ -5713,10 +5713,13 @@
        EcoBraille          20/40/80
        EuroBraille         AzerBraille
                            Clio
-                           Esys
-                           Iris
                            NoteBraille
                            Scriba
+                           Esys
+                           Esytime
+                           Iris
+                           b.note
+                           b.book
        FrankAudiodata      B2K84
        FreedomScientific   Focus 1 44/70/84
                            Focus 2 40/80
@@ -5877,7 +5880,6 @@
                     tt     TTY
                     vd     VideoBraille
                     vo     Voyager
-                    vr     Virtual
                     vs     VisioBraille
                     vv     ViaVoice
                     xs     ExternalSpeech
