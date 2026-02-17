@@ -13,7 +13,7 @@
 
   Jean‐Philippe Mengual <texou@accelibreinfo.eu> pour Traduc.org
 
-  Version 6.8, juillet 2025
+  Version 6.9, février 2026
 
   Copyright (C) 1995‐2025 by Les Développeurs de BRLTTY.  BRLTTY est un
   logiciel libre, et n’est fourni avec AUCUNE GARANTIE. Il est placé
@@ -5057,8 +5057,6 @@
          de‐g0       Allemand (désabrégé)
          de‐g1       Allemand (abréviations de base)
          de‐g2       Allemand (abrégé)
-         de‐1998     Allemand (abrégé ‐ standard 1998)
-         de‐2015     Allemand (abrégé ‐ standard 2015)
          en          Anglais
          en_US       Anglais (USA)
          en‐ueb‐g1   Anglais (Braille anglais unifié, 1er degré)

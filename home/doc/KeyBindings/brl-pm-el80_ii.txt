@@ -24,6 +24,7 @@ Special Modes
 * set display mode attributes/text: LeftKeyRear+BarLeft1
 * set screen image frozen/unfrozen: LeftKeyFront+BarDown2
 * describe character: BarDown2+RoutingKey1
+* describe color of character: long RoutingKey1
 
 Cursor Functions
 * go to screen cursor: LeftKeyFront

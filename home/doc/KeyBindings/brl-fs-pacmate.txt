@@ -20,6 +20,7 @@ Special Modes
 * set display mode attributes/text: Hot2
 * set screen image frozen/unfrozen: RightSelector+Hot5
 * describe character: RightWheelPress+RoutingKey
+* describe color of character: long RoutingKey
 
 Cursor Functions
 * go to screen cursor: RightSelector

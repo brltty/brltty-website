@@ -6,8 +6,8 @@ Notes
 * From left to right, they are: Dot7, Dot3, Dot2, Dot1, Dot4, Dot5, Dot6, Dot8.
 * The two keys of the braille keyboard in front of the braille cells, from left to right, are: Backspace, Space.
 * The cursor routing keys are the small, round buttons just behind the braille cells.
-* RoutingKey1 means pressing a cursor routing key once (a single click).
-* RoutingKey2 means pressing a cursor routing key twice quickly (a double click).
+* RoutingKey1 means pressing any cursor routing key once (a single click).
+* RoutingKey2 means pressing any cursor routing key twice quickly (a double click).
 * The Menu key is the small, round button to the left of the cursor routing keys.
 * The Z key is the small, round button to the right of the cursor routing keys.
 
@@ -15,14 +15,21 @@ Default Bindings
 ----------------
 
 Special Modes
-* enter/leave help display: Down+Left, L4
+* enter/leave help display:
+  + Down+Left, L4
+  + Space+Dots125
 * enter/leave command learn mode: Down+Left, L5
 * enter/leave preferences menu:
   + Down+Right, Up
   + L4
-* enter/leave status display: L5
+  + Space+Dots1234
+* enter/leave status display:
+  + L5
+  + Space+Dots234
 * set screen image frozen/unfrozen: L3+L4
 * describe character: RoutingKey2
+* describe color of character: long RoutingKey1
+* show current date and time: Space+Dots2345
 
 Cursor Functions
 * go to screen cursor:
@@ -62,6 +69,10 @@ Configuration Functions
 * set track screen cursor on/off: Down+Right, Down
 * set screen cursor visibility on/off: Down+Right, L3
 * set alert tunes on/off: Down+Right, Right
+
+Menu Operations
+* save preferences to disk: Space+Dots12348
+* restore preferences from disk: Space+Dots12347
 
 Keyboard Input
 * braille keyboard dot1: Dot1

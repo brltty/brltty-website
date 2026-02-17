@@ -52,6 +52,7 @@ Special Modes
 * set screen image frozen: Space+Dots1248
 * set screen image unfrozen: Space+Dots1247
 * describe character: ETouchLeftRear+ETouchLeftFront+RoutingKey1
+* describe color of character: long RoutingKey1
 * show current date and time: SmartpadF2
 
 Cursor Functions

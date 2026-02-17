@@ -15,7 +15,7 @@ Special Modes
 Cursor Functions
 * go back after cursor tracking: CapsLock+DeleteBackward
 * bring screen cursor to speech cursor:
-  + Tab+Nine
+  + Tab+ControlLeft+Nine
   + ControlRight+ShiftRight
 
 Vertical Navigation
@@ -51,7 +51,7 @@ Menu Operations
 
 Speech Functions
 * stop speaking:
-  + CapsLock+ShiftLeft+J
+  + CapsLock+ShiftLeft+Eight
   + ControlLeft
   + ControlRight
 * speak current line:
@@ -63,7 +63,6 @@ Speech Functions
 * speak from current line through bottom of screen:
   + CapsLock+ShiftLeft+Comma
   + CapsLock+PageDown
-* go to current speaking position: CapsLock+ShiftLeft+Eight
 * decrease speaking volume:
   + CapsLock+ShiftLeft+M
   + CapsLock+F7
@@ -71,21 +70,25 @@ Speech Functions
   + CapsLock+ShiftLeft+Period
   + CapsLock+F8
 * decrease speaking rate:
-  + CapsLock+ShiftLeft+U
+  + CapsLock+ShiftLeft+J
   + CapsLock+F5
 * increase speaking rate:
-  + CapsLock+ShiftLeft+O
-  + CapsLock+F6
-* set autospeak on/off:
   + CapsLock+ShiftLeft+L
+  + CapsLock+F6
+* decrease speaking pitch: CapsLock+ShiftLeft+U
+* increase speaking pitch: CapsLock+ShiftLeft+O
+* cycle speech punctuation level: CapsLock+ShiftLeft+ControlLeft+I
+* set autospeak on/off:
+  + CapsLock+ShiftLeft+Seven
   + CapsLock+F9
 * set autospeak selected line on/off: CapsLock+ShiftLeft+ControlLeft+K
+* set autospeak empty line on/off: CapsLock+ShiftLeft+ControlLeft+O
 * set autospeak selected character on/off: CapsLock+ShiftLeft+ControlLeft+J
 * set autospeak inserted characters on/off: CapsLock+ShiftLeft+ControlLeft+Period
 * set autospeak deleted characters on/off: CapsLock+ShiftLeft+ControlLeft+M
 * set autospeak replaced characters on/off: CapsLock+ShiftLeft+ControlLeft+Comma
 * set autospeak completed words on/off: CapsLock+ShiftLeft+ControlLeft+L
-* set autospeak indent of current line on/off: Tab+ControlLeft+Zero
+* set autospeak indent of current line on/off: CapsLock+ShiftLeft+ControlLeft+U
 
 Speech Navigation
 * speak current character: Tab+Comma
@@ -98,15 +101,20 @@ Speech Navigation
 * go to and speak last non-blank character on line:
   + Tab+ControlLeft+Period
   + ControlRight+ArrowRight
-* speak current word: Tab+K
-* spell current word: Tab+ControlLeft+K
-* go to and speak previous word:
+* speak current partial (identifier or symbols) word: Tab+K
+* spell current partial (identifier or symbols) word: Tab+Eight
+* go to and speak previous partial (identifier or symbols) word:
   + Tab+J
   + ShiftRight+ArrowLeft
-* go to and speak next word:
+* go to and speak next partial (identifier or symbols) word:
   + Tab+L
   + ShiftRight+ArrowRight
+* speak current whitespace-delimited word: Tab+ControlLeft+K
+* spell current whitespace-delimited word: Tab+ControlLeft+Eight
+* go to and speak previous whitespace-delimited word: Tab+ControlLeft+J
+* go to and speak next whitespace-delimited word: Tab+ControlLeft+L
 * speak current line: Tab+I
+* spell current line: Tab+ControlLeft+I
 * go to and speak previous line:
   + Tab+U
   + ShiftRight+ArrowUp
@@ -119,11 +127,10 @@ Speech Navigation
 * go to and speak last non-blank line on screen:
   + Tab+ControlLeft+O
   + ControlRight+ArrowDown
-* speak indent of current line: Tab+Zero
+* speak indent of current line: Tab+Seven
 * speak speech cursor location:
-  + Tab+Eight
+  + Tab+Nine
   + ShiftRight+Enter
-* set speech cursor visibility on/off: Tab+ControlLeft+Eight
 
 Special Functions
 * remember current braille window position #1: CapsLock+M

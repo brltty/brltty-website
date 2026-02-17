@@ -20,7 +20,7 @@ Cursor Functions
 * go to screen cursor: KP0+KP5
 * go back after cursor tracking: KPPeriod+KP5
 * bring screen cursor to current line: KP0+KPPeriod+KP2
-* bring screen cursor to speech cursor: KPPlus+KPMultiply
+* bring screen cursor to speech cursor: KPPlus+KP0+KPMinus
 
 Vertical Navigation
 * go up one line: KP0+KP8
@@ -73,23 +73,26 @@ Menu Operations
 * restore preferences from disk: KPMinus+KP4
 
 Speech Functions
-* stop speaking: KPEnter+KP4
+* stop speaking: KPEnter+KPDivide
 * speak current line: KPEnter+KP5
 * speak from top of screen through current line: KPEnter+KP8
 * speak from current line through bottom of screen: KPEnter+KP2
-* go to current speaking position: KPEnter+KPDivide
 * decrease speaking volume: KPEnter+KP1
 * increase speaking volume: KPEnter+KP3
-* decrease speaking rate: KPEnter+KP7
-* increase speaking rate: KPEnter+KP9
-* set autospeak on/off: KPEnter+KP6
+* decrease speaking rate: KPEnter+KP4
+* increase speaking rate: KPEnter+KP6
+* decrease speaking pitch: KPEnter+KP7
+* increase speaking pitch: KPEnter+KP9
+* cycle speech punctuation level: KPEnter+KP0+KP8
+* set autospeak on/off: KPEnter+KPMultiply
 * set autospeak selected line on/off: KPEnter+KP0+KP5
+* set autospeak empty line on/off: KPEnter+KP0+KP9
 * set autospeak selected character on/off: KPEnter+KP0+KP4
 * set autospeak inserted characters on/off: KPEnter+KP0+KP3
 * set autospeak deleted characters on/off: KPEnter+KP0+KP1
 * set autospeak replaced characters on/off: KPEnter+KP0+KP2
 * set autospeak completed words on/off: KPEnter+KP0+KP6
-* set autospeak indent of current line on/off: KPPlus+KP0+KPMinus
+* set autospeak indent of current line on/off: KPEnter+KP0+KP7
 
 Speech Navigation
 * speak current character: KPPlus+KP2
@@ -98,18 +101,22 @@ Speech Navigation
 * go to and speak next character: KPPlus+KP3
 * go to and speak first non-blank character on line: KPPlus+KP0+KP1
 * go to and speak last non-blank character on line: KPPlus+KP0+KP3
-* speak current word: KPPlus+KP5
-* spell current word: KPPlus+KP0+KP5
-* go to and speak previous word: KPPlus+KP4
-* go to and speak next word: KPPlus+KP6
+* speak current partial (identifier or symbols) word: KPPlus+KP5
+* spell current partial (identifier or symbols) word: KPPlus+KPDivide
+* go to and speak previous partial (identifier or symbols) word: KPPlus+KP4
+* go to and speak next partial (identifier or symbols) word: KPPlus+KP6
+* speak current whitespace-delimited word: KPPlus+KP0+KP5
+* spell current whitespace-delimited word: KPPlus+KP0+KPDivide
+* go to and speak previous whitespace-delimited word: KPPlus+KP0+KP4
+* go to and speak next whitespace-delimited word: KPPlus+KP0+KP6
 * speak current line: KPPlus+KP8
+* spell current line: KPPlus+KP0+KP8
 * go to and speak previous line: KPPlus+KP7
 * go to and speak next line: KPPlus+KP9
 * go to and speak first non-blank line on screen: KPPlus+KP0+KP7
 * go to and speak last non-blank line on screen: KPPlus+KP0+KP9
-* speak indent of current line: KPPlus+KPMinus
-* speak speech cursor location: KPPlus+KPDivide
-* set speech cursor visibility on/off: KPPlus+KP0+KPDivide
+* speak indent of current line: KPPlus+KPMultiply
+* speak speech cursor location: KPPlus+KPMinus
 
 Keyboard Input
 * set braille typing mode dots: KPPeriod+KPPlus

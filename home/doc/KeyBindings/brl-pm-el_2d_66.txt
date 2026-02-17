@@ -38,6 +38,7 @@ Special Modes
 * set screen image frozen: Status.8+BarRight1
 * set screen image unfrozen: Status.8+BarLeft1
 * describe character: BarDown2+RoutingKey1
+* describe color of character: long RoutingKey1
 * show current date and time: Status.12
 * switch to Advanced Vertical Navigation (left switch rear): press LeftSwitchRear
 * switch to Specialized Navigation (left switch front): press LeftSwitchFront

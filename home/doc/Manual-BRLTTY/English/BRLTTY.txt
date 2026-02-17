@@ -9,7 +9,7 @@
 
   Dave Mielke <dave@mielke.cc>
 
-  Version 6.8, July 2025
+  Version 6.9, February 2026
 
   Copyright (C) 1995‐2025 by The BRLTTY Developers.  BRLTTY is free
   software, and comes with ABSOLUTELY NO WARRANTY.  It is placed under
@@ -4682,8 +4682,6 @@
           de‐g0       German (uncontracted)
           de‐g1       German (basic contractions)
           de‐g2       German (contracted)
-          de‐1998     German (contracted ‐ 1998 standard)
-          de‐2015     German (contracted ‐ 2015 standard)
           en          English
           en_US       English (United States)
           en‐ueb‐g1   English (Unified English Braille, grade 1)

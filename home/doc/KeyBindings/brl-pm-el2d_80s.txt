@@ -39,6 +39,7 @@ Special Modes
 * describe character:
   + RoutingKey2
   + BarDown2+RoutingKey1
+* describe color of character: long RoutingKey1
 * show current date and time: Status.19
 
 Cursor Functions

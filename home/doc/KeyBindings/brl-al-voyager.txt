@@ -18,6 +18,7 @@ Special Modes
 * set screen image frozen: Thumb2+Dots1248
 * set screen image unfrozen: Thumb2+Dots1247
 * describe character: Right+RoutingKey
+* describe color of character: long RoutingKey
 * show current date and time: Thumb1+Thumb4
 
 Cursor Functions

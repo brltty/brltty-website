@@ -25,6 +25,7 @@ Special Modes
 * set screen image frozen: B5+K2+K3
 * set screen image unfrozen: B5+K2+K1
 * describe character: K2+RoutingKey
+* describe color of character: long RoutingKey
 * show current date and time: B6+K1
 
 Cursor Functions

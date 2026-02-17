@@ -26,6 +26,7 @@ Special Modes
 * set screen image frozen: Status.8+Dot8
 * set screen image unfrozen: Status.8+Dot7
 * describe character: Dot4+RoutingKey1
+* describe color of character: long RoutingKey1
 * show current date and time:
   + Status.21
   + Dots1237

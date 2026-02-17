@@ -8,8 +8,7 @@ Notes
 * From left to right, they are: Dot7, Dot3, Dot2, Dot1, Dot4, Dot5, Dot6, Dot8.
 * The two keys of the braille keyboard in front of the braille cells, from left to right, are: Backspace, Space.
 * The cursor routing keys are the small, round buttons just behind the braille cells.
-* RoutingKey1 means pressing a cursor routing key once (a single click).
-* RoutingKey2 means pressing a cursor routing key twice quickly (a double click).
+* RoutingKey means pressing any cursor routing key.
 * The five-way joysticks (Left, Right, Up, Down, Press) are to the left and right of the cursor routing keys.
 * The two Forward/Backward key pairs are the arrow-shaped keys at either end of the braille display.
 * The control keys are the curved keys to the left of the Dot7 key and to the right of the Dot8 key.
@@ -20,13 +19,18 @@ Default Bindings
 ----------------
 
 Special Modes
-* enter/leave help display: LeftJoystickRight+RightJoystickDown
+* enter/leave help display:
+  + LeftJoystickRight+RightJoystickDown
+  + Space+Dots125
 * enter/leave command learn mode: LeftJoystickRight+RightJoystickUp
-* describe character: RoutingKey2
+* enter/leave preferences menu: Space+Dots1234
+* enter/leave status display: Space+Dots234
+* describe color of character: long RoutingKey
+* show current date and time: Space+Dots2345
 
 Cursor Functions
 * go to screen cursor: RightJoystickPress
-* bring screen cursor to character: RoutingKey1
+* bring screen cursor to character: RoutingKey
 
 Vertical Navigation
 * go up one line: RightJoystickUp
@@ -45,11 +49,15 @@ Horizontal Navigation
   + RightJoystickRight
 
 Clipboard Functions
-* start new clipboard at character: LeftJoystickDown+RightJoystickLeft, RoutingKey1
-* append to clipboard from character: LeftJoystickDown+RightJoystickUp, RoutingKey1
-* linear copy to character: LeftJoystickDown+RightJoystickRight, RoutingKey1
-* rectangular copy to character: LeftJoystickDown+RightJoystickDown, RoutingKey1
+* start new clipboard at character: LeftJoystickDown+RightJoystickLeft, RoutingKey
+* append to clipboard from character: LeftJoystickDown+RightJoystickUp, RoutingKey
+* linear copy to character: LeftJoystickDown+RightJoystickRight, RoutingKey
+* rectangular copy to character: LeftJoystickDown+RightJoystickDown, RoutingKey
 * insert the clipboard content before the screen cursor: LeftJoystickDown+RightJoystickPress
+
+Menu Operations
+* save preferences to disk: Space+Dots12348
+* restore preferences from disk: Space+Dots12347
 
 Speech Functions
 * speak current line: LeftJoystickLeft+RightJoystickPress

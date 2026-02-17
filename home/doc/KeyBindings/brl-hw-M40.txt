@@ -11,6 +11,9 @@ Notes
 Default Bindings
 ----------------
 
+Special Modes
+* describe color of character: long RoutingKey
+
 Cursor Functions
 * go to screen cursor: ThumbLeft+ThumbRight
 * bring screen cursor to character: RoutingKey

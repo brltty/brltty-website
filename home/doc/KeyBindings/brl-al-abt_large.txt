@@ -17,6 +17,7 @@ Special Modes
 * set display mode attributes/text: Prog+Home
 * set screen image frozen/unfrozen: Prog+Down
 * describe character: Prog+Home+RoutingKey1
+* describe color of character: long RoutingKey1
 
 Cursor Functions
 * go to screen cursor or go back after cursor tracking: Cursor

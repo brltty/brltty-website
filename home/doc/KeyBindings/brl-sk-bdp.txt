@@ -18,6 +18,7 @@ Special Modes
 * set display mode attributes/text: K8+K2
 * set screen image frozen/unfrozen: K8+K3
 * describe character: K1+K8+K5, RoutingKey
+* describe color of character: long RoutingKey
 
 Cursor Functions
 * go to screen cursor or go back after cursor tracking: K5

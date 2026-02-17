@@ -28,6 +28,7 @@ Special Modes
   + Status4
   + B8+B6
 * describe character: B2+RoutingKey
+* describe color of character: long RoutingKey
 * show current date and time: B2+B3+B5+B6
 
 Cursor Functions

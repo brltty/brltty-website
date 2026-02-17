@@ -12,6 +12,7 @@ Special Modes
 * enter/leave help display: Status.1
 * enter/leave command learn mode: Status.2
 * enter/leave status display: Status.4
+* describe color of character: long RoutingKey1
 
 Cursor Functions
 * go to screen cursor: Home

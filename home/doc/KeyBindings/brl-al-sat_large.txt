@@ -27,6 +27,7 @@ Special Modes
 * set display mode attributes/text: Status2B
 * set screen image frozen/unfrozen: NavPadF1+NavPadLeft
 * describe character: RoutingKey2
+* describe color of character: long RoutingKey1
 
 Cursor Functions
 * go to screen cursor: Cursor

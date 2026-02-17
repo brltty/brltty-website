@@ -7,6 +7,9 @@ Notes
 Default Bindings
 ----------------
 
+Special Modes
+* describe color of character: long RoutingKey1
+
 Cursor Functions
 * go to screen cursor: Home
 * bring screen cursor to character: RoutingKey1

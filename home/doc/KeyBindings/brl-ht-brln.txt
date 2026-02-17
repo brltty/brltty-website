@@ -12,6 +12,7 @@ Special Modes
 * set display mode attributes/text: B6
 * set screen image frozen/unfrozen: B8+B6
 * describe character: B2+RoutingKey
+* describe color of character: long RoutingKey
 * show current date and time: B2+B3+B5+B6
 * switch to Default Bindings: B1+B8+SpaceLeft
 * switch to Braille Input Mode: B1+B8+SpaceRight

@@ -19,6 +19,7 @@ Special Modes
 * set screen image frozen/unfrozen: Status.8
 * set screen image frozen: Status.8+Attribute
 * set screen image unfrozen: Status.8+Function
+* describe color of character: long RoutingKey1
 * show current date and time: Status.12
 
 Cursor Functions

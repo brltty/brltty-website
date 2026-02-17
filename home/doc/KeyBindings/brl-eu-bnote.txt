@@ -8,8 +8,7 @@ Notes
 * From left to right, they are: Dot7, Dot3, Dot2, Dot1, Dot4, Dot5, Dot6, Dot8.
 * The two keys of the braille keyboard in front of the braille cells, from left to right, are: Backspace, Space.
 * The cursor routing keys are the small, round buttons just behind the braille cells.
-* RoutingKey1 means pressing a cursor routing key once (a single click).
-* RoutingKey2 means pressing a cursor routing key twice quickly (a double click).
+* RoutingKey means pressing any cursor routing key.
 * The keypads are the four small keys (Left, Right, Up, Down) to the left and right of the braille display.
 * Some keys have been reserved for internal use:
   + LeftKeypadUp: go to the internal menu
@@ -18,17 +17,23 @@ Default Bindings
 ----------------
 
 Special Modes
-* enter/leave help display: long LeftKeypadLeft
-* enter/leave preferences menu: long LeftKeypadRight
-* enter/leave status display: long LeftKeypadDown
-* describe character:
-  + RoutingKey2
-  + LeftKeypadRight+RoutingKey1
+* enter/leave help display:
+  + long LeftKeypadLeft
+  + Space+Dots125
+* enter/leave preferences menu:
+  + long LeftKeypadRight
+  + Space+Dots1234
+* enter/leave status display:
+  + long LeftKeypadDown
+  + Space+Dots234
+* describe character: LeftKeypadRight+RoutingKey
+* describe color of character: long RoutingKey
+* show current date and time: Space+Dots2345
 
 Cursor Functions
 * go to screen cursor: RightKeypadLeft+RightKeypadRight
 * go back after cursor tracking: LeftKeypadLeft+LeftKeypadRight
-* bring screen cursor to character: RoutingKey1
+* bring screen cursor to character: RoutingKey
 * bring screen cursor to current line: LeftKeypadDown+LeftKeypadUp
 
 Vertical Navigation
@@ -46,10 +51,10 @@ Vertical Navigation
 * go down to first line of next paragraph: LeftKeypadRight+RightKeypadRight
 * go up to previous command prompt: LeftKeypadLeft+RightKeypadLeft
 * go down to next command prompt: LeftKeypadRight+RightKeypadLeft
-* go up to nearest line with less indent than character: RightKeypadLeft+RightKeypadUp+RoutingKey1
-* go down to nearest line with less indent than character: RightKeypadLeft+RightKeypadDown+RoutingKey1
-* go up to nearest line with different character: RightKeypadRight+RightKeypadUp+RoutingKey1
-* go down to nearest line with different character: RightKeypadRight+RightKeypadDown+RoutingKey1
+* go up to nearest line with less indent than character: RightKeypadLeft+RightKeypadUp+RoutingKey
+* go down to nearest line with less indent than character: RightKeypadLeft+RightKeypadDown+RoutingKey
+* go up to nearest line with different character: RightKeypadRight+RightKeypadUp+RoutingKey
+* go down to nearest line with different character: RightKeypadRight+RightKeypadDown+RoutingKey
 
 Horizontal Navigation
 * go backward one braille window: RightKeypadLeft
@@ -62,13 +67,13 @@ Horizontal Navigation
 * go right one character: LeftKeypadRight+LeftKeypadUp
 * go left half a braille window: LeftKeypadLeft+LeftKeypadDown
 * go right half a braille window: LeftKeypadRight+LeftKeypadDown
-* place left end of braille window at character: LeftKeypadLeft+RoutingKey1
+* place left end of braille window at character: LeftKeypadLeft+RoutingKey
 
 Clipboard Functions
-* start new clipboard at character: RightKeypadLeft+RoutingKey1
-* append to clipboard from character: RightKeypadUp+RoutingKey1
-* linear copy to character: RightKeypadRight+RoutingKey1
-* rectangular copy to character: RightKeypadDown+RoutingKey1
+* start new clipboard at character: RightKeypadLeft+RoutingKey
+* append to clipboard from character: RightKeypadUp+RoutingKey
+* linear copy to character: RightKeypadRight+RoutingKey
+* rectangular copy to character: RightKeypadDown+RoutingKey
 * insert the clipboard content before the screen cursor: RightKeypadUp+RightKeypadDown
 * insert the clipboard content before the screen cursor using the alternate paste mode: long RightKeypadUp+RightKeypadDown
 * search backward for clipboard text: RightKeypadRight+RightKeypadUp
@@ -80,6 +85,10 @@ Configuration Functions
 * set track screen cursor on/off: LeftKeypadDown
 * set screen cursor visibility on/off: LeftKeypadDown+RightKeypadLeft
 * set attribute underlining on/off: LeftKeypadDown+RightKeypadRight
+
+Menu Operations
+* save preferences to disk: Space+Dots12348
+* restore preferences from disk: Space+Dots12347
 
 Keyboard Input
 * braille keyboard dot1: Dot1
@@ -121,11 +130,11 @@ Keyboard Input
 * cycle the Shift sticky input modifier (next, on, off): Space+Dot7
 * cycle the Control sticky input modifier (next, on, off): Space+Dots78
 * cycle the Meta (Left Alt) sticky input modifier (next, on, off): Space+Dot8
-* switch to specific virtual terminal: LeftKeypadDown+RoutingKey1
+* switch to specific virtual terminal: LeftKeypadDown+RoutingKey
 
 Special Functions
-* remember current braille window position: LeftKeypadDown+LeftKeypadLeft+RoutingKey1
-* go to remembered braille window position: LeftKeypadDown+LeftKeypadRight+RoutingKey1
+* remember current braille window position: LeftKeypadDown+LeftKeypadLeft+RoutingKey
+* go to remembered braille window position: LeftKeypadDown+LeftKeypadRight+RoutingKey
 
 Menu Bindings
 -------------

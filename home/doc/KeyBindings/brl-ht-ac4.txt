@@ -33,6 +33,7 @@ Special Modes
 * describe character:
   + B2+RoutingKey
   + Display3+RoutingKey
+* describe color of character: long RoutingKey
 * show current date and time:
   + Display1+Display5
   + B2+B3+B5+B6

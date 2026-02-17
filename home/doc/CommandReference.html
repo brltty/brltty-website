@@ -418,6 +418,7 @@ ul.auto-toc {
 <li><a class="reference internal" href="#clip-new">CLIP_NEW</a></li>
 <li><a class="reference internal" href="#clip-restore">CLIP_RESTORE</a></li>
 <li><a class="reference internal" href="#clip-save">CLIP_SAVE</a></li>
+<li><a class="reference internal" href="#color">COLOR</a></li>
 <li><a class="reference internal" href="#compbrl6">COMPBRL6</a></li>
 <li><a class="reference internal" href="#context">CONTEXT</a></li>
 <li><a class="reference internal" href="#contracted">CONTRACTED</a></li>
@@ -566,6 +567,7 @@ ul.auto-toc {
 <li><a class="reference internal" href="#speak-curr-char">SPEAK_CURR_CHAR</a></li>
 <li><a class="reference internal" href="#speak-curr-line">SPEAK_CURR_LINE</a></li>
 <li><a class="reference internal" href="#speak-curr-locn">SPEAK_CURR_LOCN</a></li>
+<li><a class="reference internal" href="#speak-curr-pwrd">SPEAK_CURR_PWRD</a></li>
 <li><a class="reference internal" href="#speak-curr-word">SPEAK_CURR_WORD</a></li>
 <li><a class="reference internal" href="#speak-frst-char">SPEAK_FRST_CHAR</a></li>
 <li><a class="reference internal" href="#speak-frst-line">SPEAK_FRST_LINE</a></li>
@@ -574,10 +576,14 @@ ul.auto-toc {
 <li><a class="reference internal" href="#speak-last-line">SPEAK_LAST_LINE</a></li>
 <li><a class="reference internal" href="#speak-next-char">SPEAK_NEXT_CHAR</a></li>
 <li><a class="reference internal" href="#speak-next-line">SPEAK_NEXT_LINE</a></li>
+<li><a class="reference internal" href="#speak-next-pwrd">SPEAK_NEXT_PWRD</a></li>
 <li><a class="reference internal" href="#speak-next-word">SPEAK_NEXT_WORD</a></li>
 <li><a class="reference internal" href="#speak-prev-char">SPEAK_PREV_CHAR</a></li>
 <li><a class="reference internal" href="#speak-prev-line">SPEAK_PREV_LINE</a></li>
+<li><a class="reference internal" href="#speak-prev-pwrd">SPEAK_PREV_PWRD</a></li>
 <li><a class="reference internal" href="#speak-prev-word">SPEAK_PREV_WORD</a></li>
+<li><a class="reference internal" href="#spell-curr-line">SPELL_CURR_LINE</a></li>
+<li><a class="reference internal" href="#spell-curr-pwrd">SPELL_CURR_PWRD</a></li>
 <li><a class="reference internal" href="#spell-curr-word">SPELL_CURR_WORD</a></li>
 <li><a class="reference internal" href="#spkhome">SPKHOME</a></li>
 <li><a class="reference internal" href="#spk-punct-level">SPK_PUNCT_LEVEL</a></li>
@@ -612,6 +618,7 @@ ul.auto-toc {
 <li><a class="reference internal" href="#dispmd">DISPMD</a></li>
 <li><a class="reference internal" href="#freeze">FREEZE</a></li>
 <li><a class="reference internal" href="#descchar">DESCCHAR</a></li>
+<li><a class="reference internal" href="#color">COLOR</a></li>
 <li><a class="reference internal" href="#time">TIME</a></li>
 <li><a class="reference internal" href="#indicators">INDICATORS</a></li>
 <li><a class="reference internal" href="#context">CONTEXT</a></li>
@@ -631,6 +638,11 @@ ul.auto-toc {
 <li>Toggle: on, off</li>
 </ul>
 <p id="descchar"><strong>DESCCHAR</strong> - Describe character.</p>
+<p>The following modifiers may be specified:</p>
+<ul class="simple">
+<li>a column number</li>
+</ul>
+<p id="color"><strong>COLOR</strong> - Describe color of character.</p>
 <p>The following modifiers may be specified:</p>
 <ul class="simple">
 <li>a column number</li>
@@ -1337,11 +1349,16 @@ ul.auto-toc {
 <li><a class="reference internal" href="#speak-next-char">SPEAK_NEXT_CHAR</a></li>
 <li><a class="reference internal" href="#speak-frst-char">SPEAK_FRST_CHAR</a></li>
 <li><a class="reference internal" href="#speak-last-char">SPEAK_LAST_CHAR</a></li>
+<li><a class="reference internal" href="#speak-curr-pwrd">SPEAK_CURR_PWRD</a></li>
+<li><a class="reference internal" href="#spell-curr-pwrd">SPELL_CURR_PWRD</a></li>
+<li><a class="reference internal" href="#speak-prev-pwrd">SPEAK_PREV_PWRD</a></li>
+<li><a class="reference internal" href="#speak-next-pwrd">SPEAK_NEXT_PWRD</a></li>
 <li><a class="reference internal" href="#speak-curr-word">SPEAK_CURR_WORD</a></li>
 <li><a class="reference internal" href="#spell-curr-word">SPELL_CURR_WORD</a></li>
 <li><a class="reference internal" href="#speak-prev-word">SPEAK_PREV_WORD</a></li>
 <li><a class="reference internal" href="#speak-next-word">SPEAK_NEXT_WORD</a></li>
 <li><a class="reference internal" href="#speak-curr-line">SPEAK_CURR_LINE</a></li>
+<li><a class="reference internal" href="#spell-curr-line">SPELL_CURR_LINE</a></li>
 <li><a class="reference internal" href="#speak-prev-line">SPEAK_PREV_LINE</a></li>
 <li><a class="reference internal" href="#speak-next-line">SPEAK_NEXT_LINE</a></li>
 <li><a class="reference internal" href="#speak-frst-line">SPEAK_FRST_LINE</a></li>
@@ -1377,19 +1394,32 @@ ul.auto-toc {
 <ul class="simple">
 <li>Motion: route</li>
 </ul>
-<p id="speak-curr-word"><strong>SPEAK_CURR_WORD</strong> - Speak current word.</p>
-<p id="spell-curr-word"><strong>SPELL_CURR_WORD</strong> - Spell current word.</p>
-<p id="speak-prev-word"><strong>SPEAK_PREV_WORD</strong> - Go to and speak previous word.</p>
+<p id="speak-curr-pwrd"><strong>SPEAK_CURR_PWRD</strong> - Speak current partial (identifier or symbols) word.</p>
+<p id="spell-curr-pwrd"><strong>SPELL_CURR_PWRD</strong> - Spell current partial (identifier or symbols) word.</p>
+<p id="speak-prev-pwrd"><strong>SPEAK_PREV_PWRD</strong> - Go to and speak previous partial (identifier or symbols) word.</p>
 <p>The following modifiers may be specified:</p>
 <ul class="simple">
 <li>Motion: route</li>
 </ul>
-<p id="speak-next-word"><strong>SPEAK_NEXT_WORD</strong> - Go to and speak next word.</p>
+<p id="speak-next-pwrd"><strong>SPEAK_NEXT_PWRD</strong> - Go to and speak next partial (identifier or symbols) word.</p>
+<p>The following modifiers may be specified:</p>
+<ul class="simple">
+<li>Motion: route</li>
+</ul>
+<p id="speak-curr-word"><strong>SPEAK_CURR_WORD</strong> - Speak current whitespace-delimited word.</p>
+<p id="spell-curr-word"><strong>SPELL_CURR_WORD</strong> - Spell current whitespace-delimited word.</p>
+<p id="speak-prev-word"><strong>SPEAK_PREV_WORD</strong> - Go to and speak previous whitespace-delimited word.</p>
+<p>The following modifiers may be specified:</p>
+<ul class="simple">
+<li>Motion: route</li>
+</ul>
+<p id="speak-next-word"><strong>SPEAK_NEXT_WORD</strong> - Go to and speak next whitespace-delimited word.</p>
 <p>The following modifiers may be specified:</p>
 <ul class="simple">
 <li>Motion: route</li>
 </ul>
 <p id="speak-curr-line"><strong>SPEAK_CURR_LINE</strong> - Speak current line.</p>
+<p id="spell-curr-line"><strong>SPELL_CURR_LINE</strong> - Spell current line.</p>
 <p id="speak-prev-line"><strong>SPEAK_PREV_LINE</strong> - Go to and speak previous line.</p>
 <p>The following modifiers may be specified:</p>
 <ul class="simple">

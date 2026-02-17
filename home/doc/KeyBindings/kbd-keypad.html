@@ -414,7 +414,7 @@ ul.auto-toc {
 <li>go to screen cursor: KP0+KP5</li>
 <li>go back after cursor tracking: KPPeriod+KP5</li>
 <li>bring screen cursor to current line: KP0+KPPeriod+KP2</li>
-<li>bring screen cursor to speech cursor: KPPlus+KPMultiply</li>
+<li>bring screen cursor to speech cursor: KPPlus+KP0+KPMinus</li>
 </ul>
 </div>
 <div class="section" id="vertical-navigation">
@@ -485,23 +485,26 @@ ul.auto-toc {
 <div class="section" id="speech-functions">
 <h3><a class="toc-backref" href="#toc-entry-9">Speech Functions</a></h3>
 <ul class="simple">
-<li>stop speaking: KPEnter+KP4</li>
+<li>stop speaking: KPEnter+KPDivide</li>
 <li>speak current line: KPEnter+KP5</li>
 <li>speak from top of screen through current line: KPEnter+KP8</li>
 <li>speak from current line through bottom of screen: KPEnter+KP2</li>
-<li>go to current speaking position: KPEnter+KPDivide</li>
 <li>decrease speaking volume: KPEnter+KP1</li>
 <li>increase speaking volume: KPEnter+KP3</li>
-<li>decrease speaking rate: KPEnter+KP7</li>
-<li>increase speaking rate: KPEnter+KP9</li>
-<li>set autospeak on/off: KPEnter+KP6</li>
+<li>decrease speaking rate: KPEnter+KP4</li>
+<li>increase speaking rate: KPEnter+KP6</li>
+<li>decrease speaking pitch: KPEnter+KP7</li>
+<li>increase speaking pitch: KPEnter+KP9</li>
+<li>cycle speech punctuation level: KPEnter+KP0+KP8</li>
+<li>set autospeak on/off: KPEnter+KPMultiply</li>
 <li>set autospeak selected line on/off: KPEnter+KP0+KP5</li>
+<li>set autospeak empty line on/off: KPEnter+KP0+KP9</li>
 <li>set autospeak selected character on/off: KPEnter+KP0+KP4</li>
 <li>set autospeak inserted characters on/off: KPEnter+KP0+KP3</li>
 <li>set autospeak deleted characters on/off: KPEnter+KP0+KP1</li>
 <li>set autospeak replaced characters on/off: KPEnter+KP0+KP2</li>
 <li>set autospeak completed words on/off: KPEnter+KP0+KP6</li>
-<li>set autospeak indent of current line on/off: KPPlus+KP0+KPMinus</li>
+<li>set autospeak indent of current line on/off: KPEnter+KP0+KP7</li>
 </ul>
 </div>
 <div class="section" id="speech-navigation">
@@ -513,18 +516,22 @@ ul.auto-toc {
 <li>go to and speak next character: KPPlus+KP3</li>
 <li>go to and speak first non-blank character on line: KPPlus+KP0+KP1</li>
 <li>go to and speak last non-blank character on line: KPPlus+KP0+KP3</li>
-<li>speak current word: KPPlus+KP5</li>
-<li>spell current word: KPPlus+KP0+KP5</li>
-<li>go to and speak previous word: KPPlus+KP4</li>
-<li>go to and speak next word: KPPlus+KP6</li>
+<li>speak current partial (identifier or symbols) word: KPPlus+KP5</li>
+<li>spell current partial (identifier or symbols) word: KPPlus+KPDivide</li>
+<li>go to and speak previous partial (identifier or symbols) word: KPPlus+KP4</li>
+<li>go to and speak next partial (identifier or symbols) word: KPPlus+KP6</li>
+<li>speak current whitespace-delimited word: KPPlus+KP0+KP5</li>
+<li>spell current whitespace-delimited word: KPPlus+KP0+KPDivide</li>
+<li>go to and speak previous whitespace-delimited word: KPPlus+KP0+KP4</li>
+<li>go to and speak next whitespace-delimited word: KPPlus+KP0+KP6</li>
 <li>speak current line: KPPlus+KP8</li>
+<li>spell current line: KPPlus+KP0+KP8</li>
 <li>go to and speak previous line: KPPlus+KP7</li>
 <li>go to and speak next line: KPPlus+KP9</li>
 <li>go to and speak first non-blank line on screen: KPPlus+KP0+KP7</li>
 <li>go to and speak last non-blank line on screen: KPPlus+KP0+KP9</li>
-<li>speak indent of current line: KPPlus+KPMinus</li>
-<li>speak speech cursor location: KPPlus+KPDivide</li>
-<li>set speech cursor visibility on/off: KPPlus+KP0+KPDivide</li>
+<li>speak indent of current line: KPPlus+KPMultiply</li>
+<li>speak speech cursor location: KPPlus+KPMinus</li>
 </ul>
 </div>
 <div class="section" id="keyboard-input">

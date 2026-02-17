@@ -6,8 +6,8 @@ Notes
 * From left to right, they are: Dot7, Dot3, Dot2, Dot1, Dot4, Dot5, Dot6, Dot8.
 * The two keys of the braille keyboard in front of the braille cells, from left to right, are: Backspace, Space.
 * The cursor routing keys are the small, round buttons just behind the braille cells.
-* RoutingKey1 means pressing a cursor routing key once (a single click).
-* RoutingKey2 means pressing a cursor routing key twice quickly (a double click).
+* RoutingKey1 means pressing any cursor routing key once (a single click).
+* RoutingKey2 means pressing any cursor routing key twice quickly (a double click).
 * The five-way joysticks (Left, Right, Up, Down, Press) are to the left and right of the cursor routing keys.
 * The switches are three-way (left, right, press) controls on the front surface.
 * Switch1 is the left outer switch.
@@ -21,10 +21,17 @@ Default Bindings
 ----------------
 
 Special Modes
-* enter/leave help display: LeftJoystickRight+RightJoystickDown
+* enter/leave help display:
+  + LeftJoystickRight+RightJoystickDown
+  + Space+Dots125
 * enter/leave command learn mode: LeftJoystickRight+RightJoystickUp
-* enter/leave preferences menu: LeftJoystickRight+Switch1Left+Switch1Right
+* enter/leave preferences menu:
+  + LeftJoystickRight+Switch1Left+Switch1Right
+  + Space+Dots1234
+* enter/leave status display: Space+Dots234
 * describe character: RoutingKey2
+* describe color of character: long RoutingKey1
+* show current date and time: Space+Dots2345
 
 Cursor Functions
 * go to screen cursor: RightJoystickPress
@@ -57,6 +64,10 @@ Clipboard Functions
 
 Configuration Functions
 * set track screen cursor on/off: LeftJoystickRight+Switch2Left+Switch2Right
+
+Menu Operations
+* save preferences to disk: Space+Dots12348
+* restore preferences from disk: Space+Dots12347
 
 Speech Functions
 * stop speaking: LeftJoystickLeft+Switch1Left+Switch1Right

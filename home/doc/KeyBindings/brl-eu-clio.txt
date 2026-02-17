@@ -10,14 +10,22 @@ Default Bindings
 ----------------
 
 Special Modes
-* enter/leave help display: Sharp, H
+* enter/leave help display:
+  + Sharp, H
+  + Space+Dots125
 * enter/leave command learn mode:
   + Sharp, One
   + Sharp, L
-* enter/leave preferences menu: H
-* enter/leave status display: I
+* enter/leave preferences menu:
+  + H
+  + Space+Dots1234
+* enter/leave status display:
+  + I
+  + Space+Dots234
 * set display mode attributes/text: Sharp, A
 * set screen image frozen/unfrozen: A
+* describe color of character: long RoutingKey
+* show current date and time: Space+Dots2345
 * switch to Default Bindings:
   + Star, Star
   + Sharp, Sharp
@@ -66,6 +74,10 @@ Configuration Functions
   + Zero
 * set screen cursor visibility on/off: Star, G
 * set alert tunes on/off: Star, Right
+
+Menu Operations
+* save preferences to disk: Space+Dots12348
+* restore preferences from disk: Space+Dots12347
 
 Keyboard Input
 * braille keyboard dot1: Dot1

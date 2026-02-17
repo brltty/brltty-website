@@ -28,6 +28,7 @@ Special Modes
 * set screen image frozen: Space+Dots1248
 * set screen image unfrozen: Space+Dots1247
 * describe character: RoutingKey+Action
+* describe color of character: long RoutingKey
 
 Cursor Functions
 * go to screen cursor:

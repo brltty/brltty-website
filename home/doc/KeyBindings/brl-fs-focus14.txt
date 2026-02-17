@@ -45,6 +45,7 @@ Special Modes
 * describe character:
   + NavrowKey
   + RightNavPress+RoutingKey
+* describe color of character: long RoutingKey
 * show current date and time: LeftRockerDown+RightRockerDown
 
 Cursor Functions
@@ -54,7 +55,7 @@ Cursor Functions
 * bring screen cursor to current line:
   + PanLeft+PanRight
   + Space+Dots1236
-* bring screen cursor to speech cursor: LeftSelector+RightShift+Space
+* bring screen cursor to speech cursor: PanLeft+LeftShift+RightShift+Space
 
 Vertical Navigation
 * go up one line:
@@ -180,6 +181,7 @@ Speech Functions
 * increase speaking rate: LeftShift+LeftNavUp
 * decrease speaking pitch: RightShift+LeftNavDown
 * increase speaking pitch: RightShift+LeftNavUp
+* cycle speech punctuation level: PanRight+LeftShift+RightShift
 * set autospeak on/off: PanRight+Space
 
 Speech Navigation
@@ -189,16 +191,22 @@ Speech Navigation
 * go to and speak next character: PanLeft+RightShift
 * go to and speak first non-blank character on line: PanLeft+LeftShift+Space
 * go to and speak last non-blank character on line: PanLeft+RightShift+Space
-* speak current word: LeftSelector+Space
-* spell current word: long LeftSelector+Space
-* go to and speak previous word: LeftSelector+LeftShift
-* go to and speak next word: LeftSelector+RightShift
+* speak current partial (identifier or symbols) word: LeftSelector+Space
+* spell current partial (identifier or symbols) word: long LeftSelector+Space
+* go to and speak previous partial (identifier or symbols) word: LeftSelector+LeftShift
+* go to and speak next partial (identifier or symbols) word: LeftSelector+RightShift
+* speak current whitespace-delimited word: LeftSelector+LeftShift+RightShift+Space
+* spell current whitespace-delimited word: long LeftSelector+LeftShift+RightShift+Space
+* go to and speak previous whitespace-delimited word: LeftSelector+LeftShift+Space
+* go to and speak next whitespace-delimited word: LeftSelector+RightShift+Space
 * speak current line: RightSelector+Space
+* spell current line: long RightSelector+Space
 * go to and speak previous line: RightSelector+LeftShift
 * go to and speak next line: RightSelector+RightShift
 * go to and speak first non-blank line on screen: RightSelector+LeftShift+Space
 * go to and speak last non-blank line on screen: RightSelector+RightShift+Space
-* speak speech cursor location: LeftSelector+LeftShift+Space
+* speak indent of current line: RightSelector+LeftShift+RightShift+Space
+* speak speech cursor location: PanLeft+LeftShift+RightShift
 
 Keyboard Input
 * braille keyboard dot1: Dot1

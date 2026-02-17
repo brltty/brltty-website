@@ -14,6 +14,7 @@ Special Modes
 * set display mode attributes/text: Display1+Display2+Display3+Display6
 * set screen image frozen/unfrozen: Display1+Display2+Display4
 * describe character: Display3+RoutingKey
+* describe color of character: long RoutingKey
 
 Cursor Functions
 * go to screen cursor: Display1+Display3

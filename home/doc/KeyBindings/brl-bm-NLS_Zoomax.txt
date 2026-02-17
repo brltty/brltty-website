@@ -54,6 +54,7 @@ Special Modes
 * describe character:
   + Display3+RoutingKey
   + RoutingKey+Select
+* describe color of character: long RoutingKey
 * show current date and time:
   + S2
   + Display1+Display5
@@ -62,9 +63,7 @@ Special Modes
 Cursor Functions
 * go to screen cursor: Display2+Display4+Display6
 * go back after cursor tracking: Display1+Display6
-* go to screen cursor or go back after cursor tracking:
-  + Select
-  + BL+Space+Dot8
+* go to screen cursor or go back after cursor tracking: Select
 * bring screen cursor to character: RoutingKey
 * bring screen cursor to current line:
   + S2+S3
@@ -306,11 +305,11 @@ Speech Functions
   + Dots23+Right
 * decrease speaking pitch: BL+Space+Dot3
 * increase speaking pitch: BL+Space+Dot6
+* cycle speech punctuation level: BL+Space+Dot8
 * set autospeak on/off:
+  + BL+Dot1
   + Display3+Display4+Display6
   + Dots13+Up
-* set autospeak on: BL+Dot1
-* set autospeak off: BL+Dot3
 
 Speech Navigation
 * speak current character: BL+Dots35
@@ -319,17 +318,22 @@ Speech Navigation
 * go to and speak next character: BL+Dots36
 * go to and speak first non-blank character on line: BL+Dots75
 * go to and speak last non-blank character on line: BL+Dots76
-* speak current word: BL+Dots25
-* spell current word: BL+Dots28
-* go to and speak previous word: BL+Dots24
-* go to and speak next word: BL+Dots26
+* speak current partial (identifier or symbols) word: BL+Dots25
+* spell current partial (identifier or symbols) word: BL+Dots28
+* go to and speak previous partial (identifier or symbols) word: BL+Dots24
+* go to and speak next partial (identifier or symbols) word: BL+Dots26
+* speak current whitespace-delimited word: BL+Space+Dots25
+* spell current whitespace-delimited word: BL+Space+Dots28
+* go to and speak previous whitespace-delimited word: BL+Space+Dots24
+* go to and speak next whitespace-delimited word: BL+Space+Dots26
 * speak current line: BL+Dots15
+* spell current line: BL+Dots18
 * go to and speak previous line: BL+Dots14
 * go to and speak next line: BL+Dots16
 * go to and speak first non-blank line on screen: BL+Dots74
 * go to and speak last non-blank line on screen: BL+Dots78
 * speak indent of current line:
-  + BL+Dots18
+  + BL+Dot3
   + Dots13+Left
 * speak speech cursor location: BL+Dot7
 

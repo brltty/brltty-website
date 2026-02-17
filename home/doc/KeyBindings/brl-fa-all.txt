@@ -21,6 +21,7 @@ Special Modes
 * set display mode attributes/text: F5+F6
 * set screen image frozen/unfrozen: F4+F5+F6
 * describe character: F4+RoutingKey
+* describe color of character: long RoutingKey
 * show current date and time: F1+F2+F3
 
 Cursor Functions

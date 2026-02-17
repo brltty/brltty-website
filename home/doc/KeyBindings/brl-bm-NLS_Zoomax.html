@@ -465,6 +465,7 @@ From top to bottom:<ul>
 <li>RoutingKey+Select</li>
 </ul>
 </li>
+<li>describe color of character: long RoutingKey</li>
 <li>show current date and time:<ul>
 <li>S2</li>
 <li>Display1+Display5</li>
@@ -478,11 +479,7 @@ From top to bottom:<ul>
 <ul class="simple">
 <li>go to screen cursor: Display2+Display4+Display6</li>
 <li>go back after cursor tracking: Display1+Display6</li>
-<li>go to screen cursor or go back after cursor tracking:<ul>
-<li>Select</li>
-<li>BL+Space+Dot8</li>
-</ul>
-</li>
+<li>go to screen cursor or go back after cursor tracking: Select</li>
 <li>bring screen cursor to character: RoutingKey</li>
 <li>bring screen cursor to current line:<ul>
 <li>S2+S3</li>
@@ -852,13 +849,13 @@ From top to bottom:<ul>
 </li>
 <li>decrease speaking pitch: BL+Space+Dot3</li>
 <li>increase speaking pitch: BL+Space+Dot6</li>
+<li>cycle speech punctuation level: BL+Space+Dot8</li>
 <li>set autospeak on/off:<ul>
+<li>BL+Dot1</li>
 <li>Display3+Display4+Display6</li>
 <li>Dots13+Up</li>
 </ul>
 </li>
-<li>set autospeak on: BL+Dot1</li>
-<li>set autospeak off: BL+Dot3</li>
 </ul>
 </div>
 <div class="section" id="speech-navigation">
@@ -870,17 +867,22 @@ From top to bottom:<ul>
 <li>go to and speak next character: BL+Dots36</li>
 <li>go to and speak first non-blank character on line: BL+Dots75</li>
 <li>go to and speak last non-blank character on line: BL+Dots76</li>
-<li>speak current word: BL+Dots25</li>
-<li>spell current word: BL+Dots28</li>
-<li>go to and speak previous word: BL+Dots24</li>
-<li>go to and speak next word: BL+Dots26</li>
+<li>speak current partial (identifier or symbols) word: BL+Dots25</li>
+<li>spell current partial (identifier or symbols) word: BL+Dots28</li>
+<li>go to and speak previous partial (identifier or symbols) word: BL+Dots24</li>
+<li>go to and speak next partial (identifier or symbols) word: BL+Dots26</li>
+<li>speak current whitespace-delimited word: BL+Space+Dots25</li>
+<li>spell current whitespace-delimited word: BL+Space+Dots28</li>
+<li>go to and speak previous whitespace-delimited word: BL+Space+Dots24</li>
+<li>go to and speak next whitespace-delimited word: BL+Space+Dots26</li>
 <li>speak current line: BL+Dots15</li>
+<li>spell current line: BL+Dots18</li>
 <li>go to and speak previous line: BL+Dots14</li>
 <li>go to and speak next line: BL+Dots16</li>
 <li>go to and speak first non-blank line on screen: BL+Dots74</li>
 <li>go to and speak last non-blank line on screen: BL+Dots78</li>
 <li>speak indent of current line:<ul>
-<li>BL+Dots18</li>
+<li>BL+Dot3</li>
 <li>Dots13+Left</li>
 </ul>
 </li>

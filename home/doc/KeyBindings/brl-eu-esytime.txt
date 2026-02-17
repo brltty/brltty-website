@@ -6,8 +6,8 @@ Notes
 * From left to right, they are: Dot7, Dot3, Dot2, Dot1, Dot4, Dot5, Dot6, Dot8.
 * The two keys of the braille keyboard in front of the braille cells, from left to right, are: Backspace, Space.
 * The cursor routing keys are the small, round buttons just behind the braille cells.
-* RoutingKey1 means pressing a cursor routing key once (a single click).
-* RoutingKey2 means pressing a cursor routing key twice quickly (a double click).
+* RoutingKey1 means pressing any cursor routing key once (a single click).
+* RoutingKey2 means pressing any cursor routing key twice quickly (a double click).
 * The four keys below the left joystick, from top to bottom, are:
   L1, Escape, Tab, Shift.
 * The four keys below the right joystick, from top to bottom, are:
@@ -27,16 +27,25 @@ Default Bindings
 ----------------
 
 Special Modes
-* enter/leave help display: L1+RightJoystickUp
+* enter/leave help display:
+  + L1+RightJoystickUp
+  + Space+Dots125
 * enter/leave command learn mode: L1+RightJoystickDown
-* enter/leave preferences menu: L1+RightJoystickPress
-* enter/leave status display: LeftJoystickDown+RightJoystickPress
+* enter/leave preferences menu:
+  + L1+RightJoystickPress
+  + Space+Dots1234
+* enter/leave status display:
+  + LeftJoystickDown+RightJoystickPress
+  + Space+Dots234
 * set display mode attributes/text: LeftJoystickUp+RightJoystickPress
 * set screen image frozen/unfrozen: L8+RightJoystickUp
 * describe character:
   + RoutingKey2
   + RightJoystickPress+RoutingKey1
-* show current date and time: L1+LeftJoystickPress
+* describe color of character: long RoutingKey1
+* show current date and time:
+  + L1+LeftJoystickPress
+  + Space+Dots2345
 
 Cursor Functions
 * go to screen cursor: L1+L8
@@ -93,8 +102,12 @@ Configuration Functions
 * set attribute underlining on/off: LeftJoystickUp+RightJoystickRight
 
 Menu Operations
-* save preferences to disk: L1+RightJoystickRight
-* restore preferences from disk: L1+RightJoystickLeft
+* save preferences to disk:
+  + L1+RightJoystickRight
+  + Space+Dots12348
+* restore preferences from disk:
+  + L1+RightJoystickLeft
+  + Space+Dots12347
 
 Keyboard Input
 * braille keyboard dot1: Dot1

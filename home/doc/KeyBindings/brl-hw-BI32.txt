@@ -41,6 +41,7 @@ Special Modes
 * set screen image frozen: Space+Dots1248
 * set screen image unfrozen: Space+Dots1247
 * describe character: Display3+RoutingKey
+* describe color of character: long RoutingKey
 * show current date and time: Display1+Display5
 
 Cursor Functions

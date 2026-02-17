@@ -26,6 +26,7 @@ Special Modes
 * set display mode attributes/text: LeftKeyRear+BarLeft1
 * set screen image frozen/unfrozen: LeftKeyFront+BarDown2
 * describe character: BarDown2+RoutingKey1
+* describe color of character: long RoutingKey1
 * switch to Advanced Vertical Navigation (left switch rear): press LeftSwitchRear
 * switch to Specialized Navigation (left switch front): press LeftSwitchFront
 * switch to Content-based Navigation (right switch rear): press RightSwitchRear
