@@ -15,7 +15,7 @@ Special Modes
 * enter/leave command learn mode: L1+L2+L3
 * enter/leave preferences menu: L1+L2+L3+L8
 * enter/leave status display: L2+L8
-* set screen image frozen/unfrozen: L1+L2+L8
+* set screen image frozen/live: L1+L2+L8
 * describe character: L6+RoutingKey
 
 Cursor Functions
@@ -40,6 +40,8 @@ Clipboard Functions
 * append to clipboard from character: L2+RoutingKey
 * linear copy to character: L8+RoutingKey
 * rectangular copy to character: L7+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long L1+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long L2+RoutingKey
 * insert the clipboard content before the screen cursor: L2+L3
 * insert a clipboard history entry before the screen cursor: L2+L3+L4, RoutingKey
 

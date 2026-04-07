@@ -16,9 +16,9 @@ Special Modes
 * set display mode attributes/text: Status.7
 * set display mode attributes: Status.7+Attribute
 * set display mode text: Status.7+Function
-* set screen image frozen/unfrozen: Status.8
+* set screen image frozen/live: Status.8
 * set screen image frozen: Status.8+Attribute
-* set screen image unfrozen: Status.8+Function
+* set screen image live: Status.8+Function
 * describe color of character: long RoutingKey1
 * show current date and time: Status.12
 
@@ -59,6 +59,7 @@ Horizontal Navigation
 Clipboard Functions
 * start new clipboard at character: Function+RoutingKey1
 * rectangular copy to character: Attribute+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: long Function+RoutingKey1
 * insert the clipboard content before the screen cursor:
   + Status.13
   + Function+Attribute

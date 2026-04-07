@@ -18,9 +18,9 @@ Special Modes
 * set display mode attributes/text: Space+Dots145
 * set display mode attributes: Space+Dots1458
 * set display mode text: Space+Dots1457
-* set screen image frozen/unfrozen: Space+Dots124
+* set screen image frozen/live: Space+Dots124
 * set screen image frozen: Space+Dots1248
-* set screen image unfrozen: Space+Dots1247
+* set screen image live: Space+Dots1247
 
 Cursor Functions
 * bring screen cursor to character: RoutingKey
@@ -43,11 +43,14 @@ Horizontal Navigation
 * go to end of line: Long+Right
 
 Clipboard Functions
+* show current clipboard content: long Space+Dots13468
+* clear the clipboard: long Space+Dots13467
 * start new clipboard at character: RoutingKey+Left
 * linear copy to character: RoutingKey+Right
 * rectangular copy to character: RoutingKey+Down
 * copy characters to clipboard: RoutingKey+RoutingKey
 * append characters to clipboard: RoutingKey+Up
+* start new clipboard with smart copy (URL, email, etc) at character: long RoutingKey+Left
 * insert the clipboard content before the screen cursor:
   + RoutingKey.2+RoutingKey.3
   + Space+Dots1346

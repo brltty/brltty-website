@@ -10,7 +10,7 @@ Special Modes
 * enter/leave preferences menu: KPMinus+KP5
 * enter/leave status display: KPMinus+KP8
 * set display mode attributes/text: KP0+KPMultiply
-* set screen image frozen/unfrozen: KPMinus+KP2
+* set screen image frozen/live: KPMinus+KP2
 * describe character at cursor: KPMinus+KP3
 * show current date and time: KPMinus+KP1
 * switch to Default Bindings: KPEnter+KPMinus

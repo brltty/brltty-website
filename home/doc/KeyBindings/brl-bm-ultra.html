@@ -3,16 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
+<meta name="generator" content="Docutils 0.21.2: https://docutils.sourceforge.io/" />
 <title>Key Table: Baum VarioUltra</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
 
 See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
@@ -275,7 +276,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
   margin-left: 2em ;
   margin-right: 2em }
 
-pre.code .ln { color: grey; } /* line numbers */
+pre.code .ln { color: gray; } /* line numbers */
 pre.code, code { background-color: #eeeeee }
 pre.code .comment, code .comment { color: #5C6576 }
 pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
@@ -301,7 +302,7 @@ span.option {
 span.pre {
   white-space: pre }
 
-span.problematic {
+span.problematic, pre.problematic {
   color: red }
 
 span.section-subtitle {
@@ -367,7 +368,7 @@ ul.auto-toc {
 <li><a class="reference external" href="brl-bm-ultra.txt">Help Screen Version</a></li>
 </ul>
 <div class="contents topic" id="contents">
-<p class="topic-title">Contents</p>
+<p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
 <ul class="simple">
 <li><a class="reference internal" href="#notes" id="toc-entry-1">Notes</a></li>
 <li><a class="reference internal" href="#default-bindings" id="toc-entry-2">Default Bindings</a><ul>
@@ -440,14 +441,14 @@ From top to bottom:<ul>
 </li>
 <li>set display mode attributes: B10+Dots1458</li>
 <li>set display mode text: B10+Dots1457</li>
-<li>set screen image frozen/unfrozen:<ul>
+<li>set screen image frozen/live:<ul>
 <li>Display1+Display2+Display4</li>
 <li>Dots45+Up</li>
 <li>B10+Dots124</li>
 </ul>
 </li>
 <li>set screen image frozen: B10+Dots1248</li>
-<li>set screen image unfrozen: B10+Dots1247</li>
+<li>set screen image live: B10+Dots1247</li>
 <li>describe character:<ul>
 <li>Display3+RoutingKey</li>
 <li>RoutingKey+Press</li>
@@ -591,6 +592,8 @@ From top to bottom:<ul>
 <div class="section" id="clipboard-functions">
 <h3><a class="toc-backref" href="#toc-entry-7">Clipboard Functions</a></h3>
 <ul class="simple">
+<li>show current clipboard content: long B10+Dots13468</li>
+<li>clear the clipboard: long B10+Dots13467</li>
 <li>start new clipboard at character:<ul>
 <li>Display1+RoutingKey</li>
 <li>RoutingKey+Left</li>
@@ -615,6 +618,16 @@ From top to bottom:<ul>
 <li>append characters to clipboard:<ul>
 <li>Display2+RoutingKey+RoutingKey</li>
 <li>B10+RoutingKey+RoutingKey</li>
+</ul>
+</li>
+<li>start new clipboard with smart copy (URL, email, etc) at character:<ul>
+<li>long Display1+RoutingKey</li>
+<li>long RoutingKey+Left</li>
+</ul>
+</li>
+<li>append to clipboard with smart copy (URL, email, etc) at character:<ul>
+<li>long Display2+RoutingKey</li>
+<li>long RoutingKey+Up</li>
 </ul>
 </li>
 <li>insert the clipboard content before the screen cursor:<ul>

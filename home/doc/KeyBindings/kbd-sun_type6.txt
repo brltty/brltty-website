@@ -13,9 +13,9 @@ Special Modes
   + ControlLeft+ACTION_Help
 * enter/leave preferences menu: ControlLeft+ShiftLeft+KP0+KP2
 * enter/leave status display: ControlLeft+ShiftLeft+KP0+KP8
-* set screen image frozen/unfrozen: ACTION_Stop+ACTION_Again
+* set screen image frozen/live: ACTION_Stop+ACTION_Again
 * set screen image frozen: ACTION_Stop
-* set screen image unfrozen: ACTION_Again
+* set screen image live: ACTION_Again
 * describe character at cursor: ControlLeft+KP0+KP5
 * show current date and time: KP0+T
 

@@ -26,7 +26,7 @@ Special Modes
 * enter/leave status display:
   + L5
   + Space+Dots234
-* set screen image frozen/unfrozen: L3+L4
+* set screen image frozen/live: L3+L4
 * describe character: RoutingKey2
 * describe color of character: long RoutingKey1
 * show current date and time: Space+Dots2345
@@ -61,6 +61,8 @@ Clipboard Functions
 * append to clipboard from character: Down+Right, L2, RoutingKey1
 * linear copy to character: Down+Right, L8, RoutingKey1
 * rectangular copy to character: Down+Right, L6, RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: Down+Right, L1, long RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character: Down+Right, L2, long RoutingKey1
 * insert the clipboard content before the screen cursor: Down+Right, L7
 * search backward for clipboard text: Down+Left, L3
 * search forward for clipboard text: Down+Left, L6

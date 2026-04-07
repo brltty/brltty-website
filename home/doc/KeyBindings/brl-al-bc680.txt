@@ -46,11 +46,11 @@ Special Modes
   + Space+Dots145
 * set display mode attributes: Space+Dots1458
 * set display mode text: Space+Dots1457
-* set screen image frozen/unfrozen:
+* set screen image frozen/live:
   + ETouchLeftRear+ETouchLeftFront+ETouchRightRear
   + Space+Dots124
 * set screen image frozen: Space+Dots1248
-* set screen image unfrozen: Space+Dots1247
+* set screen image live: Space+Dots1247
 * describe character: ETouchLeftRear+ETouchLeftFront+RoutingKey1
 * describe color of character: long RoutingKey1
 * show current date and time: SmartpadF2
@@ -92,11 +92,15 @@ Horizontal Navigation
 * place left end of braille window at character: ThumbHome+RoutingKey1
 
 Clipboard Functions
+* show current clipboard content: long Space+Dots13468
+* clear the clipboard: long Space+Dots13467
 * start new clipboard at character: ETouchLeftRear+RoutingKey1
 * append to clipboard from character: ETouchLeftFront+RoutingKey1
 * linear copy to character: ETouchRightRear+RoutingKey1
 * rectangular copy to character: ETouchRightFront+RoutingKey1
 * copy characters to clipboard: RoutingKey1+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: long ETouchLeftRear+RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character: long ETouchLeftFront+RoutingKey1
 * insert the clipboard content before the screen cursor:
   + SmartpadEnter
   + ETouchRightRear+ETouchRightFront

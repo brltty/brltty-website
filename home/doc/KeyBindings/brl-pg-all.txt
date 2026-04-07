@@ -10,7 +10,7 @@ Special Modes
 * enter/leave preferences menu: LeftControl+End
 * enter/leave status display: LeftControl+Escape
 * set display mode attributes/text: LeftShift+Left
-* set screen image frozen/unfrozen: LeftControl+Enter
+* set screen image frozen/live: LeftControl+Enter
 * describe character: RightShift+Down, RoutingKey
 
 Cursor Functions
@@ -42,6 +42,8 @@ Clipboard Functions
 * append to clipboard from character: RightShift+Enter, RoutingKey
 * linear copy to character: RightShift+End, RoutingKey
 * rectangular copy to character: RightShift+Escape, RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: RightShift+Home, long RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: RightShift+Enter, long RoutingKey
 * insert the clipboard content before the screen cursor: RightShift+Right
 
 Configuration Functions

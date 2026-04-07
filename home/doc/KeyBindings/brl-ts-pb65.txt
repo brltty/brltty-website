@@ -22,7 +22,7 @@ Special Modes
 * set display mode attributes: Switch4Up
 * set display mode text: Switch4Down
 * set screen image frozen: Switch2Up
-* set screen image unfrozen: Switch2Down
+* set screen image live: Switch2Down
 
 Cursor Functions
 * go to screen cursor: Concave
@@ -86,6 +86,8 @@ Clipboard Functions
 * linear copy to character: RoutingKey+Button4
 * rectangular copy to character: RoutingKey+Button3
 * copy characters to clipboard: RoutingKey+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long RoutingKey+Button1
+* append to clipboard with smart copy (URL, email, etc) at character: long RoutingKey+Button2
 * insert the clipboard content before the screen cursor: RoutingKey.2+RoutingKey.3
 * search backward for clipboard text: RoutingKey.1+RoutingKey.3+RightRockerUp
 * search forward for clipboard text: RoutingKey.1+RoutingKey.3+RightRockerDown

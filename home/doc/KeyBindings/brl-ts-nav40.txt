@@ -17,7 +17,7 @@ Special Modes
 * enter/leave preferences menu: NavLeft+NavRight
 * enter/leave status display: CursorUp+NavDown
 * set display mode attributes/text: CursorDown+NavUp+ThumbLeft
-* set screen image frozen/unfrozen: ThumbLeft+ThumbRight
+* set screen image frozen/live: ThumbLeft+ThumbRight
 
 Cursor Functions
 * go to screen cursor: ThumbRight

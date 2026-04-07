@@ -10,7 +10,7 @@ Special Modes
 * enter/leave preferences menu: F13
 * enter/leave status display: F14
 * set display mode attributes/text: Attribute2
-* set screen image frozen/unfrozen: Attribute1
+* set screen image frozen/live: Attribute1
 * describe character: RoutingKey2
 
 Cursor Functions
@@ -70,6 +70,8 @@ Clipboard Functions
 * append to clipboard from character: Attribute1+RoutingKey1
 * linear copy to character: Attribute4+RoutingKey1
 * rectangular copy to character: Attribute3+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: long Attribute2+RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character: long Attribute1+RoutingKey1
 * insert the clipboard content before the screen cursor: F3
 
 Configuration Functions

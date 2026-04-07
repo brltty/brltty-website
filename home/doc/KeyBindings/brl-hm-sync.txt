@@ -9,7 +9,7 @@ Special Modes
 * enter/leave preferences menu: RightScrollUp+RightScrollDown+LeftScrollDown
 * enter/leave status display: RightScrollUp+RightScrollDown+LeftScrollUp
 * set display mode attributes/text: LeftScrollDown+RightScrollDown
-* set screen image frozen/unfrozen: LeftScrollDown+RightScrollUp
+* set screen image frozen/live: LeftScrollDown+RightScrollUp
 
 Cursor Functions
 * go to screen cursor or go back after cursor tracking: RightScrollUp+RightScrollDown

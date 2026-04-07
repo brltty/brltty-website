@@ -24,7 +24,7 @@ Special Modes
 * enter/leave preferences menu: NavPadLeft
 * enter/leave status display: NavPadRight
 * set display mode attributes/text: Status2B
-* set screen image frozen/unfrozen: NavPadF1+NavPadLeft
+* set screen image frozen/live: NavPadF1+NavPadLeft
 * describe character: RoutingKey2
 * describe color of character: long RoutingKey1
 
@@ -71,6 +71,8 @@ Clipboard Functions
 * rectangular copy to character: NavPadF2+RoutingKey1
 * copy characters to clipboard: RoutingKey1+RoutingKey1
 * append characters to clipboard: RoutingKey2+RoutingKey2
+* start new clipboard with smart copy (URL, email, etc) at character: long NavPadF1+RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character: long NavPadF1+RoutingKey2
 * insert the clipboard content before the screen cursor: NavPadF2+NavPadLeft
 * insert the clipboard content before the screen cursor using the alternate paste mode: long NavPadF2+NavPadLeft
 * search backward for clipboard text: NavPadF2+NavPadUp

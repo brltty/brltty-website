@@ -31,11 +31,11 @@ Special Modes
   + LeftKeyRear+BarLeft1
 * set display mode attributes: Status.7+BarRight1
 * set display mode text: Status.7+BarLeft1
-* set screen image frozen/unfrozen:
+* set screen image frozen/live:
   + Status.8
   + LeftKeyFront+BarDown2
 * set screen image frozen: Status.8+BarRight1
-* set screen image unfrozen: Status.8+BarLeft1
+* set screen image live: Status.8+BarLeft1
 * describe character:
   + RoutingKey2
   + BarDown2+RoutingKey1
@@ -81,6 +81,12 @@ Clipboard Functions
 * rectangular copy to character:
   + BarRight2+RoutingKey1
   + RightKeyFront+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character:
+  + long BarLeft2+RoutingKey1
+  + long LeftKeyRear+RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character:
+  + long BarLeft1+RoutingKey1
+  + long LeftKeyFront+RoutingKey1
 * insert the clipboard content before the screen cursor:
   + Status.20
   + LeftKeyRear+BarDown1

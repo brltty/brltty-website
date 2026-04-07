@@ -35,6 +35,8 @@ Clipboard Functions
 * append to clipboard from character: ThumbLeft+RoutingKey
 * linear copy to character: ThumbRight+RoutingKey
 * rectangular copy to character: ThumbNext+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long ThumbPrevious+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long ThumbLeft+RoutingKey
 * insert the clipboard content before the screen cursor: ThumbPrevious+ThumbNext
 * insert the clipboard content before the screen cursor using the alternate paste mode: long ThumbPrevious+ThumbNext
 

@@ -3,16 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
+<meta name="generator" content="Docutils 0.21.2: https://docutils.sourceforge.io/" />
 <title>The BRLTTY Command Reference</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
 
 See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
@@ -275,7 +276,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
   margin-left: 2em ;
   margin-right: 2em }
 
-pre.code .ln { color: grey; } /* line numbers */
+pre.code .ln { color: gray; } /* line numbers */
 pre.code, code { background-color: #eeeeee }
 pre.code .comment, code .comment { color: #5C6576 }
 pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
@@ -301,7 +302,7 @@ span.option {
 span.pre {
   white-space: pre }
 
-span.problematic {
+span.problematic, pre.problematic {
   color: red }
 
 span.section-subtitle {
@@ -364,7 +365,7 @@ ul.auto-toc {
 <h1 class="title">The BRLTTY Command Reference</h1>
 
 <div class="contents topic" id="contents">
-<p class="topic-title">Contents</p>
+<p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
 <ul class="simple">
 <li><a class="reference internal" href="#alphabetical-command-index" id="toc-entry-1">Alphabetical Command Index</a></li>
 <li><a class="reference internal" href="#special-modes" id="toc-entry-2">Special Modes</a></li>
@@ -414,10 +415,12 @@ ul.auto-toc {
 <li><a class="reference internal" href="#chrrt">CHRRT</a></li>
 <li><a class="reference internal" href="#clip-add">CLIP_ADD</a></li>
 <li><a class="reference internal" href="#clip-append">CLIP_APPEND</a></li>
+<li><a class="reference internal" href="#clip-clear">CLIP_CLEAR</a></li>
 <li><a class="reference internal" href="#clip-copy">CLIP_COPY</a></li>
 <li><a class="reference internal" href="#clip-new">CLIP_NEW</a></li>
 <li><a class="reference internal" href="#clip-restore">CLIP_RESTORE</a></li>
 <li><a class="reference internal" href="#clip-save">CLIP_SAVE</a></li>
+<li><a class="reference internal" href="#clip-show">CLIP_SHOW</a></li>
 <li><a class="reference internal" href="#color">COLOR</a></li>
 <li><a class="reference internal" href="#compbrl6">COMPBRL6</a></li>
 <li><a class="reference internal" href="#context">CONTEXT</a></li>
@@ -425,6 +428,8 @@ ul.auto-toc {
 <li><a class="reference internal" href="#control">CONTROL</a></li>
 <li><a class="reference internal" href="#copy-line">COPY_LINE</a></li>
 <li><a class="reference internal" href="#copy-rect">COPY_RECT</a></li>
+<li><a class="reference internal" href="#copy-smart-add">COPY_SMART_ADD</a></li>
+<li><a class="reference internal" href="#copy-smart-new">COPY_SMART_NEW</a></li>
 <li><a class="reference internal" href="#csrblink">CSRBLINK</a></li>
 <li><a class="reference internal" href="#csrhide">CSRHIDE</a></li>
 <li><a class="reference internal" href="#csrjmp-vert">CSRJMP_VERT</a></li>
@@ -632,7 +637,7 @@ ul.auto-toc {
 <ul class="simple">
 <li>Toggle: on, off</li>
 </ul>
-<p id="freeze"><strong>FREEZE</strong> - Set screen image frozen/unfrozen.</p>
+<p id="freeze"><strong>FREEZE</strong> - Set screen image frozen/live.</p>
 <p>The following modifiers may be specified:</p>
 <ul class="simple">
 <li>Toggle: on, off</li>
@@ -983,12 +988,16 @@ ul.auto-toc {
 <div class="section" id="clipboard-functions">
 <h2><a class="toc-backref" href="#toc-entry-7">Clipboard Functions</a></h2>
 <ul class="simple">
+<li><a class="reference internal" href="#clip-show">CLIP_SHOW</a></li>
+<li><a class="reference internal" href="#clip-clear">CLIP_CLEAR</a></li>
 <li><a class="reference internal" href="#clip-new">CLIP_NEW</a></li>
 <li><a class="reference internal" href="#clip-add">CLIP_ADD</a></li>
 <li><a class="reference internal" href="#copy-line">COPY_LINE</a></li>
 <li><a class="reference internal" href="#copy-rect">COPY_RECT</a></li>
 <li><a class="reference internal" href="#clip-copy">CLIP_COPY</a></li>
 <li><a class="reference internal" href="#clip-append">CLIP_APPEND</a></li>
+<li><a class="reference internal" href="#copy-smart-new">COPY_SMART_NEW</a></li>
+<li><a class="reference internal" href="#copy-smart-add">COPY_SMART_ADD</a></li>
 <li><a class="reference internal" href="#paste">PASTE</a></li>
 <li><a class="reference internal" href="#paste-altmode">PASTE_ALTMODE</a></li>
 <li><a class="reference internal" href="#paste-history">PASTE_HISTORY</a></li>
@@ -998,6 +1007,8 @@ ul.auto-toc {
 <li><a class="reference internal" href="#clip-save">CLIP_SAVE</a></li>
 <li><a class="reference internal" href="#clip-restore">CLIP_RESTORE</a></li>
 </ul>
+<p id="clip-show"><strong>CLIP_SHOW</strong> - Show current clipboard content.</p>
+<p id="clip-clear"><strong>CLIP_CLEAR</strong> - Clear the clipboard.</p>
 <p id="clip-new"><strong>CLIP_NEW</strong> - Start new clipboard at character.</p>
 <p>The following modifiers may be specified:</p>
 <ul class="simple">
@@ -1020,6 +1031,16 @@ ul.auto-toc {
 </ul>
 <p id="clip-copy"><strong>CLIP_COPY</strong> - Copy characters to clipboard.</p>
 <p id="clip-append"><strong>CLIP_APPEND</strong> - Append characters to clipboard.</p>
+<p id="copy-smart-new"><strong>COPY_SMART_NEW</strong> - Start new clipboard with smart copy (URL, email, etc) at character.</p>
+<p>The following modifiers may be specified:</p>
+<ul class="simple">
+<li>a column number</li>
+</ul>
+<p id="copy-smart-add"><strong>COPY_SMART_ADD</strong> - Append to clipboard with smart copy (URL, email, etc) at character.</p>
+<p>The following modifiers may be specified:</p>
+<ul class="simple">
+<li>a column number</li>
+</ul>
 <p id="paste"><strong>PASTE</strong> - Insert the clipboard content before the screen cursor.</p>
 <p id="paste-altmode"><strong>PASTE_ALTMODE</strong> - Insert the clipboard content before the screen cursor using the alternate paste mode.</p>
 <p id="paste-history"><strong>PASTE_HISTORY</strong> - Insert a clipboard history entry before the screen cursor.</p>

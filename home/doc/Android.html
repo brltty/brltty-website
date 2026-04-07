@@ -3,16 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
+<meta name="generator" content="Docutils 0.21.2: https://docutils.sourceforge.io/" />
 <title>BRLTTY on Android</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
 
 See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
@@ -275,7 +276,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
   margin-left: 2em ;
   margin-right: 2em }
 
-pre.code .ln { color: grey; } /* line numbers */
+pre.code .ln { color: gray; } /* line numbers */
 pre.code, code { background-color: #eeeeee }
 pre.code .comment, code .comment { color: #5C6576 }
 pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
@@ -301,7 +302,7 @@ span.option {
 span.pre {
   white-space: pre }
 
-span.problematic {
+span.problematic, pre.problematic {
   color: red }
 
 span.section-subtitle {
@@ -364,7 +365,7 @@ ul.auto-toc {
 <h1 class="title">BRLTTY on Android</h1>
 
 <div class="contents topic" id="contents">
-<p class="topic-title">Contents</p>
+<p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
 <ul class="simple">
 <li><a class="reference internal" href="#using-brltty" id="toc-entry-1">Using BRLTTY</a><ul>
 <li><a class="reference internal" href="#activation-and-configuration" id="toc-entry-2">Activation and Configuration</a><ul>
@@ -433,9 +434,8 @@ ul.auto-toc {
 <h2><a class="toc-backref" href="#toc-entry-1">Using BRLTTY</a></h2>
 <div class="section" id="activation-and-configuration">
 <h3><a class="toc-backref" href="#toc-entry-2">Activation and Configuration</a></h3>
-<p>At this point, BRLTTY has been installed. Next, you'll need to go into
-<tt class="docutils literal">Settings</tt> -&gt; <tt class="docutils literal">Accessibility</tt> -&gt; <tt class="docutils literal">BRLTTY</tt> in order to start the <tt class="docutils literal">BRLTTY</tt>
-accessibility service, adjust its settings, and select your braille device.</p>
+<p>Go to <tt class="docutils literal">Settings</tt> -&gt; <tt class="docutils literal">Accessibility</tt> -&gt; <tt class="docutils literal">Downloaded Apps</tt> -&gt; <tt class="docutils literal">BRLTTY</tt>
+in order to start/stop <tt class="docutils literal">BRLTTY</tt>, adjust its settings, and select your braille device(s).</p>
 <p>If you'll be connecting to your braille device via Bluetooth,
 see <a class="reference internal" href="#connecting-via-bluetooth">Connecting Via Bluetooth</a>.</p>
 <p>If you'll be connecting to your braille device via USB,
@@ -444,18 +444,17 @@ see <a class="reference internal" href="#connecting-via-usb">Connecting Via USB<
 see <a class="reference internal" href="#using-a-braille-keyboard">Using a Braille Keyboard</a>.</p>
 <div class="section" id="starting-and-stopping-brltty">
 <h4><a class="toc-backref" href="#toc-entry-3">Starting and Stopping BRLTTY</a></h4>
-<p>BRLTTY isn't a regular Android application - it's an accessibility service. As
-such, it can't be started and stopped in the usual way, i.e. from the launcher.
-In fact, it can't even be found within the applications list.</p>
+<p>BRLTTY isn't a regular Android application - it's an accessibility service.
+As such, it can't be started and stopped in the usual way, i.e. from the launcher.
+In fact, it won't even show up within the <tt class="docutils literal">All Apps</tt> list.</p>
 <p>BRLTTY must be started and stopped from the <tt class="docutils literal">Accessibility Settings</tt> screen.
-To get there, launch the <tt class="docutils literal">Settings</tt> application, and then tap on
-<tt class="docutils literal">Accessibility</tt> (near the bottom). This screen contains a &quot;Services&quot; section
-that lists all of the accessibility services that are currently installed on
-the device. For each installed accessibility service, there's an associated
-indicator that says <tt class="docutils literal">On</tt> if that service is currently running, and <tt class="docutils literal">Off</tt> if
-it isn't.</p>
-<p>Find <tt class="docutils literal">BRLTTY</tt> and tap on it. This brings up a window with two items in it.
-One is a &quot;switch&quot; for turning BRLTTY on and off. The other is a button that
+To get there, launch the <tt class="docutils literal">Settings</tt> application, and then tap on <tt class="docutils literal">Accessibility</tt> (near the bottom).
+This screen contains a &quot;Downloaded Apps&quot; section which lists all of the
+accessibility services that are currently installed on the device.
+For each of them, there's an associated indicator that shows
+either <tt class="docutils literal">On</tt> if it's currently running or <tt class="docutils literal">Off</tt> if it isn't.</p>
+<p>Find <tt class="docutils literal">BRLTTY</tt> and tap on it. This brings up a window with a few items in it.
+One is a &quot;switch&quot; for turning BRLTTY on and off. Another is a button that
 takes you to BRLTTY's <tt class="docutils literal">Settings</tt> screen. You can go through BRLTTY's
 settings, making changes as desired, as well as define your braille device(s),
 either before starting BRLTTY or while it's running.</p>

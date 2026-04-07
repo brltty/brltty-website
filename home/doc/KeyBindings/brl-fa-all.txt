@@ -19,7 +19,7 @@ Special Modes
 * enter/leave preferences menu: F2
 * enter/leave status display: F1+F3
 * set display mode attributes/text: F5+F6
-* set screen image frozen/unfrozen: F4+F5+F6
+* set screen image frozen/live: F4+F5+F6
 * describe character: F4+RoutingKey
 * describe color of character: long RoutingKey
 * show current date and time: F1+F2+F3
@@ -72,6 +72,7 @@ Clipboard Functions
 * rectangular copy to character: F5+RoutingKey
 * copy characters to clipboard: RoutingKey+RoutingKey
 * append characters to clipboard: F2+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long F1+RoutingKey
 * insert the clipboard content before the screen cursor: K7+K8+K9
 * insert the clipboard content before the screen cursor using the alternate paste mode: long K7+K8+K9
 * search backward for clipboard text: K3+K5+K4

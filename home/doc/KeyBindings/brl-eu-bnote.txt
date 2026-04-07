@@ -74,6 +74,8 @@ Clipboard Functions
 * append to clipboard from character: RightKeypadUp+RoutingKey
 * linear copy to character: RightKeypadRight+RoutingKey
 * rectangular copy to character: RightKeypadDown+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long RightKeypadLeft+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long RightKeypadUp+RoutingKey
 * insert the clipboard content before the screen cursor: RightKeypadUp+RightKeypadDown
 * insert the clipboard content before the screen cursor using the alternate paste mode: long RightKeypadUp+RightKeypadDown
 * search backward for clipboard text: RightKeypadRight+RightKeypadUp

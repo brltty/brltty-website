@@ -12,7 +12,7 @@ Special Modes
 * enter/leave preferences menu: Dots1346
 * enter/leave status display: Dots34
 * set display mode attributes/text: Dots134
-* set screen image frozen/unfrozen: Dots124
+* set screen image frozen/live: Dots124
 
 Cursor Functions
 * go to screen cursor: Dots36
@@ -63,6 +63,8 @@ Clipboard Functions
 * append to clipboard from character: Status2, RoutingKey
 * linear copy to character: Status3, RoutingKey
 * rectangular copy to character: Status4, RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: Status1, long RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: Status2, long RoutingKey
 * insert the clipboard content before the screen cursor: Dots1234
 
 Configuration Functions

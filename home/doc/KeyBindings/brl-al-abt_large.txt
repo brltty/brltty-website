@@ -15,7 +15,7 @@ Special Modes
 * enter/leave preferences menu: Prog+Cursor
 * enter/leave status display: Prog+Up
 * set display mode attributes/text: Prog+Home
-* set screen image frozen/unfrozen: Prog+Down
+* set screen image frozen/live: Prog+Down
 * describe character: Prog+Home+RoutingKey1
 * describe color of character: long RoutingKey1
 
@@ -49,6 +49,7 @@ Horizontal Navigation
 Clipboard Functions
 * start new clipboard at character: Prog+RoutingKey1
 * rectangular copy to character: Home+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: long Prog+RoutingKey1
 * insert the clipboard content before the screen cursor: Prog+Home+Down
 * insert the clipboard content before the screen cursor using the alternate paste mode: long Prog+Home+Down
 

@@ -18,7 +18,7 @@ Special Modes
 * enter/leave preferences menu: Hot7
 * enter/leave status display: Hot8
 * set display mode attributes/text: Hot2
-* set screen image frozen/unfrozen: RightSelector+Hot5
+* set screen image frozen/live: RightSelector+Hot5
 * describe character: RightWheelPress+RoutingKey
 * describe color of character: long RoutingKey
 
@@ -69,6 +69,8 @@ Clipboard Functions
 * linear copy to character: RightSelector+RoutingKey
 * rectangular copy to character: PanRight+RoutingKey
 * copy characters to clipboard: RoutingKey+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long PanLeft+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long LeftSelector+RoutingKey
 * insert the clipboard content before the screen cursor: LeftSelector+RightSelector
 * insert the clipboard content before the screen cursor using the alternate paste mode: long LeftSelector+RightSelector
 * search backward for clipboard text: RightSelector+LeftWheelUp

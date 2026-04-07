@@ -8,7 +8,7 @@ Special Modes
 * enter/leave help display: CapsLock+F1
 * enter/leave command learn mode: CapsLock+ShiftLeft+F1
 * enter/leave preferences menu: CapsLock+F2
-* set screen image frozen/unfrozen: CapsLock+F
+* set screen image frozen/live: CapsLock+F
 * describe character at cursor: CapsLock+D
 * show current date and time: CapsLock+T
 

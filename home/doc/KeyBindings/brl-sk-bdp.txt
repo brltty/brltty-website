@@ -16,7 +16,7 @@ Special Modes
 * enter/leave preferences menu: K1+K6
 * enter/leave status display: K1+K7
 * set display mode attributes/text: K8+K2
-* set screen image frozen/unfrozen: K8+K3
+* set screen image frozen/live: K8+K3
 * describe character: K1+K8+K5, RoutingKey
 * describe color of character: long RoutingKey
 
@@ -58,6 +58,8 @@ Clipboard Functions
 * append to clipboard from character: K1+K8+K2+K7, RoutingKey
 * linear copy to character: K1+K8+K3+K6, RoutingKey
 * rectangular copy to character: K1+K8+K3+K7, RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: K1+K8+K2+K6, long RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: K1+K8+K2+K7, long RoutingKey
 * insert the clipboard content before the screen cursor: K6+K7
 * insert the clipboard content before the screen cursor using the alternate paste mode: long K6+K7
 

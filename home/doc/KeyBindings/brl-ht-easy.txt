@@ -10,7 +10,7 @@ Special Modes
 * enter/leave preferences menu: B7+B1
 * enter/leave status display: B7+B6
 * set display mode attributes/text: B6
-* set screen image frozen/unfrozen: B8+B6
+* set screen image frozen/live: B8+B6
 * describe character: B2+RoutingKey
 * describe color of character: long RoutingKey
 * show current date and time: B2+B3+B5+B6
@@ -56,6 +56,8 @@ Clipboard Functions
 * linear copy to character: B6+RoutingKey
 * rectangular copy to character: B5+RoutingKey
 * copy characters to clipboard: RoutingKey+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long B4+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long B3+RoutingKey
 * insert the clipboard content before the screen cursor: Left+Right
 * insert the clipboard content before the screen cursor using the alternate paste mode: long Left+Right
 * search backward for clipboard text: B3+B4

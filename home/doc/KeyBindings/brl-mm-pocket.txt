@@ -45,9 +45,9 @@ Special Modes
 * set display mode attributes/text: Read+dots145
 * set display mode attributes: Read+dots1458
 * set display mode text: Read+dots1457
-* set screen image frozen/unfrozen: Read+dots124
+* set screen image frozen/live: Read+dots124
 * set screen image frozen: Read+dots1248
-* set screen image unfrozen: Read+dots1247
+* set screen image live: Read+dots1247
 * describe character: Select+Read+RoutingKey
 * show current date and time: Control
 
@@ -86,10 +86,14 @@ Horizontal Navigation
 * place left end of braille window at character: Control+Alt+RoutingKey
 
 Clipboard Functions
+* show current clipboard content: long Read+dots13468
+* clear the clipboard: long Read+dots13467
 * start new clipboard at character: Control+RoutingKey
 * append to clipboard from character: Alt+RoutingKey
 * linear copy to character: Select+RoutingKey
 * rectangular copy to character: Read+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long Control+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long Alt+RoutingKey
 * insert the clipboard content before the screen cursor:
   + Control+Alt
   + Read+dots1346

@@ -17,7 +17,7 @@ Special Modes
 * enter/leave command learn mode: Display3+Display4
 * enter/leave preferences menu: Display6+Display7
 * set display mode attributes/text: Display1+Display3
-* set screen image frozen/unfrozen: Display2+Display5
+* set screen image frozen/live: Display2+Display5
 * describe character: Display5+RoutingKey
 * describe color of character: long RoutingKey
 
@@ -54,6 +54,8 @@ Clipboard Functions
 * append to clipboard from character: Display4+RoutingKey
 * linear copy to character: Display6+RoutingKey
 * rectangular copy to character: Display7+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long Display3+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long Display4+RoutingKey
 * insert the clipboard content before the screen cursor: Display5+Display4+Display7
 * insert the clipboard content before the screen cursor using the alternate paste mode: long Display5+Display4+Display7
 

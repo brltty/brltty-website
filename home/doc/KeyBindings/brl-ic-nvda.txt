@@ -28,11 +28,11 @@ Special Modes
 * set display mode attributes/text: Space+Dots12, Dots145
 * set display mode attributes: Space+Dots12, Dot8, Dots145
 * set display mode text: Space+Dots12, Dot7, Dots145
-* set screen image frozen/unfrozen:
+* set screen image frozen/live:
   + Space+Dots12, Dots124
   + Space+Dots124
 * set screen image frozen: Space+Dots12, Dot8, Dots124
-* set screen image unfrozen: Space+Dots12, Dot7, Dots124
+* set screen image live: Space+Dots12, Dot7, Dots124
 * describe character: Space+Dots1235, Dot6, RoutingKey
 * show current date and time: Space+Dot8
 
@@ -75,6 +75,8 @@ Clipboard Functions
 * append to clipboard from character: Space+Dots1235, Dot2, RoutingKey
 * linear copy to character: Space+Dots1235, Dot4, RoutingKey
 * rectangular copy to character: Space+Dots1235, Dot5, RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: Space+Dots1235, Dot1, long RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: Space+Dots1235, Dot2, long RoutingKey
 * insert the clipboard content before the screen cursor: Space+Dots12, Dots1346
 * search backward for clipboard text: Space+Dots1456
 * search forward for clipboard text: Space+Dots3456

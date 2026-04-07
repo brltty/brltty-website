@@ -13,9 +13,9 @@
 
   Jean‐Philippe Mengual <texou@accelibreinfo.eu> pour Traduc.org
 
-  Version 6.9, février 2026
+  Version 6.9.1, avril 2026
 
-  Copyright (C) 1995‐2025 by Les Développeurs de BRLTTY.  BRLTTY est un
+  Copyright (C) 1995‐2026 by Les Développeurs de BRLTTY.  BRLTTY est un
   logiciel libre, et n’est fourni avec AUCUNE GARANTIE. Il est placé
   sous les termes de la version 2 ou ultérieure de la GNU General Public
   License publiée par The Free Software Foundation.

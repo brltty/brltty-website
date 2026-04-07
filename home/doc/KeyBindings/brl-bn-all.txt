@@ -19,7 +19,7 @@ Special Modes
 * enter/leave status display: Backspace+Dots234
 * set display mode attributes: Backspace+Dot1
 * set display mode text: Backspace+Dots2345
-* set screen image frozen/unfrozen: Enter+Dots124
+* set screen image frozen/live: Enter+Dots124
 * describe character: Backspace+Dots145, RoutingKey
 * switch to Default Bindings: Space+Dots1345
 
@@ -81,6 +81,8 @@ Clipboard Functions
 * append to clipboard from character: Space+Dots246, RoutingKey
 * linear copy to character: Space+Dots12456, RoutingKey
 * rectangular copy to character: Space+Dots23456, RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: Space+Dots12356, long RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: Space+Dots246, long RoutingKey
 * insert the clipboard content before the screen cursor: Space+Dots1234
 * search backward for clipboard text: Dots124
 * search forward for clipboard text: Dots235

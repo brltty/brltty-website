@@ -21,7 +21,7 @@ Special Modes
 * enter/leave preferences menu: Display1+Display3+Display4
 * enter/leave status display: Display2+Display5
 * set display mode attributes/text: Display1+Display4+Display5
-* set screen image frozen/unfrozen: Display1+Display2+Display4
+* set screen image frozen/live: Display1+Display2+Display4
 * describe character: Display3+RoutingKey
 * describe color of character: long RoutingKey
 * show current date and time: Display1+Display5
@@ -94,6 +94,12 @@ Clipboard Functions
   + ThumbNext+RoutingKey
 * copy characters to clipboard: RoutingKey+RoutingKey
 * append characters to clipboard: Display2+RoutingKey+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character:
+  + long Display1+RoutingKey
+  + long ThumbPrevious+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character:
+  + long Display2+RoutingKey
+  + long ThumbLeft+RoutingKey
 * insert the clipboard content before the screen cursor:
   + ThumbPrevious+ThumbNext
   + Display1+Display2+Display3+Display4

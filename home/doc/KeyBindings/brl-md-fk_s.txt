@@ -20,7 +20,7 @@ Special Modes
 * enter/leave preferences menu: F10
 * enter/leave status display: Shift+F2
 * set display mode attributes/text: Shift+F6
-* set screen image frozen/unfrozen: Shift+F1
+* set screen image frozen/live: Shift+F1
 * show current date and time: Long+F9
 * set hidden screen cursor on: press StatusKey.1
 * set hidden screen cursor off: release StatusKey.1
@@ -57,6 +57,7 @@ Clipboard Functions
 * rectangular copy to character: RoutingKey+Down
 * copy characters to clipboard: RoutingKey+RoutingKey
 * append characters to clipboard: RoutingKey+Up
+* start new clipboard with smart copy (URL, email, etc) at character: long RoutingKey+Left
 * insert the clipboard content before the screen cursor:
   + Shift+F10
   + RoutingKey.2+RoutingKey.3

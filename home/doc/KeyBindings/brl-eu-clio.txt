@@ -23,7 +23,7 @@ Special Modes
   + I
   + Space+Dots234
 * set display mode attributes/text: Sharp, A
-* set screen image frozen/unfrozen: A
+* set screen image frozen/live: A
 * describe color of character: long RoutingKey
 * show current date and time: Space+Dots2345
 * switch to Default Bindings:
@@ -64,6 +64,8 @@ Clipboard Functions
 * append to clipboard from character: Star, F, RoutingKey
 * linear copy to character: Star, M, RoutingKey
 * rectangular copy to character: Star, K, RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: Star, E, long RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: Star, F, long RoutingKey
 * insert the clipboard content before the screen cursor: Star, L
 * search backward for clipboard text: Sharp, G
 * search forward for clipboard text: Sharp, K

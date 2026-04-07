@@ -56,6 +56,8 @@ Clipboard Functions
 * append to clipboard from character: LeftJoystickDown+RightJoystickUp, RoutingKey1
 * linear copy to character: LeftJoystickDown+RightJoystickRight, RoutingKey1
 * rectangular copy to character: LeftJoystickDown+RightJoystickDown, RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: LeftJoystickDown+RightJoystickLeft, long RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character: LeftJoystickDown+RightJoystickUp, long RoutingKey1
 * insert the clipboard content before the screen cursor: LeftJoystickDown+RightJoystickPress
 
 Configuration Functions

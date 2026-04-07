@@ -21,7 +21,7 @@ Special Modes
 * enter/leave preferences menu: LeftOuter+RightOuter
 * enter/leave status display: CursorUp+RightInner
 * set display mode attributes/text: CursorDown+LeftInner+LeftThumb
-* set screen image frozen/unfrozen: LeftThumb+RightThumb
+* set screen image frozen/live: LeftThumb+RightThumb
 * describe character: RoutingKey+CursorDown
 
 Cursor Functions
@@ -73,6 +73,8 @@ Clipboard Functions
 * linear copy to character: RoutingKey+CursorRight
 * rectangular copy to character: RoutingKey+RightOuter
 * copy characters to clipboard: RoutingKey+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long RoutingKey+LeftOuter
+* append to clipboard with smart copy (URL, email, etc) at character: long RoutingKey+CursorLeft
 * insert the clipboard content before the screen cursor: RoutingKey.2+RoutingKey.3
 * search backward for clipboard text: RoutingKey.1+RoutingKey.3+LeftInner
 * search forward for clipboard text: RoutingKey.1+RoutingKey.3+RightInner

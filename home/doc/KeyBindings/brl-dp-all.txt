@@ -18,9 +18,9 @@ Special Modes
 * set display mode attributes/text: Space+Dots145
 * set display mode attributes: Space+Dots1458
 * set display mode text: Space+Dots1457
-* set screen image frozen/unfrozen: Space+Dots124
+* set screen image frozen/live: Space+Dots124
 * set screen image frozen: Space+Dots1248
-* set screen image unfrozen: Space+Dots1247
+* set screen image live: Space+Dots1247
 * show current date and time: FunctionKey.2+FunctionKey.3
 
 Cursor Functions
@@ -78,6 +78,8 @@ Horizontal Navigation
   + long NavRight
 
 Clipboard Functions
+* show current clipboard content: long Space+Dots13468
+* clear the clipboard: long Space+Dots13467
 * insert the clipboard content before the screen cursor: Space+Dots1346
 * insert the clipboard content before the screen cursor using the alternate paste mode: long Space+Dots1346
 * save clipboard to disk: Space+Dots13468

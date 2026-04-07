@@ -10,7 +10,7 @@ Special Modes
 * enter/leave preferences menu: PadCenter1+PadDown1
 * enter/leave status display: PadCenter1+PadUp1
 * set display mode attributes/text: RightUpper1+PadDown1
-* set screen image frozen/unfrozen: RightUpper1+PadUp1
+* set screen image frozen/live: RightUpper1+PadUp1
 * describe character: PadCenter1+RoutingKey
 
 Cursor Functions
@@ -55,6 +55,8 @@ Clipboard Functions
 * append to clipboard from character: LeftLower1+RoutingKey
 * linear copy to character: RightUpper1+RoutingKey
 * rectangular copy to character: RightLower1+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long LeftUpper1+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long LeftLower1+RoutingKey
 * insert the clipboard content before the screen cursor: LeftUpper1+PadCenter1
 * search backward for clipboard text: LeftUpper1+PadLeft1
 * search forward for clipboard text: LeftUpper1+PadRight1

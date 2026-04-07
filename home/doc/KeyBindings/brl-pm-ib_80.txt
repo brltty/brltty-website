@@ -50,6 +50,7 @@ Horizontal Navigation
 Clipboard Functions
 * start new clipboard at character: Function+RoutingKey1
 * rectangular copy to character: Attribute+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: long Function+RoutingKey1
 * insert the clipboard content before the screen cursor: Function+Attribute
 * insert the clipboard content before the screen cursor using the alternate paste mode: long Function+Attribute
 * search backward for clipboard text: Braille+Up

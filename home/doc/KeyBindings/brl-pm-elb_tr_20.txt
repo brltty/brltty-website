@@ -17,7 +17,7 @@ Special Modes
 * enter/leave preferences menu: LeftKeyFront+BarRight1
 * enter/leave status display: LeftKeyFront+BarLeft1
 * set display mode attributes/text: LeftKeyRear+BarLeft1
-* set screen image frozen/unfrozen: LeftKeyFront+BarDown2
+* set screen image frozen/live: LeftKeyFront+BarDown2
 * describe character: BarDown2+RoutingKey1
 * describe color of character: long RoutingKey1
 
@@ -55,6 +55,12 @@ Clipboard Functions
 * rectangular copy to character:
   + BarRight2+RoutingKey1
   + RightKeyFront+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character:
+  + long BarLeft2+RoutingKey1
+  + long LeftKeyRear+RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character:
+  + long BarLeft1+RoutingKey1
+  + long LeftKeyFront+RoutingKey1
 * insert the clipboard content before the screen cursor: LeftKeyRear+BarDown1
 * insert the clipboard content before the screen cursor using the alternate paste mode: long LeftKeyRear+BarDown1
 

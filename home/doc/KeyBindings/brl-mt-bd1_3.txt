@@ -30,6 +30,7 @@ Clipboard Functions
 * linear copy to character: Down+RoutingKey
 * rectangular copy to character: Down+Select+RoutingKey
 * append characters to clipboard: Up+Select+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long Up+RoutingKey
 
 Menu Bindings
 -------------

@@ -27,7 +27,7 @@ Special Modes
 * set display mode attributes/text:
   + B6
   + Display1+Display4+Display5
-* set screen image frozen/unfrozen:
+* set screen image frozen/live:
   + B8+B6
   + Display1+Display2+Display4
 * describe character:
@@ -142,6 +142,12 @@ Clipboard Functions
   + Display5+RoutingKey
 * copy characters to clipboard: RoutingKey+RoutingKey
 * append characters to clipboard: Display2+RoutingKey+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character:
+  + long Display1+RoutingKey
+  + long B4+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character:
+  + long B3+RoutingKey
+  + long Display2+RoutingKey
 * insert the clipboard content before the screen cursor:
   + SpaceLeft+SpaceRight
   + Display1+Display2+Display3+Display4

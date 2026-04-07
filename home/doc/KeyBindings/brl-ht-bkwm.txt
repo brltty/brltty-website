@@ -8,7 +8,7 @@ Special Modes
 * enter/leave help display: Backward+Forward
 * enter/leave preferences menu: Escape+Enter
 * set display mode attributes/text: Escape+Forward
-* set screen image frozen/unfrozen: Backward+Forward+Enter
+* set screen image frozen/live: Backward+Forward+Enter
 * describe color of character at cursor: long Enter
 
 Cursor Functions

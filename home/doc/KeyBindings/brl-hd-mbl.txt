@@ -18,9 +18,9 @@ Special Modes
 * set display mode attributes/text: B3+K2
 * set display mode attributes: B3+K2+K3
 * set display mode text: B3+K2+K1
-* set screen image frozen/unfrozen: B4+K2
+* set screen image frozen/live: B4+K2
 * set screen image frozen: B4+K2+K3
-* set screen image unfrozen: B4+K2+K1
+* set screen image live: B4+K2+K1
 * describe character: K2+RoutingKey
 * describe color of character: long RoutingKey
 * show current date and time: B5+K1
@@ -62,6 +62,8 @@ Clipboard Functions
 * append to clipboard from character: B2+RoutingKey
 * linear copy to character: B6+RoutingKey
 * rectangular copy to character: B5+RoutingKey
+* start new clipboard with smart copy (URL, email, etc) at character: long B3+RoutingKey
+* append to clipboard with smart copy (URL, email, etc) at character: long B2+RoutingKey
 * insert the clipboard content before the screen cursor: B4+K1
 * insert the clipboard content before the screen cursor using the alternate paste mode: long B4+K1
 * search backward for clipboard text: B1+B2+B3

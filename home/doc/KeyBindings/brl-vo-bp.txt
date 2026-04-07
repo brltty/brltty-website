@@ -20,7 +20,7 @@ Special Modes
 * set display mode attributes/text: Dot1+JoystickEnter
 * set display mode attributes: Dot1+JoystickRight
 * set display mode text: Dot1+JoystickLeft
-* set screen image frozen/unfrozen: Dots124+JoystickEnter
+* set screen image frozen/live: Dots124+JoystickEnter
 * describe character at cursor: ScrollRight+JoystickEnter
 
 Cursor Functions
@@ -62,6 +62,8 @@ Clipboard Functions
 * append to clipboard from character at cursor: Control+JoystickUp
 * linear copy to character at cursor: Control+JoystickRight
 * rectangular copy to character at cursor: Control+JoystickDown
+* start new clipboard with smart copy (URL, email, etc) at character at cursor: long Control+JoystickLeft
+* append to clipboard with smart copy (URL, email, etc) at character at cursor: long Control+JoystickUp
 * insert the clipboard content before the screen cursor: Control+JoystickEnter
 
 Configuration Functions

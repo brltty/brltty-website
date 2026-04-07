@@ -22,9 +22,9 @@ Special Modes
 * set display mode attributes/text: Status.7
 * set display mode attributes: Status.7+Dot8
 * set display mode text: Status.7+Dot7
-* set screen image frozen/unfrozen: Status.8
+* set screen image frozen/live: Status.8
 * set screen image frozen: Status.8+Dot8
-* set screen image unfrozen: Status.8+Dot7
+* set screen image live: Status.8+Dot7
 * describe character: Dot4+RoutingKey1
 * describe color of character: long RoutingKey1
 * show current date and time:
@@ -78,6 +78,8 @@ Clipboard Functions
 * append to clipboard from character: Dot3+RoutingKey1
 * linear copy to character: Dot6+RoutingKey1
 * rectangular copy to character: Dot8+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: long Dot7+RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character: long Dot3+RoutingKey1
 * insert the clipboard content before the screen cursor: Status.22
 * insert the clipboard content before the screen cursor using the alternate paste mode: long Status.22
 * search backward for clipboard text: Dots37
@@ -175,14 +177,16 @@ Special Modes
 * set display mode attributes/text: Dots145
 * set display mode attributes: Dots1458
 * set display mode text: Dots1457
-* set screen image frozen/unfrozen: Dots124
+* set screen image frozen/live: Dots124
 * set screen image frozen: Dots1248
-* set screen image unfrozen: Dots1247
+* set screen image live: Dots1247
 
 Cursor Functions
 * bring screen cursor to current line: Dots1236
 
 Clipboard Functions
+* show current clipboard content: long Dots13468
+* clear the clipboard: long Dots13467
 * insert the clipboard content before the screen cursor: Dots1346
 * insert the clipboard content before the screen cursor using the alternate paste mode: long Dots1346
 * save clipboard to disk: Dots13468

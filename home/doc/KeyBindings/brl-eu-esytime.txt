@@ -38,7 +38,7 @@ Special Modes
   + LeftJoystickDown+RightJoystickPress
   + Space+Dots234
 * set display mode attributes/text: LeftJoystickUp+RightJoystickPress
-* set screen image frozen/unfrozen: L8+RightJoystickUp
+* set screen image frozen/live: L8+RightJoystickUp
 * describe character:
   + RoutingKey2
   + RightJoystickPress+RoutingKey1
@@ -87,6 +87,8 @@ Clipboard Functions
 * append to clipboard from character: RightJoystickUp+RoutingKey1
 * linear copy to character: RightJoystickRight+RoutingKey1
 * rectangular copy to character: RightJoystickDown+RoutingKey1
+* start new clipboard with smart copy (URL, email, etc) at character: long RightJoystickLeft+RoutingKey1
+* append to clipboard with smart copy (URL, email, etc) at character: long RightJoystickUp+RoutingKey1
 * insert the clipboard content before the screen cursor: L8+RightJoystickPress
 * search backward for clipboard text: L1+LeftJoystickUp
 * search forward for clipboard text: L1+LeftJoystickDown
