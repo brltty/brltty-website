@@ -46,7 +46,13 @@ do
                continue
             }
 
-            [ "${cacheState}" = " " ] && {
+            [ "${cacheState}" = "R" -a "${worktreeState}" = "D" ] && {
+               filePath="${filePath#* -> }"
+               removeFile
+               continue
+            }
+
+            [ "${cacheState}" = " " ] || [[ "${cacheState}" =~ [M] ]] && {
                case "${worktreeState}"
                in
                   D) removeFile; continue;;
