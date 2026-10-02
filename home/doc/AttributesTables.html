@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="Docutils 0.21.2: https://docutils.sourceforge.io/" />
-<title>Attributes Tables</title>
-<style type="text/css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes Tables</title>
+    <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
@@ -359,12 +358,10 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-</head>
-<body>
-<div class="document" id="attributes-tables">
-<h1 class="title">Attributes Tables</h1>
+  </head>
 
-<div class="contents topic" id="contents">
+  <body>
+    <div class="contents topic" id="contents">
 <p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
 <ul class="simple">
 <li><a class="reference internal" href="#description" id="toc-entry-1">Description</a></li>
@@ -376,6 +373,10 @@ ul.auto-toc {
 <li><a class="reference internal" href="#attributes-table-list" id="toc-entry-5">Attributes Table List</a></li>
 </ul>
 </div>
+<p>For a conceptual introduction — what attributes tables are for
+and how to select one at run time —
+see the <em>Tables</em> chapter of the <em>BRLTTY Reference Manual</em>.
+This file documents the attributes-table file format and directive reference.</p>
 <div class="section" id="description">
 <h2><a class="toc-backref" href="#toc-entry-1">Description</a></h2>
 <p>Files with names of the form <tt class="docutils literal">*.atb</tt> are attributes tables, and with names of
@@ -497,11 +498,11 @@ relative, it is anchored at the directory containing the including file.</dd>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>left_right</td>
-<td>foreground colour in the left column and background colour in the right column</td>
-</tr>
 <tr><td>invleft_right</td>
 <td>inverse foreground colour in the left column and background colour in the right column</td>
+</tr>
+<tr><td>left_right</td>
+<td>foreground colour in the left column and background colour in the right column</td>
 </tr>
 <tr><td>upper_lower</td>
 <td>foreground colour in the upper square and background colour in the lower square</td>
@@ -509,6 +510,5 @@ relative, it is anchored at the directory containing the including file.</dd>
 </tbody>
 </table>
 </div>
-</div>
-</body>
+  </body>
 </html>

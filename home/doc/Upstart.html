@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="Docutils 0.21.2: https://docutils.sourceforge.io/" />
-<title>Using Upstart Service Management</title>
-<style type="text/css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Upstart Service Management</title>
+    <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
@@ -359,12 +358,10 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-</head>
-<body>
-<div class="document" id="using-upstart-service-management">
-<h1 class="title">Using Upstart Service Management</h1>
+  </head>
 
-<p>An Upstart job for BRLTTY can be found within the <tt class="docutils literal">Autostart/Upstart/</tt>
+  <body>
+    <p>An Upstart job for BRLTTY can be found within the <tt class="docutils literal">Autostart/Upstart/</tt>
 subdirectory of BRLTTY's source tree. It's called <tt class="docutils literal">brltty.conf</tt>. All you need
 to do is to copy this file into Upstart's jobs directory.</p>
 <p>Upstart's jobs directory has changed over time. Older Upstart releases use
@@ -399,6 +396,5 @@ stop brltty
 </pre>
 <p>For example: You don't need to reboot the system in order to start BRLTTY.
 Just use Upstart's <tt class="docutils literal">start</tt> command to start it right away.</p>
-</div>
-</body>
+  </body>
 </html>

@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="Docutils 0.21.2: https://docutils.sourceforge.io/" />
-<title>BRLTTY on Linux</title>
-<style type="text/css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRLTTY on Linux</title>
+    <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
@@ -359,12 +358,10 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-</head>
-<body>
-<div class="document" id="brltty-on-linux">
-<h1 class="title">BRLTTY on Linux</h1>
+  </head>
 
-<div class="contents topic" id="contents">
+  <body>
+    <div class="contents topic" id="contents">
 <p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
 <ul class="simple">
 <li><a class="reference internal" href="#least-privilege" id="toc-entry-1">Least Privilege</a><ul>
@@ -532,15 +529,33 @@ to that of the selected user.</p>
 <p>A state directory is one which a program needs to be able to write data to.
 BRLTTY's state directories are:</p>
 <dl class="docutils">
-<dt>sockets directory (usually <tt class="docutils literal">/var/lib/BrlAPI/</tt>)</dt>
-<dd><p class="first">This directory is where BRLTTY creates BrlAPI's
+<dt>sockets directory (usually <tt class="docutils literal">/run/BrlAPI/</tt>)</dt>
+<dd><p class="first">This directory is where the system-wide BrlAPI server creates its
 local (UNIX domain) server sockets.
-It needs to be world writable, and, as such,
-should also have its sticky bit set.
+It's owned by the user that BRLTTY runs as,
+which is the only writer (it creates the sockets).
+It just needs to be searchable and readable by everyone else
+so that clients running as other users can reach those sockets
+(which BRLTTY itself makes connectable);
+access is controlled by the authorization key rather than by these permissions.
 So:</p>
-<pre class="last literal-block">
-chmod ugo=rwx,o+t <em>path</em>
+<pre class="literal-block">
+chmod 0755 <em>path</em>
 </pre>
+<p>It's within <tt class="docutils literal">/run</tt> so that it's cleaned up automatically at reboot.
+For backward compatibility, the old location (<tt class="docutils literal">/var/lib/BrlAPI/</tt>)
+should be a symbolic link to it
+so that clients which were built to look there can still find the sockets.</p>
+<p class="last">When BRLTTY is started by an unprivileged user (for example, within a desktop
+session) it doesn't run a BrlAPI server by default
+(doing so would only shadow the system one),
+so this directory isn't needed in that case.
+Such a user can still run their own server (see the <tt class="docutils literal"><span class="pre">--api</span></tt> option),
+which places its sockets within the user's own XDG runtime directory
+(<tt class="docutils literal">$XDG_RUNTIME_DIR/brltty/</tt>) rather than here.
+Clients look there first,
+so they reach the user's own server when it's running
+and otherwise fall back to the system one.</p>
 </dd>
 <dt>updatable directory (usually <tt class="docutils literal">/var/lib/brltty/</tt>)</dt>
 <dd><p class="first">This directory is where BRLTTY saves user data.
@@ -586,7 +601,7 @@ From highest to lowest precedence, they are:</p>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><tt class="docutils literal">/var/lib/BrlAPI/</tt></td>
+<td><tt class="docutils literal">/run/BrlAPI/</tt></td>
 </tr>
 <tr><td>Updatable</td>
 <td>-U</td>
@@ -627,10 +642,13 @@ that BRLTTY is executing as.
 The same change is also made to whatever the directory contains.
 This requires the <em>cap_chown</em> (temporary) capability
 for a directory or file that's owned by a different user.</li>
-<li>Group read and write permissions are added to it
-and to whatever it contains.
-For directories, group search permission is also added
-and the set-group-ID bit is set.
+<li>Group read permission is added to it and to whatever it contains,
+and, for directories, group search permission as well.
+For the directories that are meant to be writable by the group
+- that's all of them except the sockets directory (usually <tt class="docutils literal">/run/BrlAPI/</tt>),
+which only its owner ever writes to -
+group write permission is added too (to the directory and its contents),
+and the set-group-ID bit is set on the directory.
 This requires the <em>cap_fowner</em> (temporary) capability
 for a directory or file that's owned by a different user.</li>
 </ul>
@@ -1392,10 +1410,12 @@ after having successfully switched to executing as <a class="reference internal"
 then it can add group permissions to its <a class="reference internal" href="#state-directories">state directories</a>
 and to their contents
 after having successfully switched to executing as <a class="reference internal" href="#the-unprivileged-user">the unprivileged user</a>.
-Both read and write group permissions are added to all files and directories.
-In addition, for all directories,
-group search permission is added
-and the set-group-ID bit is set.</dd>
+Group read permission is added to all files and directories,
+and group search permission to all directories.
+For those that are meant to be group-writable
+(all except the sockets directory (usually <tt class="docutils literal">/run/BrlAPI/</tt>)),
+group write permission is added as well,
+and the set-group-ID bit is set on the directories.</dd>
 <dt><em>cap_setgid</em></dt>
 <dd>If this capability has also been assigned to BRLTTY's executable
 then it internally extends its supplementary group list
@@ -1514,6 +1534,5 @@ to change the writable directory to a better location
 </div>
 </div>
 </div>
-</div>
-</body>
+  </body>
 </html>

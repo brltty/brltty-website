@@ -1,91 +1,3170 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<HTML>
-<HEAD>
- <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.85">
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <TITLE>BrlAPI Reference manual</TITLE>
- <LINK HREF="BrlAPI-1.html" REL=next>
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BrlAPI Reference manual</title>
+    <style>
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #8F5902; font-style: italic } /* Comment */
+.highlight .err { color: #A40000; border: 1px solid #EF2929 } /* Error */
+.highlight .g { color: #000 } /* Generic */
+.highlight .k { color: #004461; font-weight: bold } /* Keyword */
+.highlight .l { color: #000 } /* Literal */
+.highlight .n { color: #000 } /* Name */
+.highlight .o { color: #582800 } /* Operator */
+.highlight .x { color: #000 } /* Other */
+.highlight .p { color: #000; font-weight: bold } /* Punctuation */
+.highlight .ch { color: #8F5902; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #8F5902; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #8F5902 } /* Comment.Preproc */
+.highlight .cpf { color: #8F5902; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #8F5902; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #8F5902; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A40000 } /* Generic.Deleted */
+.highlight .ge { color: #000; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #000 } /* Generic.EmphStrong */
+.highlight .gr { color: #EF2929 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888 } /* Generic.Output */
+.highlight .gp { color: #745334 } /* Generic.Prompt */
+.highlight .gs { color: #000; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #A40000; font-weight: bold } /* Generic.Traceback */
+.highlight .kc { color: #004461; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #004461; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #004461; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #004461; font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: #004461; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #004461; font-weight: bold } /* Keyword.Type */
+.highlight .ld { color: #000 } /* Literal.Date */
+.highlight .m { color: #900 } /* Literal.Number */
+.highlight .s { color: #4E9A06 } /* Literal.String */
+.highlight .na { color: #C4A000 } /* Name.Attribute */
+.highlight .nb { color: #004461 } /* Name.Builtin */
+.highlight .nc { color: #000 } /* Name.Class */
+.highlight .no { color: #000 } /* Name.Constant */
+.highlight .nd { color: #888 } /* Name.Decorator */
+.highlight .ni { color: #CE5C00 } /* Name.Entity */
+.highlight .ne { color: #C00; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #000 } /* Name.Function */
+.highlight .nl { color: #F57900 } /* Name.Label */
+.highlight .nn { color: #000 } /* Name.Namespace */
+.highlight .nx { color: #000 } /* Name.Other */
+.highlight .py { color: #000 } /* Name.Property */
+.highlight .nt { color: #004461; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #000 } /* Name.Variable */
+.highlight .ow { color: #004461; font-weight: bold } /* Operator.Word */
+.highlight .pm { color: #000; font-weight: bold } /* Punctuation.Marker */
+.highlight .w { color: #F8F8F8 } /* Text.Whitespace */
+.highlight .mb { color: #900 } /* Literal.Number.Bin */
+.highlight .mf { color: #900 } /* Literal.Number.Float */
+.highlight .mh { color: #900 } /* Literal.Number.Hex */
+.highlight .mi { color: #900 } /* Literal.Number.Integer */
+.highlight .mo { color: #900 } /* Literal.Number.Oct */
+.highlight .sa { color: #4E9A06 } /* Literal.String.Affix */
+.highlight .sb { color: #4E9A06 } /* Literal.String.Backtick */
+.highlight .sc { color: #4E9A06 } /* Literal.String.Char */
+.highlight .dl { color: #4E9A06 } /* Literal.String.Delimiter */
+.highlight .sd { color: #8F5902; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4E9A06 } /* Literal.String.Double */
+.highlight .se { color: #4E9A06 } /* Literal.String.Escape */
+.highlight .sh { color: #4E9A06 } /* Literal.String.Heredoc */
+.highlight .si { color: #4E9A06 } /* Literal.String.Interpol */
+.highlight .sx { color: #4E9A06 } /* Literal.String.Other */
+.highlight .sr { color: #4E9A06 } /* Literal.String.Regex */
+.highlight .s1 { color: #4E9A06 } /* Literal.String.Single */
+.highlight .ss { color: #4E9A06 } /* Literal.String.Symbol */
+.highlight .bp { color: #3465A4 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #000 } /* Name.Function.Magic */
+.highlight .vc { color: #000 } /* Name.Variable.Class */
+.highlight .vg { color: #000 } /* Name.Variable.Global */
+.highlight .vi { color: #000 } /* Name.Variable.Instance */
+.highlight .vm { color: #000 } /* Name.Variable.Magic */
+.highlight .il { color: #900 } /* Literal.Number.Integer.Long */</style>
+    <style>
+/*
+ * Sphinx stylesheet -- basic theme.
+ */
+
+/* -- main layout ----------------------------------------------------------- */
+
+div.clearer {
+    clear: both;
+}
+
+div.section::after {
+    display: block;
+    content: '';
+    clear: left;
+}
+
+/* -- relbar ---------------------------------------------------------------- */
+
+div.related {
+    width: 100%;
+    font-size: 90%;
+}
+
+div.related h3 {
+    display: none;
+}
+
+div.related ul {
+    margin: 0;
+    padding: 0 0 0 10px;
+    list-style: none;
+}
+
+div.related li {
+    display: inline;
+}
+
+div.related li.right {
+    float: right;
+    margin-right: 5px;
+}
+
+/* -- sidebar --------------------------------------------------------------- */
+
+div.sphinxsidebarwrapper {
+    padding: 10px 5px 0 10px;
+}
+
+div.sphinxsidebar {
+    float: left;
+    width: 230px;
+    margin-left: -100%;
+    font-size: 90%;
+    word-wrap: break-word;
+    overflow-wrap : break-word;
+}
+
+div.sphinxsidebar ul {
+    list-style: none;
+}
+
+div.sphinxsidebar ul ul,
+div.sphinxsidebar ul.want-points {
+    margin-left: 20px;
+    list-style: square;
+}
+
+div.sphinxsidebar ul ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.sphinxsidebar form {
+    margin-top: 10px;
+}
+
+div.sphinxsidebar input {
+    border: 1px solid #98dbcc;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+div.sphinxsidebar #searchbox form.search {
+    overflow: hidden;
+}
+
+div.sphinxsidebar #searchbox input[type="text"] {
+    float: left;
+    width: 80%;
+    padding: 0.25em;
+    box-sizing: border-box;
+}
+
+div.sphinxsidebar #searchbox input[type="submit"] {
+    float: left;
+    width: 20%;
+    border-left: none;
+    padding: 0.25em;
+    box-sizing: border-box;
+}
 
 
-</HEAD>
-<BODY>
-<A HREF="BrlAPI-1.html">Next</A>
-Previous
-Contents
-<HR>
-<H1>BrlAPI Reference manual</H1>
+img {
+    border: 0;
+    max-width: 100%;
+}
 
-<H2>Sébastien Hinderer <CODE>
-<A HREF="mailto:Sebastien.Hinderer@ens-lyon.org">&lt;Sebastien.Hinderer@ens-lyon.org&gt;</A></CODE><BR></H2>
-<H2>Samuel Thibault <CODE>
-<A HREF="mailto:Samuel.Thibault@ens-lyon.org">&lt;Samuel.Thibault@ens-lyon.org&gt;</A></CODE><BR></H2>V1.5, November 2019
-<HR>
-<EM>This document describes <CODE>BrlAPI</CODE>.</EM>
-<HR>
-<P>
-<H2><A NAME="toc1">1.</A> <A HREF="BrlAPI-1.html">Introduction</A></H2>
+/* -- search page ----------------------------------------------------------- */
 
-<UL>
-<LI><A NAME="toc1.1">1.1</A> <A HREF="BrlAPI-1.html#ss1.1">Concepts</A>
-<LI><A NAME="toc1.2">1.2</A> <A HREF="BrlAPI-1.html#ss1.2">How to read this manual</A>
-</UL>
-<P>
-<H2><A NAME="toc2">2.</A> <A HREF="BrlAPI-2.html">General description of <EM>BrlAPI</EM></A></H2>
+ul.search {
+    margin-top: 10px;
+}
 
-<UL>
-<LI><A NAME="toc2.1">2.1</A> <A HREF="BrlAPI-2.html#ss2.1">Historical notes.</A>
-<LI><A NAME="toc2.2">2.2</A> <A HREF="BrlAPI-2.html#ss2.2">Why <EM>BrlAPI</EM> is part of <EM>brltty</EM>.</A>
-<LI><A NAME="toc2.3">2.3</A> <A HREF="BrlAPI-2.html#ss2.3">How it works.</A>
-</UL>
-<P>
-<H2><A NAME="toc3">3.</A> <A HREF="BrlAPI-3.html">Concurrency management between <EM>BrlAPI</EM> clients</A></H2>
+ul.search li {
+    padding: 5px 0;
+}
 
-<UL>
-<LI><A NAME="toc3.1">3.1</A> <A HREF="BrlAPI-3.html#ss3.1">VT switching</A>
-<LI><A NAME="toc3.2">3.2</A> <A HREF="BrlAPI-3.html#ss3.2">A pile of "paper sheets"</A>
-<LI><A NAME="toc3.3">3.3</A> <A HREF="BrlAPI-3.html#ss3.3">Hierarchy</A>
-<LI><A NAME="toc3.4">3.4</A> <A HREF="BrlAPI-3.html#ss3.4">The X-window case</A>
-<LI><A NAME="toc3.5">3.5</A> <A HREF="BrlAPI-3.html#ss3.5">Detaching</A>
-</UL>
-<P>
-<H2><A NAME="toc4">4.</A> <A HREF="BrlAPI-4.html">Installation and configuration of <EM>BrlAPI</EM></A></H2>
+ul.search li a {
+    font-weight: bold;
+}
 
-<P>
-<H2><A NAME="toc5">5.</A> <A HREF="BrlAPI-5.html">Library description</A></H2>
+ul.search li p.context {
+    color: #888;
+    margin: 2px 0 0 30px;
+    text-align: left;
+}
 
-<UL>
-<LI><A NAME="toc5.1">5.1</A> <A HREF="BrlAPI-5.html#ss5.1">Connecting to <EM>BrlAPI</EM></A>
-<LI><A NAME="toc5.2">5.2</A> <A HREF="BrlAPI-5.html#ss5.2">Getting driver name</A>
-<LI><A NAME="toc5.3">5.3</A> <A HREF="BrlAPI-5.html#ss5.3">Getting display size</A>
-<LI><A NAME="toc5.4">5.4</A> <A HREF="BrlAPI-5.html#ss5.4">Entering raw mode, immediately leaving raw mode.</A>
-<LI><A NAME="toc5.5">5.5</A> <A HREF="BrlAPI-5.html#ss5.5">Getting tty control</A>
-<LI><A NAME="toc5.6">5.6</A> <A HREF="BrlAPI-5.html#ss5.6">Writing something on the display</A>
-<LI><A NAME="toc5.7">5.7</A> <A HREF="BrlAPI-5.html#ss5.7">Waiting for a key press</A>
-<LI><A NAME="toc5.8">5.8</A> <A HREF="BrlAPI-5.html#ss5.8">Understanding commands</A>
-<LI><A NAME="toc5.9">5.9</A> <A HREF="BrlAPI-5.html#ss5.9">Leaving tty control</A>
-<LI><A NAME="toc5.10">5.10</A> <A HREF="BrlAPI-5.html#ss5.10">Disconnecting from <EM>BrlAPI</EM></A>
-<LI><A NAME="toc5.11">5.11</A> <A HREF="BrlAPI-5.html#ss5.11">Putting everything together...</A>
-</UL>
-<P>
-<H2><A NAME="toc6">6.</A> <A HREF="BrlAPI-6.html">Writing (<EM>BrlAPI</EM>-compliant) drivers for <EM>brltty</EM></A></H2>
+ul.keywordmatches li.goodmatch a {
+    font-weight: bold;
+}
 
-<UL>
-<LI><A NAME="toc6.1">6.1</A> <A HREF="BrlAPI-6.html#ss6.1">Overview of the driver's structure</A>
-<LI><A NAME="toc6.2">6.2</A> <A HREF="BrlAPI-6.html#ss6.2">Basic driver structure</A>
-<LI><A NAME="toc6.3">6.3</A> <A HREF="BrlAPI-6.html#ss6.3">Enhancements for <EM>BrlAPI</EM></A>
-</UL>
-<P>
-<H2><A NAME="toc7">7.</A> <A HREF="BrlAPI-7.html">Protocol reference</A></H2>
+/* -- index page ------------------------------------------------------------ */
 
-<UL>
-<LI><A NAME="toc7.1">7.1</A> <A HREF="BrlAPI-7.html#ss7.1">Reliable packet transmission channel</A>
-<LI><A NAME="toc7.2">7.2</A> <A HREF="BrlAPI-7.html#ss7.2">Responses from the server</A>
-<LI><A NAME="toc7.3">7.3</A> <A HREF="BrlAPI-7.html#ss7.3">Operating modes</A>
-<LI><A NAME="toc7.4">7.4</A> <A HREF="BrlAPI-7.html#ss7.4">Details for each type of packet</A>
-</UL>
-<HR>
-<A HREF="BrlAPI-1.html">Next</A>
-Previous
-Contents
-</BODY>
-</HTML>
+table.contentstable {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.contentstable p.biglink {
+    line-height: 150%;
+}
+
+a.biglink {
+    font-size: 1.3em;
+}
+
+span.linkdescr {
+    font-style: italic;
+    padding-top: 5px;
+    font-size: 90%;
+}
+
+/* -- general index --------------------------------------------------------- */
+
+table.indextable {
+    width: 100%;
+}
+
+table.indextable td {
+    text-align: left;
+    vertical-align: top;
+}
+
+table.indextable ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+table.indextable > tbody > tr > td > ul {
+    padding-left: 0em;
+}
+
+table.indextable tr.pcap {
+    height: 10px;
+}
+
+table.indextable tr.cap {
+    margin-top: 10px;
+    background-color: #f2f2f2;
+}
+
+img.toggler {
+    margin-right: 3px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+div.modindex-jumpbox {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 1em 0 1em 0;
+    padding: 0.4em;
+}
+
+div.genindex-jumpbox {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 1em 0 1em 0;
+    padding: 0.4em;
+}
+
+/* -- domain module index --------------------------------------------------- */
+
+table.modindextable td {
+    padding: 2px;
+    border-collapse: collapse;
+}
+
+/* -- general body styles --------------------------------------------------- */
+
+div.body {
+    min-width: inherit;
+    max-width: 800px;
+}
+
+div.body p, div.body dd, div.body li, div.body blockquote {
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+a.headerlink {
+    visibility: hidden;
+}
+
+a:visited {
+    color: #551A8B;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink,
+caption:hover > a.headerlink,
+p.caption:hover > a.headerlink,
+div.code-block-caption:hover > a.headerlink {
+    visibility: visible;
+}
+
+div.body p.caption {
+    text-align: inherit;
+}
+
+div.body td {
+    text-align: left;
+}
+
+.first {
+    margin-top: 0 !important;
+}
+
+p.rubric {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+img.align-left, figure.align-left, .figure.align-left, object.align-left {
+    clear: left;
+    float: left;
+    margin-right: 1em;
+}
+
+img.align-right, figure.align-right, .figure.align-right, object.align-right {
+    clear: right;
+    float: right;
+    margin-left: 1em;
+}
+
+img.align-center, figure.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.align-default, figure.align-default, .figure.align-default {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-default {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+/* -- sidebars -------------------------------------------------------------- */
+
+div.sidebar,
+aside.sidebar {
+    margin: 0 0 0.5em 1em;
+    border: 1px solid #ddb;
+    padding: 7px;
+    background-color: #ffe;
+    width: 40%;
+    float: right;
+    clear: right;
+    overflow-x: auto;
+}
+
+p.sidebar-title {
+    font-weight: bold;
+}
+
+nav.contents,
+aside.topic,
+div.admonition, div.topic, blockquote {
+    clear: left;
+}
+
+/* -- topics ---------------------------------------------------------------- */
+
+nav.contents,
+aside.topic,
+div.topic {
+    border: 1px solid #ccc;
+    padding: 7px;
+    margin: 10px 0 10px 0;
+}
+
+p.topic-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* -- admonitions ----------------------------------------------------------- */
+
+div.admonition {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+
+div.admonition dt {
+    font-weight: bold;
+}
+
+p.admonition-title {
+    margin: 0px 10px 5px 0px;
+    font-weight: bold;
+}
+
+div.body p.centered {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* -- content of sidebars/topics/admonitions -------------------------------- */
+
+div.sidebar > :last-child,
+aside.sidebar > :last-child,
+nav.contents > :last-child,
+aside.topic > :last-child,
+div.topic > :last-child,
+div.admonition > :last-child {
+    margin-bottom: 0;
+}
+
+div.sidebar::after,
+aside.sidebar::after,
+nav.contents::after,
+aside.topic::after,
+div.topic::after,
+div.admonition::after,
+blockquote::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+/* -- tables ---------------------------------------------------------------- */
+
+table.docutils {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-collapse: collapse;
+}
+
+table.align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.align-default {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table caption span.caption-number {
+    font-style: italic;
+}
+
+table caption span.caption-text {
+}
+
+table.docutils td, table.docutils th {
+    padding: 1px 8px 1px 5px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #aaa;
+}
+
+th {
+    text-align: left;
+    padding-right: 5px;
+}
+
+table.citation {
+    border-left: solid 1px gray;
+    margin-left: 1px;
+}
+
+table.citation td {
+    border-bottom: none;
+}
+
+th > :first-child,
+td > :first-child {
+    margin-top: 0px;
+}
+
+th > :last-child,
+td > :last-child {
+    margin-bottom: 0px;
+}
+
+/* -- figures --------------------------------------------------------------- */
+
+div.figure, figure {
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+div.figure p.caption, figcaption {
+    padding: 0.3em;
+}
+
+div.figure p.caption span.caption-number,
+figcaption span.caption-number {
+    font-style: italic;
+}
+
+div.figure p.caption span.caption-text,
+figcaption span.caption-text {
+}
+
+/* -- field list styles ----------------------------------------------------- */
+
+table.field-list td, table.field-list th {
+    border: 0 !important;
+}
+
+.field-list ul {
+    margin: 0;
+    padding-left: 1em;
+}
+
+.field-list p {
+    margin: 0;
+}
+
+.field-name {
+    -moz-hyphens: manual;
+    -ms-hyphens: manual;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
+
+/* -- hlist styles ---------------------------------------------------------- */
+
+table.hlist {
+    margin: 1em 0;
+}
+
+table.hlist td {
+    vertical-align: top;
+}
+
+/* -- object description styles --------------------------------------------- */
+
+.sig {
+	font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+}
+
+.sig-name, code.descname {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.sig-name {
+	font-size: 1.1em;
+}
+
+code.descname {
+    font-size: 1.2em;
+}
+
+.sig-prename, code.descclassname {
+    background-color: transparent;
+}
+
+.optional {
+    font-size: 1.3em;
+}
+
+.sig-paren {
+    font-size: larger;
+}
+
+.sig-param.n {
+	font-style: italic;
+}
+
+/* C++ specific styling */
+
+.sig-inline.c-texpr,
+.sig-inline.cpp-texpr {
+	font-family: unset;
+}
+
+.sig.c   .k, .sig.c   .kt,
+.sig.cpp .k, .sig.cpp .kt {
+	color: #0033B3;
+}
+
+.sig.c   .m,
+.sig.cpp .m {
+	color: #1750EB;
+}
+
+.sig.c   .s, .sig.c   .sc,
+.sig.cpp .s, .sig.cpp .sc {
+	color: #067D17;
+}
+
+
+/* -- other body styles ----------------------------------------------------- */
+
+ol.arabic {
+    list-style: decimal;
+}
+
+ol.loweralpha {
+    list-style: lower-alpha;
+}
+
+ol.upperalpha {
+    list-style: upper-alpha;
+}
+
+ol.lowerroman {
+    list-style: lower-roman;
+}
+
+ol.upperroman {
+    list-style: upper-roman;
+}
+
+:not(li) > ol > li:first-child > :first-child,
+:not(li) > ul > li:first-child > :first-child {
+    margin-top: 0px;
+}
+
+:not(li) > ol > li:last-child > :last-child,
+:not(li) > ul > li:last-child > :last-child {
+    margin-bottom: 0px;
+}
+
+ol.simple ol p,
+ol.simple ul p,
+ul.simple ol p,
+ul.simple ul p {
+    margin-top: 0;
+}
+
+ol.simple > li:not(:first-child) > p,
+ul.simple > li:not(:first-child) > p {
+    margin-top: 0;
+}
+
+ol.simple p,
+ul.simple p {
+    margin-bottom: 0;
+}
+
+aside.footnote > span,
+div.citation > span {
+    float: left;
+}
+aside.footnote > span:last-of-type,
+div.citation > span:last-of-type {
+  padding-right: 0.5em;
+}
+aside.footnote > p {
+  margin-left: 2em;
+}
+div.citation > p {
+  margin-left: 4em;
+}
+aside.footnote > p:last-of-type,
+div.citation > p:last-of-type {
+    margin-bottom: 0em;
+}
+aside.footnote > p:last-of-type:after,
+div.citation > p:last-of-type:after {
+    content: "";
+    clear: both;
+}
+
+dl.field-list {
+    display: grid;
+    grid-template-columns: fit-content(30%) auto;
+}
+
+dl.field-list > dt {
+    font-weight: bold;
+    word-break: break-word;
+    padding-left: 0.5em;
+    padding-right: 5px;
+}
+
+dl.field-list > dd {
+    padding-left: 0.5em;
+    margin-top: 0em;
+    margin-left: 0em;
+    margin-bottom: 0em;
+}
+
+dl {
+    margin-bottom: 15px;
+}
+
+dd > :first-child {
+    margin-top: 0px;
+}
+
+dd ul, dd table {
+    margin-bottom: 10px;
+}
+
+dd {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.sig dd {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sig dl {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+dl > dd:last-child,
+dl > dd:last-child > :last-child {
+    margin-bottom: 0;
+}
+
+dt:target, span.highlighted {
+    background-color: #fbe54e;
+}
+
+rect.highlighted {
+    fill: #fbe54e;
+}
+
+dl.glossary dt {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.versionmodified {
+    font-style: italic;
+}
+
+.system-message {
+    background-color: #fda;
+    padding: 5px;
+    border: 3px solid red;
+}
+
+.footnote:target  {
+    background-color: #ffa;
+}
+
+.line-block {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.line-block .line-block {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+.guilabel, .menuselection {
+    font-family: sans-serif;
+}
+
+.accelerator {
+    text-decoration: underline;
+}
+
+.classifier {
+    font-style: oblique;
+}
+
+.classifier:before {
+    font-style: normal;
+    margin: 0 0.5em;
+    content: ":";
+    display: inline-block;
+}
+
+abbr, acronym {
+    border-bottom: dotted 1px;
+    cursor: help;
+}
+
+/* -- code displays --------------------------------------------------------- */
+
+pre {
+    overflow: auto;
+    overflow-y: hidden;  /* fixes display issues on Chrome browsers */
+}
+
+pre, div[class*="highlight-"] {
+    clear: both;
+}
+
+span.pre {
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+    white-space: nowrap;
+}
+
+div[class*="highlight-"] {
+    margin: 1em 0;
+}
+
+td.linenos pre {
+    border: 0;
+    background-color: transparent;
+    color: #aaa;
+}
+
+table.highlighttable {
+    display: block;
+}
+
+table.highlighttable tbody {
+    display: block;
+}
+
+table.highlighttable tr {
+    display: flex;
+}
+
+table.highlighttable td {
+    margin: 0;
+    padding: 0;
+}
+
+table.highlighttable td.linenos {
+    padding-right: 0.5em;
+}
+
+table.highlighttable td.code {
+    flex: 1;
+    overflow: hidden;
+}
+
+.highlight .hll {
+    display: block;
+}
+
+div.highlight pre,
+table.highlighttable pre {
+    margin: 0;
+}
+
+div.code-block-caption + div {
+    margin-top: 0;
+}
+
+div.code-block-caption {
+    margin-top: 1em;
+    padding: 2px 5px;
+    font-size: small;
+}
+
+div.code-block-caption code {
+    background-color: transparent;
+}
+
+table.highlighttable td.linenos,
+span.linenos,
+div.highlight span.gp {  /* gp: Generic.Prompt */
+  user-select: none;
+  -webkit-user-select: text; /* Safari fallback only */
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+div.code-block-caption span.caption-number {
+    padding: 0.1em 0.3em;
+    font-style: italic;
+}
+
+div.code-block-caption span.caption-text {
+}
+
+div.literal-block-wrapper {
+    margin: 1em 0;
+}
+
+code.xref, a code {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+    background-color: transparent;
+}
+
+.viewcode-link {
+    float: right;
+}
+
+.viewcode-back {
+    float: right;
+    font-family: sans-serif;
+}
+
+div.viewcode-block:target {
+    margin: -1px -10px;
+    padding: 0 10px;
+}
+
+/* -- math display ---------------------------------------------------------- */
+
+img.math {
+    vertical-align: middle;
+}
+
+div.body div.math p {
+    text-align: center;
+}
+
+span.eqno {
+    float: right;
+}
+
+span.eqno a.headerlink {
+    position: absolute;
+    z-index: 1;
+}
+
+div.math:hover a.headerlink {
+    visibility: visible;
+}
+
+/* -- printout stylesheet --------------------------------------------------- */
+
+@media print {
+    div.document,
+    div.documentwrapper,
+    div.bodywrapper {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    div.sphinxsidebar,
+    div.related,
+    div.footer,
+    #top-link {
+        display: none;
+    }
+}
+
+/* -- page layout ----------------------------------------------------------- */
+
+body {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+
+div.document {
+    width: 940px;
+    margin: 30px auto 0 auto;
+}
+
+div.documentwrapper {
+    float: left;
+    width: 100%;
+}
+
+div.bodywrapper {
+    margin: 0 0 0 220px;
+}
+
+div.sphinxsidebar {
+    width: 220px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+hr {
+    border: 1px solid #B1B4B6;
+}
+
+div.body {
+    background-color: #fff;
+    color: #3E4349;
+    padding: 0 30px 0 30px;
+}
+
+div.body > .section {
+    text-align: left;
+}
+
+div.footer {
+    width: 940px;
+    margin: 20px auto 30px auto;
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+}
+
+div.footer a {
+    color: #888;
+}
+
+p.caption {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+
+div.relations {
+    display: none;
+}
+
+
+div.sphinxsidebar {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+div.sphinxsidebar a {
+    color: #444;
+    text-decoration: none;
+    border-bottom: 1px dotted #999;
+}
+
+div.sphinxsidebar a:hover {
+    border-bottom: 1px solid #999;
+}
+
+div.sphinxsidebarwrapper {
+    padding: 18px 10px;
+}
+
+div.sphinxsidebarwrapper p.logo {
+    padding: 0;
+    margin: -10px 0 0 0px;
+    text-align: center;
+}
+
+div.sphinxsidebarwrapper h1.logo {
+    margin-top: -10px;
+    text-align: center;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+div.sphinxsidebarwrapper h1.logo-name {
+    margin-top: 0px;
+}
+
+div.sphinxsidebarwrapper p.blurb {
+    margin-top: 0;
+    font-style: normal;
+}
+
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+    font-family: Georgia, serif;
+    color: #444;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
+div.sphinxsidebar h4 {
+    font-size: 20px;
+}
+
+div.sphinxsidebar h3 a {
+    color: #444;
+}
+
+div.sphinxsidebar p.logo a,
+div.sphinxsidebar h3 a,
+div.sphinxsidebar p.logo a:hover,
+div.sphinxsidebar h3 a:hover {
+    border: none;
+}
+
+div.sphinxsidebar p {
+    color: #555;
+    margin: 10px 0;
+}
+
+div.sphinxsidebar ul {
+    margin: 10px 0;
+    padding: 0;
+    color: #000;
+}
+
+div.sphinxsidebar ul li.toctree-l1 > a {
+    font-size: 120%;
+}
+
+div.sphinxsidebar ul li.toctree-l2 > a {
+    font-size: 110%;
+}
+
+div.sphinxsidebar input {
+    border: 1px solid #CCC;
+    font-family: Georgia, serif;
+    font-size: 1em;
+}
+
+div.sphinxsidebar #searchbox input[type="text"] {
+    width: 160px;
+}
+
+div.sphinxsidebar .search > div {
+    display: table-cell;
+}
+
+div.sphinxsidebar hr {
+    border: none;
+    height: 1px;
+    color: #AAA;
+    background: #AAA;
+
+    text-align: left;
+    margin-left: 0;
+    width: 50%;
+}
+
+div.sphinxsidebar .badge {
+    border-bottom: none;
+}
+
+div.sphinxsidebar .badge:hover {
+    border-bottom: none;
+}
+
+/* To address an issue with donation coming after search */
+div.sphinxsidebar h3.donation {
+    margin-top: 10px;
+}
+
+/* -- body styles ----------------------------------------------------------- */
+
+a {
+    color: #004B6B;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #6D4100;
+    text-decoration: underline;
+}
+
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    margin: 30px 0px 10px 0px;
+    padding: 0;
+}
+
+div.body h1 { margin-top: 0; padding-top: 0; font-size: 240%; }
+div.body h2 { font-size: 180%; }
+div.body h3 { font-size: 150%; }
+div.body h4 { font-size: 130%; }
+div.body h5 { font-size: 100%; }
+div.body h6 { font-size: 100%; }
+
+a.headerlink {
+    color: #DDD;
+    padding: 0 4px;
+    text-decoration: none;
+}
+
+a.headerlink:hover {
+    color: #444;
+    background: #EAEAEA;
+}
+
+div.body p, div.body dd, div.body li {
+    line-height: 1.4em;
+}
+
+div.admonition {
+    margin: 20px 0px;
+    padding: 10px 30px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+
+div.admonition tt.xref, div.admonition code.xref, div.admonition a tt {
+    background-color: #FBFBFB;
+    border-bottom: 1px solid #fafafa;
+}
+
+div.admonition p.admonition-title {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    line-height: 1;
+}
+
+div.admonition p.last {
+    margin-bottom: 0;
+}
+
+div.highlight {
+    background-color: #fff;
+}
+
+dt:target, .highlight {
+    background: #FAF3E8;
+}
+
+div.warning {
+    background-color: #FCC;
+    border: 1px solid #FAA;
+}
+
+div.danger {
+    background-color: #FCC;
+    border: 1px solid #FAA;
+    -moz-box-shadow: 2px 2px 4px #D52C2C;
+    -webkit-box-shadow: 2px 2px 4px #D52C2C;
+    box-shadow: 2px 2px 4px #D52C2C;
+}
+
+div.error {
+    background-color: #FCC;
+    border: 1px solid #FAA;
+    -moz-box-shadow: 2px 2px 4px #D52C2C;
+    -webkit-box-shadow: 2px 2px 4px #D52C2C;
+    box-shadow: 2px 2px 4px #D52C2C;
+}
+
+div.caution {
+    background-color: #FCC;
+    border: 1px solid #FAA;
+}
+
+div.attention {
+    background-color: #FCC;
+    border: 1px solid #FAA;
+}
+
+div.important {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+
+div.note {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+
+div.tip {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+
+div.hint {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+
+div.seealso {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+
+div.topic {
+    background-color: #EEE;
+}
+
+p.admonition-title {
+    display: inline;
+}
+
+p.admonition-title:after {
+    content: ":";
+}
+
+pre, tt, code {
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 0.9em;
+}
+
+.hll {
+    background-color: #FFC;
+    margin: 0 -12px;
+    padding: 0 12px;
+    display: block;
+}
+
+img.screenshot {
+}
+
+tt.descname, tt.descclassname, code.descname, code.descclassname {
+    font-size: 0.95em;
+}
+
+tt.descname, code.descname {
+    padding-right: 0.08em;
+}
+
+img.screenshot {
+    -moz-box-shadow: 2px 2px 4px #EEE;
+    -webkit-box-shadow: 2px 2px 4px #EEE;
+    box-shadow: 2px 2px 4px #EEE;
+}
+
+table.docutils {
+    border: 1px solid #888;
+    -moz-box-shadow: 2px 2px 4px #EEE;
+    -webkit-box-shadow: 2px 2px 4px #EEE;
+    box-shadow: 2px 2px 4px #EEE;
+}
+
+table.docutils td, table.docutils th {
+    border: 1px solid #888;
+    padding: 0.25em 0.7em;
+}
+
+table.field-list, table.footnote {
+    border: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+table.footnote {
+    margin: 15px 0;
+    width: 100%;
+    border: 1px solid #EEE;
+    background: #FDFDFD;
+    font-size: 0.9em;
+}
+
+table.footnote + table.footnote {
+    margin-top: -15px;
+    border-top: none;
+}
+
+table.field-list th {
+    padding: 0 0.8em 0 0;
+}
+
+table.field-list td {
+    padding: 0;
+}
+
+table.field-list p {
+    margin-bottom: 0.8em;
+}
+
+/* Cloned from
+ * https://github.com/sphinx-doc/sphinx/commit/ef60dbfce09286b20b7385333d63a60321784e68
+ */
+.field-name {
+    -moz-hyphens: manual;
+    -ms-hyphens: manual;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
+
+table.footnote td.label {
+    width: .1px;
+    padding: 0.3em 0 0.3em 0.5em;
+}
+
+table.footnote td {
+    padding: 0.3em 0.5em;
+}
+
+dl {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+dl dd {
+    margin-left: 30px;
+}
+
+blockquote {
+    margin: 0 0 0 30px;
+    padding: 0;
+}
+
+ul, ol {
+    /* Matches the 30px from the narrow-screen "li > ul" selector below */
+    margin: 10px 0 10px 30px;
+    padding: 0;
+}
+
+pre {
+    background: #EEE;
+    padding: 7px 30px;
+    margin: 15px 0px;
+    line-height: 1.3em;
+}
+
+div.viewcode-block:target {
+    background: #ffd;
+}
+
+dl pre, blockquote pre, li pre {
+    margin-left: 0;
+    padding-left: 30px;
+}
+
+tt, code {
+    background-color: #ecf0f3;
+    color: #222;
+    /* padding: 1px 2px; */
+}
+
+tt.xref, code.xref, a tt {
+    background-color: #FBFBFB;
+    border-bottom: 1px solid #fff;
+}
+
+a.reference {
+    text-decoration: none;
+    border-bottom: 1px dotted #004B6B;
+}
+
+/* Don't put an underline on images */
+a.image-reference, a.image-reference:hover {
+    border-bottom: none;
+}
+
+a.reference:hover {
+    border-bottom: 1px solid #6D4100;
+}
+
+a.footnote-reference {
+    text-decoration: none;
+    font-size: 0.7em;
+    vertical-align: top;
+    border-bottom: 1px dotted #004B6B;
+}
+
+a.footnote-reference:hover {
+    border-bottom: 1px solid #6D4100;
+}
+
+a:hover tt, a:hover code {
+    background: #EEE;
+}
+
+
+@media screen and (max-width: 870px) {
+
+    div.sphinxsidebar {
+    	display: none;
+    }
+
+    div.document {
+       width: 100%;
+
+    }
+
+    div.documentwrapper {
+    	margin-left: 0;
+    	margin-top: 0;
+    	margin-right: 0;
+    	margin-bottom: 0;
+    }
+
+    div.bodywrapper {
+    	margin-top: 0;
+    	margin-right: 0;
+    	margin-bottom: 0;
+    	margin-left: 0;
+    }
+
+    ul {
+    	margin-left: 0;
+    }
+
+	li > ul {
+        /* Matches the 30px from the "ul, ol" selector above */
+		margin-left: 30px;
+	}
+
+    .document {
+    	width: auto;
+    }
+
+    .footer {
+    	width: auto;
+    }
+
+    .bodywrapper {
+    	margin: 0;
+    }
+
+    .footer {
+    	width: auto;
+    }
+
+    .github {
+        display: none;
+    }
+
+
+
+}
+
+
+
+@media screen and (max-width: 875px) {
+
+    body {
+        margin: 0;
+        padding: 20px 30px;
+    }
+
+    div.documentwrapper {
+        float: none;
+        background: #fff;
+    }
+
+    div.sphinxsidebar {
+        display: block;
+        float: none;
+        width: 102.5%;
+        margin: 50px -30px -20px -30px;
+        padding: 10px 20px;
+        background: #333;
+        color: #FFF;
+    }
+
+    div.sphinxsidebar h3, div.sphinxsidebar h4, div.sphinxsidebar p,
+    div.sphinxsidebar h3 a {
+        color: #fff;
+    }
+
+    div.sphinxsidebar a {
+        color: #AAA;
+    }
+
+    div.sphinxsidebar p.logo {
+        display: none;
+    }
+
+    div.document {
+        width: 100%;
+        margin: 0;
+    }
+
+    div.footer {
+        display: none;
+    }
+
+    div.bodywrapper {
+        margin: 0;
+    }
+
+    div.body {
+        min-height: 0;
+        padding: 0;
+    }
+
+    .rtd_doc_footer {
+        display: none;
+    }
+
+    .document {
+        width: auto;
+    }
+
+    .footer {
+        width: auto;
+    }
+
+    .footer {
+        width: auto;
+    }
+
+    .github {
+        display: none;
+    }
+}
+
+
+/* misc. */
+
+.revsys-inline {
+    display: none!important;
+}
+
+/* Hide ugly table cell borders in ..bibliography:: directive output */
+table.docutils.citation, table.docutils.citation td, table.docutils.citation th {
+  border: none;
+  /* Below needed in some edge cases; if not applied, bottom shadows appear */
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+/* relbar */
+
+.related {
+    line-height: 30px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.related.top {
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 20px;
+}
+
+.related.bottom {
+    border-top: 1px solid #EEE;
+}
+
+.related ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.related li {
+    display: inline;
+}
+
+nav#rellinks {
+    float: right;
+}
+
+nav#rellinks li+li:before {
+    content: "|";
+}
+
+nav#breadcrumbs li+li:before {
+    content: "\00BB";
+}
+
+/* Hide certain items when printing */
+@media print {
+    div.related {
+        display: none;
+    }
+}</style>
+   
+  <style>
+/* This file intentionally left blank. */
+</style>
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="brlapi-reference-manual">
+<h1>BrlAPI Reference manual</h1>
+<dl class="field-list simple">
+<dt class="field-odd">Version<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1.5</p>
+</dd>
+<dt class="field-even">Date<span class="colon">:</span></dt>
+<dd class="field-even"><p>November 2019</p>
+</dd>
+</dl>
+<p>This document describes <code class="docutils literal notranslate"><span class="pre">BrlAPI</span></code>.</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p>
+<ul>
+<li><p><a class="reference internal" href="#concepts" id="id3">Concepts</a></p></li>
+<li><p><a class="reference internal" href="#how-to-read-this-manual" id="id4">How to read this manual</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#general-description-of-brlapi" id="id5">General description of <em>BrlAPI</em></a></p>
+<ul>
+<li><p><a class="reference internal" href="#historical-notes" id="id6">Historical notes.</a></p></li>
+<li><p><a class="reference internal" href="#why-brlapi-is-part-of-brltty" id="id7">Why <em>BrlAPI</em> is part of <em>brltty</em>.</a></p></li>
+<li><p><a class="reference internal" href="#how-it-works" id="id8">How it works.</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#concurrency-management-between-brlapi-clients" id="id9">Concurrency management between <em>BrlAPI</em> clients</a></p>
+<ul>
+<li><p><a class="reference internal" href="#vt-switching" id="id10">VT switching</a></p></li>
+<li><p><a class="reference internal" href="#a-pile-of-paper-sheets" id="id11">A pile of &quot;paper sheets&quot;</a></p></li>
+<li><p><a class="reference internal" href="#hierarchy" id="id12">Hierarchy</a></p></li>
+<li><p><a class="reference internal" href="#the-x-window-case" id="id13">The X-window case</a></p></li>
+<li><p><a class="reference internal" href="#detaching" id="id14">Detaching</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#installation-and-configuration-of-brlapi" id="id15">Installation and configuration of <em>BrlAPI</em></a></p></li>
+<li><p><a class="reference internal" href="#library-description" id="id16">Library description</a></p>
+<ul>
+<li><p><a class="reference internal" href="#connecting-to-brlapi" id="id17">Connecting to <em>BrlAPI</em></a></p></li>
+<li><p><a class="reference internal" href="#getting-driver-name" id="id18">Getting driver name</a></p></li>
+<li><p><a class="reference internal" href="#getting-display-size" id="id19">Getting display size</a></p></li>
+<li><p><a class="reference internal" href="#entering-raw-mode-immediately-leaving-raw-mode" id="id20">Entering raw mode, immediately leaving raw mode.</a></p></li>
+<li><p><a class="reference internal" href="#getting-tty-control" id="id21">Getting tty control</a></p></li>
+<li><p><a class="reference internal" href="#writing-something-on-the-display" id="id22">Writing something on the display</a></p></li>
+<li><p><a class="reference internal" href="#waiting-for-a-key-press" id="id23">Waiting for a key press</a></p></li>
+<li><p><a class="reference internal" href="#understanding-commands" id="id24">Understanding commands</a></p></li>
+<li><p><a class="reference internal" href="#leaving-tty-control" id="id25">Leaving tty control</a></p></li>
+<li><p><a class="reference internal" href="#disconnecting-from-brlapi" id="id26">Disconnecting from <em>BrlAPI</em></a></p></li>
+<li><p><a class="reference internal" href="#putting-everything-together" id="id27">Putting everything together...</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#writing-brlapi-compliant-drivers-for-brltty" id="id28">Writing (<em>BrlAPI</em>-compliant) drivers for <em>brltty</em></a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview-of-the-driver-s-structure" id="id29">Overview of the driver's structure</a></p></li>
+<li><p><a class="reference internal" href="#basic-driver-structure" id="id30">Basic driver structure</a></p></li>
+<li><p><a class="reference internal" href="#enhancements-for-brlapi" id="id31">Enhancements for <em>BrlAPI</em></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#protocol-reference" id="id32">Protocol reference</a></p>
+<ul>
+<li><p><a class="reference internal" href="#reliable-packet-transmission-channel" id="id33">Reliable packet transmission channel</a></p></li>
+<li><p><a class="reference internal" href="#responses-from-the-server" id="id34">Responses from the server</a></p></li>
+<li><p><a class="reference internal" href="#operating-modes" id="id35">Operating modes</a></p></li>
+<li><p><a class="reference internal" href="#details-for-each-type-of-packet" id="id36">Details for each type of packet</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#authors" id="id37">Authors</a></p></li>
+</ul>
+</nav>
+<section id="introduction">
+<span id="sec-intro"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a></h2>
+<p><em>BrlAPI</em> is a service provided by the <em>brltty</em> daemon.</p>
+<p>Its purpose is to allow programmers to write applications that take advantage
+of a braille terminal in order to deliver a blind user suitable information
+for his/her specific needs.</p>
+<p>While an application communicates with the braille terminal, everything
+<em>brltty</em> sends to the braille terminal in the application's console is
+ignored, whereas each piece of data coming from the braille terminal is sent to
+the application, rather than to <em>brltty</em>.</p>
+<section id="concepts">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Concepts</a></h3>
+<p>All throughout this manual, a few terms will be used which are either
+specific to braille terminals, or introduced because of <em>BrlAPI</em>. They are defined
+below. Taking a few minutes to go through this glossary will save a lot
+of time and questions later.</p>
+<dl class="simple">
+<dt>Authorization key</dt><dd><p>A file containing arbitrary data, that has to be sent to the server by the
+client, to prove it is allowed to establish a connection and then control
+the braille terminal.</p>
+</dd>
+<dt>Braille display</dt><dd><p>The small screen on the braille terminal that is able to display braille text.</p>
+</dd>
+<dt>Braille keyboard</dt><dd><p>The keyboard of the braille terminal.</p>
+</dd>
+<dt>Braille terminal</dt><dd><p>A computer designed to display text in braille. In this case, the text is
+supposed to come from another computer running Linux or any other Unix system.</p>
+</dd>
+<dt>Brltty</dt><dd><p>The background process that gives a blind person access to the console screen
+thanks to a braille terminal or speech synthetizer.</p>
+</dd>
+<dt>Client</dt><dd><p>An application designed to handle a braille terminal thanks to <em>BrlAPI</em>.</p>
+</dd>
+<dt>Command</dt><dd><p>A code returned by the driver, indicating an action to do, for instance
+&quot;go to previous line&quot;, &quot;go to next line&quot;, etc.</p>
+</dd>
+<dt>Driver</dt><dd><p>A library that has functions to communicate with a braille terminal.
+Basically, a driver has functions to open communication with the
+braille terminal, close the communication, write on the braille
+display, and read keypresses from the braille keyboard, plus some special
+functions that will be described in detail in this manual.</p>
+</dd>
+<dt>Key</dt><dd><p>A code that is returned by the driver when a key is pressed. This is
+different from a command, because the command concept is driver-independent
+(all drivers use the same command codes - those defined by <em>brltty</em>), whereas
+codes used for returning keypresses may vary between drivers.</p>
+</dd>
+<dt>BrlAPI's Library</dt><dd><p>This library helps clients to connect and use <em>BrlAPI</em>'s
+server thanks to a series of <code class="docutils literal notranslate"><span class="pre">brlapi_</span></code>-prefixed functions.</p>
+</dd>
+<dt>Packet</dt><dd><p>A sequence of bytes making up the atomic unit in communications, either between
+braille drivers and braille terminals or between the server and clients.</p>
+</dd>
+<dt>Raw mode</dt><dd><p>Mode in which the client application exchanges packets with the driver.
+Normal operations like sending text for display or reading keypresses are
+not available in this mode. It lets applications take advantage of advanced
+functionalities of the driver's communication protocol.</p>
+</dd>
+<dt>Server</dt><dd><p>The part of <em>brltty</em> that controls incoming connections and communication
+between clients and braille drivers.</p>
+</dd>
+<dt>Suspend mode</dt><dd><p>Mode in which the server keeps the device driver closed, so that the client
+can connect directly to the device.</p>
+</dd>
+<dt>Tty</dt><dd><p>Synonym for console, terminal, ...  Linux' console consist of several Virtual
+Ttys (VTs).  The screen program's windows also are Ttys.  X-window system's
+xterms emulate Ttys as well.</p>
+</dd>
+</dl>
+</section>
+<section id="how-to-read-this-manual">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">How to read this manual</a></h3>
+<p>This manual is split in five parts.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#sec-general"><span class="std std-ref">General description</span></a></dt><dd><p>Describes more precisely what <em>BrlAPI</em>
+is and how it works in collaboration with <em>brltty</em>'s core, the braille driver
+and clients. In this part, a &quot;connection-use-disconnection&quot; scenario
+will be described step by step, explaining for each step what <em>BrlAPI</em> does in
+reaction to client instructions. These explanations will take place at a
+user level.</p>
+</dd>
+<dt><a class="reference internal" href="#sec-concurrency"><span class="std std-ref">Concurrency management</span></a></dt><dd><p>This part explains how concurrency between <em>BrlAPI</em> clients is handled
+thanks to focus tellers.</p>
+</dd>
+<dt><a class="reference internal" href="#sec-install"><span class="std std-ref">Installation and configuration</span></a></dt><dd><p>This part explains in detail how to install and configure the API. For
+instructions on how to install and configure <em>brltty</em>, please report to
+the <em>brltty</em> documentation.</p>
+</dd>
+<dt><a class="reference internal" href="#sec-library"><span class="std std-ref">Library description</span></a></dt><dd><p>This part describes how client applications
+can communicate with the server using the <em>BrlAPI</em> library that
+comes with <em>brltty</em>. Each function will be briefly described,
+classified by categories. More exhaustive descriptions of every
+function are available in the corresponding online manual pages.</p>
+</dd>
+<dt><a class="reference internal" href="#sec-drivers"><span class="std std-ref">Writing braille drivers</span></a></dt><dd><p>This part describes how the braille drivers included in <em>brltty</em> should be
+written in order to take advantage of <em>BrlAPI</em>'s services.</p>
+</dd>
+<dt><a class="reference internal" href="#sec-protocol"><span class="std std-ref">Protocol reference</span></a></dt><dd><p>This part describes in detail the communication
+protocol that is used to communicate between server and clients.</p>
+</dd>
+</dl>
+<p>What should be read probably depends on what should be done by applications with
+<em>BrlAPI</em>.</p>
+<p>Reading chapters <a class="reference internal" href="#sec-general"><span class="std std-ref">General description</span></a>, <a class="reference internal" href="#sec-concurrency"><span class="std std-ref">Concurrency
+management</span></a> and <a class="reference internal" href="#sec-install"><span class="std std-ref">Installation and configuration</span></a> is recommended, since they provide
+useful information and (hopefully) lead to a good understanding of <em>BrlAPI</em>,
+for an efficient use.</p>
+<p>Chapter <a class="reference internal" href="#sec-library"><span class="std std-ref">Library description</span></a> concerns writing
+applications that take advantage of braille terminals so as to bring specific
+(and more useful) information to blind people.</p>
+<p>Chapter <a class="reference internal" href="#sec-drivers"><span class="std std-ref">Drivers</span></a> is for braille driver implementation: either adding a braille driver
+to <em>brltty</em> or modifying an existing one so that it can benefit from
+<em>BrlAPI</em>'s features, this chapter will be of interest, since it describes
+exactly what is needed to write a driver for <em>brltty</em>: the core
+of drivers interface for instance.</p>
+<p>Finally, chapter <a class="reference internal" href="#sec-protocol"><span class="std std-ref">Protocol reference</span></a> is for <em>not using</em> the library, but using the <em>BrlAPI</em>
+server directly, when the library might not be sufficient: it describes the
+underlying protocol that will have to be used to do so.</p>
+</section>
+</section>
+<section id="general-description-of-brlapi">
+<span id="sec-general"></span><h2><a class="toc-backref" href="#id5" role="doc-backlink">General description of <em>BrlAPI</em></a></h2>
+<p>Here is explained what <em>BrlAPI</em> is, and what it precisely does.
+These explanations should be simple enough to be accessible to every user.
+For a more technical review of <em>BrlAPI</em>'s functionalities, please see chapter
+<a class="reference internal" href="#sec-library"><span class="std std-ref">Library description</span></a>.</p>
+<section id="historical-notes">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Historical notes.</a></h3>
+<p>Originally, <em>brltty</em> was designed to give access to the Linux
+console to visually impaired people, through a braille terminal
+or a speech synthetizer. At that time, applications running in the
+console were not taking care of the presence of a braille
+terminal (most applications didn't even know what a braille
+terminal was).</p>
+<p>This situation where applications are not aware of the presence of a
+special device is elegant of course, since it lets use an
+unlimited number of applications which don't need to be specially
+designed for visually impaired people.</p>
+<p>However, it appeared that applications specially designed to take
+advantage of a braille terminal could be wanted, to
+provide the suitable information to blind users, for instance.
+The idea of <em>BrlAPI</em> is to propose an efficient communication
+mechanism, to control the braille display, read keys from the
+braille keyboard, or to exchange data with the braille terminal at
+a lower level (e.g. to write file transfer protocols between
+braille terminals and Linux systems).</p>
+</section>
+<section id="why-brlapi-is-part-of-brltty">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Why <em>BrlAPI</em> is part of <em>brltty</em>.</a></h3>
+<p>Instead of rewriting a whole communication program from
+scratch, we chose to add communication
+mechanisms to <em>brltty</em>. This choice has two main justifications.</p>
+<p>On the one hand, integration to <em>brltty</em> allows us to use the
+increasing number of drivers written for <em>brltty</em>, thus handling
+a large number of braille terminals without having to rewrite any
+piece of existing code.</p>
+<p>On the other hand, if an application chooses to send its own
+information to the braille display, and to process braille keys,
+<em>brltty</em> has to be warned, so that it won't try to communicate
+with the braille terminal while the application already does.
+To make this synchronzation between <em>brltty</em>
+and client applications possible, it seemed easier to add the
+communication mechanisms to <em>brltty</em>'s core, instead of writing an
+external program providing them.</p>
+</section>
+<section id="how-it-works">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">How it works.</a></h3>
+<p>We are now going to describe the steps an application should
+go through to get control of the braille terminal, and what
+happens on <em>brltty</em>'s side at each step. This step-by-step
+description will let us introduce more precisely some
+concepts that are useful for every <em>BrlAPI</em> user.</p>
+<section id="connection">
+<h4>Connection.</h4>
+<p>The first thing any client application has to do is to
+connect (in the Unix sense of the word) to <em>BrlAPI</em> which is
+an mere application server. If this is not
+clear, the only thing to be remembered is that this
+step allows the client application to let the server know about its
+presence. At this stage, nothing special is done on <em>brltty</em>'s
+side.</p>
+</section>
+<section id="authorization">
+<h4>Authorization.</h4>
+<p>Since Unix is designed to allow many users to work on the
+same machine, it's quite possible that there are more than one
+user accounts on the system. Most probably, one doesn't want
+any user with an account on the machine to be able to communicate
+with the braille terminal (just imagine what would happen if,
+while somebody was working with the braille terminal, another user
+connected to the system began to communicate with it,
+preventing the first one from doing his job...). That's why <em>BrlAPI</em> has to
+provide a way to determine whether a user who established a
+connection is really allowed to communicate with the braille
+terminal. To achieve this, <em>BrlAPI</em> requires that each
+application that wants to control a braille terminal sends an
+authorization key before doing anything else. The control of
+the braille terminal will only be possible for the client once
+it has sent the proper authorization key. What is called
+authorization key is in fact a Unix file containing data (it
+must be non-empty) on your system. All the things you have to do is to give
+read permissions on this file to users that are allowed to
+communicate with the braille terminal, and only to them. This
+way, only authorized users will have access to the
+authorization key and then be able to send it to <em>BrlAPI</em>.
+To see how to do that, please see chapter <a class="reference internal" href="#sec-install"><span class="std std-ref">Installation and configuration</span></a>.</p>
+<p>At the end of this step, the user is authorized to take
+control of the braille terminal. On <em>brltty</em>'s side, some data
+structures are allocated to store information on the client,
+but this has no user-level side-effect.</p>
+</section>
+<section id="real-use-of-the-braille-terminal">
+<h4>Real use of the braille terminal.</h4>
+<p>Once the client is properly connected and authorized,
+there are two possible types of communication with the braille
+terminal. The chosen type of communication depends on what the
+client plans to do. If its purpose is to display information on
+the braille display or to process braille keys, it will have to
+take control of the Linux tty on which it is running. If its
+purpose is to exchange data with the braille terminal (e.g. for
+file transfer), it will enter what is called &quot;raw mode&quot;.</p>
+<section id="braille-display-and-braille-key-presses-processing">
+<h5>Braille display and braille key presses processing.</h5>
+<p>If the client wants to display something on the braille
+display or to process braille keys itself, rather than letting
+<em>brltty</em> process them, it has to take control of the Linux
+terminal it is running on.</p>
+<p>Once a client has obtained the control of his tty, <em>BrlAPI</em>
+will completely discard <em>brltty</em>'s display on this tty (and only
+this one), leaving the braille display free for the client.</p>
+<p>At the same time, if a key is pressed on the braille
+keyboard, <em>BrlAPI</em> checks whether the client application is
+interested in this key or not. If it is, the key is passed to
+it, either as a key code or as a <em>brltty</em> command. If it is not, the
+key code is converted into a <em>brltty</em> command and returned to
+<em>brltty</em>.</p>
+<p>Once the client is not interested in displaying text
+or reading braille keys any more, it has to leave the tty, so
+that either <em>brltty</em> can continue its job, or another client can
+take control of it.</p>
+</section>
+<section id="parameter-handling">
+<h5>Parameter handling.</h5>
+<p>The server exposes some parameters to the client. Some parameters are global to
+all clients (e.g. the braille display size), while others are local per client
+(e.g. retaindots, i.e. whether to send Perkins presses as dot patterns or as
+letters). Some parameters are read-only (e.g. the braille display size), while
+others are read-write (e.g. retaindots). Some parameters may change during
+execution, while others change only when a client set it.</p>
+<p>Clients can either request the current value of a parameter, or set its value
+(if it is read-write), or request the server to notify on value change.</p>
+</section>
+<section id="raw-mode">
+<h5>Raw mode.</h5>
+<p>Only one client can be in raw mode at the same time. In
+this mode, data coming from the braille terminal are checked
+by the driver (to ensure they are valid), but instead of being processed,
+they are delivered &quot;as-is&quot; to the client that is in raw mode.</p>
+<p>In the other direction, packets sent to <em>BrlAPI</em> by the
+client that is in raw mode are passed to the driver which is
+expected to deliver them to the braille terminal without any
+modification.</p>
+</section>
+<section id="suspend-mode">
+<h5>Suspend Mode.</h5>
+<p>Only one client can be in suspend mode at the same time. This mode is also
+exclusive with raw mode. In this mode, the server keeps the device driver
+closed, and thus the client can open the device directly by itself.</p>
+<p><strong>This mode is not recommended</strong>, since the client will then have to
+reimplement device access. Raw mode should really be preferred, since it lets
+the client take advantage of server's ability to talk with the device
+(USB/bluetooth support for instance).</p>
+</section>
+<section id="remarks">
+<h5>Remarks.</h5>
+<ul class="simple">
+<li><p>The operations described in the three previous
+subsections are not completely mutually exclusive. An
+application that controls its current tty can enter raw or suspend
+mode, provided that no other application already is in this
+mode.</p></li>
+<li><p>Not every braille driver supports raw mode. It has
+to be specially (re)written to support it, since it has
+to provide special functions to process incoming and outgoing
+packets. The same restriction is true (but less strong)
+concerning the ability to deliver/convert keycodes into
+commands: not every driver has this ability, it has to be
+modified to get it.</p></li>
+<li><p>Operations previously described can be repeated.
+You can, for instance, use raw mode to transfer data onto
+your braille terminal, display text in braille, return to raw
+mode..., all that without having to reconnect to <em>BrlAPI</em> before
+each operation.</p></li>
+</ul>
+</section>
+</section>
+<section id="disconnection">
+<h4>Disconnection.</h4>
+<p>Once the client has finished using the braille terminal, it
+has to disconnect from the API, so that the memory structures
+allocated for the connection can be freed and eventually used by
+another client. This step is transparent for the user, in the
+sense that it involves no change on the braille display.</p>
+</section>
+</section>
+</section>
+<section id="concurrency-management-between-brlapi-clients">
+<span id="sec-concurrency"></span><h2><a class="toc-backref" href="#id9" role="doc-backlink">Concurrency management between <em>BrlAPI</em> clients</a></h2>
+<p>An essential purpose of <em>BrlAPI</em> is to manage concurrent access to the
+braille display between the <em>brltty</em> daemon and applications. This
+concurrency is managed &quot;per Tty&quot;. We first describe this with a flat view, and
+then consider Tty hierarchy.</p>
+<section id="vt-switching">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">VT switching</a></h3>
+<p>Let's first describe how things work with the simple case of a single series of
+Virtual Ttys (VTs), the linux console for instance.</p>
+<p>As described in <a class="reference internal" href="#sec-general"><span class="std std-ref">General Description</span></a>, before being able
+to write output, a <em>BrlAPI</em> client has to &quot;get&quot; a tty, i.e. it sends to the
+<em>BrlAPI</em> server the number of the linux' Virtual Tty on which it is running.
+The <em>BrlAPI</em> server uses this information so as to know which client's output
+should be shown on the braille display, according to the focus teller's
+information.</p>
+<p>Let's say some client <em>A</em> is running on VT 2.  It &quot;got&quot; VT 2 and wrote some
+output on its <em>BrlAPI</em> connection.  The focus teller is <em>brltty</em> here: it
+always tells to the <em>BrlAPI</em> server which VT is currently shown on the screen
+and gets usual keyboard presses (it is &quot;active&quot;).</p>
+<p>Let's say VT 1 is active, then the <em>BrlAPI</em> server shows <em>brltty</em>'s output
+on the braille display.  I.e. the usual <em>brltty</em> screen reading appears.
+Moreover, when braille keys are pressed, they are passed to <em>brltty</em>, so that
+usual screen reading can be performed.  When the user switches to VT 2,
+<em>brltty</em> (as focus teller) tells it to the <em>BrlAPI</em> server, which then
+remembers that client <em>A</em> has got it and has produced some output.  The
+server then displays this output on the braille display.  Note that <em>A</em>
+doesn't need to re-submit its output: the server had recorded it so as to be
+able to show it as soon as the focus switches to VT 2.  Whenever some key of the
+braille device is pressed, <em>BrlAPI</em> looks whether it is in the list of keys
+that client <em>A</em> said to be of his interest.  If it is, it is passed to <em>A</em>
+(and not to <em>brltty</em>). If it isn't, it is passed to <em>brltty</em> (and not to
+<em>A</em>).</p>
+<p>As a consequence, whenever clients get and release Ttys and the user switches
+between Ttys, either the <em>brltty</em> screen reading or the client's output is
+automatically shown according to rather natural rules.</p>
+</section>
+<section id="a-pile-of-paper-sheets">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">A pile of &quot;paper sheets&quot;</a></h3>
+<p>Let's look at VT 2 by itself. What is shown on the braille display can be seen
+as the result of a pile of two paper sheets.  <em>brltty</em> is represented by the
+bottom sheet on which its screen reading is written, and client <em>A</em> by the
+top sheet on which its output is written. <em>A</em>'s sheet hence &quot;covers&quot;
+<em>brltty</em>'s sheet: <em>A</em>'s output &quot;mask&quot; <em>brltty</em>'s screen reading.</p>
+<p><em>A</em> may yet want to temporarily let <em>brltty</em>'s screen reading appear on VT
+2, while still receiving some key presses, for instance.  For this, it sends a
+&quot;void&quot; write.  The server then clears the recorded output for this connection
+(in the sheet representation, the sheet becomes &quot;transparent&quot;).  As a
+consequence, <em>brltty</em>'s output is automatically shown (by transparency in the
+sheet representation), just like if <em>A</em> had released the Tty.</p>
+<p>Keypresses are handled in a similar way: <em>A</em>'s desire to get key presses is
+satisfied first before <em>brltty</em>.</p>
+<p>Let's say some other client <em>B</em> (probably launched by <em>A</em>) also gets VT 2
+and outputs some text on its <em>BrlAPI</em> connection.  This adds a third sheet,
+on top of the two previous ones.  It means that the <em>BrlAPI</em> server will show
+<em>B</em>'s output on the braille device.  If <em>A</em> then outputs some text, the
+server will record it (on <em>A</em>'s sheet which hence becomes opaque again), but
+it won't be displayed on the braille device, since <em>B</em>'s sheet is still at
+the top and opaque (i.e. with some text on it).  But if <em>B</em> issues a void
+write, the server clears its output buffer (i.e. <em>B</em>'s sheet becomes
+transparent), and as a result <em>A</em>'s output appear on the braille display (by
+transparency through <em>B</em>'s sheet).</p>
+<p>The sheet order is by default determined by the Tty &quot;get&quot;ting order. Clients
+can however change their priority (which by default is 50) to a higher value in
+order to show up higher in the pile, or to a lower value in order to hide lower
+in the pile.</p>
+</section>
+<section id="hierarchy">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Hierarchy</a></h3>
+<p>Now, what happens when running some <em>screen</em> program on, say, VT 3?  It
+emulates a series of Ttys, whose output actually appear on the same VT 3.
+That's where a hierarchy level appears: the focus information is not only the VT
+number but also, in the case of VT 3, which <em>screen</em> window is active.  This
+hence forms a <em>tree</em> of Ttys: the &quot;root&quot; being the vga driver's output, whose
+sons are VTs, and VT 3 has the <em>screen</em> windows as sons.  <em>Brltty</em> is a
+focus teller for the root, <em>screen</em> will have to be a focus teller for VT 3.
+<em>Screen</em> should then get VT 3, not display anything (so that the usual
+<em>brltty</em> screen reading will be shown by transparency), and tell the
+<em>BrlAPI</em> server which <em>screen</em> window is active (at startup and at each
+window switch).  This is not implemented directly in <em>screen</em> yet, but this
+may be achieved via a second <em>brltty</em> daemon running the Screen driver (but
+it isn't yet able to get the current window number though) and the <em>BrlAPI</em>
+driver.</p>
+<p>A <em>BrlAPI</em> client <em>C</em> running in some <em>screen</em> window number 1 would
+then have to get the Tty path &quot;VT 3 then window 1&quot;, which is merely expressed
+as &quot;3 1&quot;.  The window number is available in the <code class="docutils literal notranslate"><span class="pre">WINDOW</span></code> environment
+variable, set by <em>screen</em>. The VT number, which actually represents the &quot;path
+to screen's output&quot; should be available in the <code class="docutils literal notranslate"><span class="pre">WINDOWPATH</span></code> environment
+variable, also set by <em>screen</em>.  The client can thus merely concatenate the
+content of <code class="docutils literal notranslate"><span class="pre">WINDOWPATH</span></code> (which could hold many levels of window numbers) and
+of <code class="docutils literal notranslate"><span class="pre">WINDOW</span></code> and give the result as tty path to the <em>BrlAPI</em> server, which
+then knows precisely where the client's usual output resides.  In practice,
+applications just need to call <code class="docutils literal notranslate"><span class="pre">brlapi_enterTtyMode(BRLAPI_TTY_DEFAULT)</span></code>, and
+the the <em>BrlAPI</em> client library will automatically perform all that.</p>
+<p>Whenever the user switches to VT 3, the <em>BrlAPI</em> server remembers the window
+that <em>screen</em> told to be active.  If it was window 1, it then displays
+<em>C</em>'s output (if any).  Else <em>brltty</em>'s usual screen reading is shown.
+Of course, several clients may be run in window 1 as well, and the &quot;sheet pile&quot;
+mechanism applies: <em>brltty</em>'s sheet first (at the root of the Ttys tree), then
+<em>screen</em>'s sheet (which is transparent, on VT 3), then <em>C</em>'s sheet (on
+window 1 of VT 3), then other clients' sheets (on the same window).</p>
+<p>Ttys are hence organized in a tree, each client adding its sheet at some tty in
+the tree.</p>
+</section>
+<section id="the-x-window-case">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">The X-window case</a></h3>
+<p>Let's say some X server is running on VT 7 of a Linux system. Xorg's <em>xinit</em>
+and <em>xdm</em> commands automatically set the X session's <code class="docutils literal notranslate"><span class="pre">WINDOWPATH</span></code>
+environment variable to &quot;7&quot;, so that X11 <em>BrlAPI</em> clients started from
+the session just need to call <em>brlapi_enterTtyMode(xid)</em> where <em>xid</em>
+is the X-window ID of the window of the client. The <em>BrlAPI</em> library
+will automatically prepend the content of <code class="docutils literal notranslate"><span class="pre">WINDOWPATH</span></code> to it.</p>
+<p>For text-based <em>BrlAPI</em> clients running in an xterm (which should just call
+<code class="docutils literal notranslate"><span class="pre">brlapi_enterTtyMode(BRLAPI_TTY_DEFAULT)</span></code> as explained in the previous
+section), <em>BrlAPI</em> detects the window id thanks to the <code class="docutils literal notranslate"><span class="pre">WINDOWID</span></code> variable
+set by xterm.</p>
+<p>Screen readers are not bound to a particular window, so they should call
+<em>brlapi_enterTtyModeWithPath(NULL, 0)</em> to let the <em>BrlAPI</em> library only
+send the content of <code class="docutils literal notranslate"><span class="pre">WINDOWPATH</span></code>, expressing that screen readers take the
+whole tty.  The user should notably launch <em>xbrlapi</em>, which is a focus
+teller for X-window as well as a keyboard simulator (<em>brltty</em> can't reliably
+simulate them at the kernel level in such situation).  For accessing AT-SPI
+contents (like gnome or kde applications), Orca should also be launched.  For
+accessing AT-SPI terminals (like gnome-terminal) in the same way as in the
+console, a second <em>brltty</em> daemon running the at-spi screen driver and the
+<em>BrlAPI</em> driver can also be launched.  All three would get the VT of the
+X session, in that order (for now): <em>xbrlapi</em> first, then <em>orca</em> and
+<em>brltty</em> at last.  When the X focus is on an AT-SPI terminal, <em>brltty</em>
+will hence be able to grab the braille display and key presses.  Else <em>orca</em>
+would get them.  And <em>xbrlapi</em> would finally get remaining key presses and
+simulate them.</p>
+<p>Note: old versions of <code class="docutils literal notranslate"><span class="pre">xinit</span></code>, <code class="docutils literal notranslate"><span class="pre">xdm</span></code>, <code class="docutils literal notranslate"><span class="pre">kdm</span></code> or <code class="docutils literal notranslate"><span class="pre">gdm</span></code> do not
+automatically set the <code class="docutils literal notranslate"><span class="pre">WINDOWPATH</span></code> variable. The user can set it by hand in
+his <code class="docutils literal notranslate"><span class="pre">~/.xsession</span></code>, <code class="docutils literal notranslate"><span class="pre">~/.xinitrc</span></code>, <code class="docutils literal notranslate"><span class="pre">~/.gdmrc</span></code>... to &quot;7&quot;</p>
+<p>Note: some Operating Systems like Solaris do not have VTs. In that case
+<code class="docutils literal notranslate"><span class="pre">WINDOWPATH</span></code> is empty or not even set.  Everything explained above still
+work fine.</p>
+</section>
+<section id="detaching">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Detaching</a></h3>
+<p>Several programs allow detaching: <em>screen</em> and <em>VNC</em> for instance. In such
+situation, an intermediate <em>BrlAPI</em> server should be run for each such
+session. Clients would connect to it, and it would prepend the &quot;current tty&quot;
+path on the fly while forwarding things to the root <em>BrlAPI</em> server. This
+intermediate server is yet to be written (but it is actually relatively close to
+be).</p>
+</section>
+</section>
+<section id="installation-and-configuration-of-brlapi">
+<span id="sec-install"></span><h2><a class="toc-backref" href="#id15" role="doc-backlink">Installation and configuration of <em>BrlAPI</em></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> will install libbrlapi.so in /lib, and include files in
+/usr/include/brltty. An authorization key will also typically be set in
+/etc/brlapi.key (if it is not, just create it and put arbitrary data in it), but
+it won't be readable by anybody else than root. It is up
+to you to define a group of users who will have the right to read it and hence
+be able to connect to the server. For instance, you may want to do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># addgroup brlapi</span>
+<span class="c1"># chgrp brlapi /etc/brlapi.key</span>
+<span class="c1"># chmod g+r /etc/brlapi.key</span>
+<span class="c1"># addgroup user1 brlapi</span>
+<span class="c1"># addgroup user2 brlapi</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="library-description">
+<span id="sec-library"></span><h2><a class="toc-backref" href="#id16" role="doc-backlink">Library description</a></h2>
+<p>Let's now see how one can write dedicated applications. Basic notions will be
+seen, along with a very simple client. Greater details are given as online
+manual pages.</p>
+<p>The historical test program for <em>BrlAPI</em> was something like:</p>
+<ul class="simple">
+<li><p>connect to <em>BrlAPI</em></p></li>
+<li><p>get driver id</p></li>
+<li><p>get driver name</p></li>
+<li><p>get display size</p></li>
+<li><p>try entering raw mode, immediately leave raw mode.</p></li>
+<li><p>get tty control</p></li>
+<li><p>write something on the display</p></li>
+<li><p>wait for a key press</p></li>
+<li><p>leave tty control</p></li>
+<li><p>disconnect from <em>BrlAPI</em></p></li>
+</ul>
+<p>It is here rewritten, its working briefly explained.</p>
+<section id="connecting-to-brlapi">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Connecting to <em>BrlAPI</em></a></h3>
+<p>Connection to <em>BrlAPI</em> is needed first, thanks to the
+<code class="docutils literal notranslate"><span class="pre">brlapi_openConnection</span></code> call. For this, a
+<code class="docutils literal notranslate"><span class="pre">brlapi_connectionSettings_t</span></code> variable must be filled which will hold the
+settings the library needs to connect to the server. Just giving <code class="docutils literal notranslate"><span class="pre">NULL</span></code>
+will work for local use. The other parameter lets you get back the parameters
+which were actually used to initialize connection. <code class="docutils literal notranslate"><span class="pre">NULL</span></code> will also be nice
+for now.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">brlapi_openConnection</span><span class="p">(</span><span class="n">NULL</span><span class="p">,</span> <span class="n">NULL</span><span class="p">)</span><span class="o">==</span><span class="n">BRLAPI_INVALID_FILE_DESCRIPTOR</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">brlapi_perror</span><span class="p">(</span><span class="s2">&quot;brlapi_openConnection&quot;</span><span class="p">);</span>
+  <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The connection might fail, so testing is needed.</p>
+</section>
+<section id="getting-driver-name">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Getting driver name</a></h3>
+<p>Knowing the type of the braille device might be useful:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="n">name</span><span class="p">[</span><span class="n">BRLAPI_MAXNAMELENGTH</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">brlapi_getDriverName</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="n">brlapi_perror</span><span class="p">(</span><span class="s2">&quot;brlapi_getDriverName&quot;</span><span class="p">);</span>
+<span class="k">else</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Driver name: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This is particularly useful before entering raw mode to achieve file
+transfers for instance, just to check that the device is really the one
+expected.</p>
+</section>
+<section id="getting-display-size">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Getting display size</a></h3>
+<p>Before writing on the braille display, the size should be always first
+checked to be sure everything will hold on it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if (brlapi_getDisplaySize(&amp;x, &amp;y) &lt; 0)
+  brlapi_perror(&quot;brlapi_getDisplaySize&quot;);
+else
+  fprintf(stderr, &quot;Braille display has %d line%s of %d column%s\n&quot;,
+    y, y&gt;1?&quot;s&quot;:&quot;&quot;, x, x&gt;1?&quot;s&quot;:&quot;&quot;);
+</pre></div>
+</div>
+</section>
+<section id="entering-raw-mode-immediately-leaving-raw-mode">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Entering raw mode, immediately leaving raw mode.</a></h3>
+<p>Entering raw mode is very simple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Trying to enter in raw mode... &quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">brlapi_enterRawMode</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="n">brlapi_perror</span><span class="p">(</span><span class="s2">&quot;brlapi_enterRawMode&quot;</span><span class="p">);</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Ok, leaving raw mode immediately</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+  <span class="n">brlapi_leaveRawMode</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Not every driver supports raw mode, so testing is needed.</p>
+<p>While in raw mode, <code class="docutils literal notranslate"><span class="pre">brlapi_sendRaw</span></code> and <code class="docutils literal notranslate"><span class="pre">brlapi_recvRaw</span></code>
+can be used to send and get data directly to and from the device.
+It should be used with care, improper use might completely thrash the device!</p>
+</section>
+<section id="getting-tty-control">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Getting tty control</a></h3>
+<p>Let's now display something on the device. control of the tty must be get
+first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Taking control of the tty... &quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">brlapi_enterTtyMode</span><span class="p">(</span><span class="n">BRLAPI_TTY_DEFAULT</span><span class="p">,</span> <span class="n">NULL</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Ok</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The first parameter tells the server the number of the tty to take
+control of. Setting BRLAPI_TTY_DEFAULT lets the library determine it for us.</p>
+<p>The server is asked to send <em>brltty</em> commands, which are device-independent.</p>
+<p>Getting control might fail if, for instance, another application already took
+control of this tty, so testing is needed.</p>
+<p>From now on, the braille display is detached from the screen.</p>
+</section>
+<section id="writing-something-on-the-display">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Writing something on the display</a></h3>
+<p>The application can now write things on the braille display without
+altering the screen display:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Writing to braille display... &quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">brlapi_writeText</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Press a braille key to continue...&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Ok</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The cursor is also asked <em>not</em> to be shown: its position is set to 0.</p>
+<p>&quot;Writing to braille display... Ok&quot; is now displayed on the screen, and
+&quot;Press a braille key to continue...&quot; on the braille display.</p>
+</section>
+<section id="waiting-for-a-key-press">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Waiting for a key press</a></h3>
+<p>To have a break for the user to be able to read these messages,
+a key press (a command here, which is driver-independent) may be waited for:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Waiting until a braille key is pressed to continue... &quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">brlapi_readKey</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">key</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;got it! (code=%&quot;</span><span class="n">BRLAPI_PRIxKEYCODE</span><span class="s2">&quot;)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The command is returned, as described in <code class="docutils literal notranslate"><span class="pre">&lt;brlapi_constants.h&gt;</span></code>
+and <code class="docutils literal notranslate"><span class="pre">&lt;brlapi_keycodes.h&gt;</span></code>.
+It is not transmitted to <em>brltty</em>: it is up to the application to define
+the behavior, here cleanly exiting, as described below.</p>
+<p>The first parameter tells the lib to block until a key press is indeed read.</p>
+</section>
+<section id="understanding-commands">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Understanding commands</a></h3>
+<p>There are two kinds of commands: braille commands (line up/down, top/bottom,
+etc.) and X Keysyms (i.e. regular keyboard keys). One way to discover which key
+was pressed is to just use a switch statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="n">BRLAPI_KEY_TYPE_CMD</span><span class="o">|</span><span class="n">BRLAPI_KEY_CMD_LNUP</span><span class="p">:</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;line up</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="n">BRLAPI_KEY_TYPE_CMD</span><span class="o">|</span><span class="n">BRLAPI_KEY_CMD_LNDN</span><span class="p">:</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;line down</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="n">BRLAPI_KEY_TYPE_SYM</span><span class="o">|</span><span class="n">XK_Tab</span><span class="p">:</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;tab</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="n">default</span><span class="p">:</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;unknown key</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Another way is to ask BrlAPI to expand the keycode into separate information
+parts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brlapi_expandedKeyCode_t</span> <span class="n">ekey</span><span class="p">;</span>
+<span class="n">brlapi_expandKeyCode</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ekey</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;type </span><span class="si">%u</span><span class="s2">, command </span><span class="si">%u</span><span class="s2">, argument </span><span class="si">%u</span><span class="s2">, flags </span><span class="si">%u</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+  <span class="n">ekey</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">ekey</span><span class="o">.</span><span class="n">command</span><span class="p">,</span> <span class="n">ekey</span><span class="o">.</span><span class="n">argument</span><span class="p">,</span> <span class="n">ekey</span><span class="o">.</span><span class="n">flags</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Eventually, named equivalents are provided:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brlapi_describedKeyCode_t</span> <span class="n">dkey</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">i</span><span class="p">;</span>
+
+<span class="n">brlapi_describeKeyCode</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">dkey</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;type </span><span class="si">%s</span><span class="s2">, command </span><span class="si">%s</span><span class="s2">, argument </span><span class="si">%u</span><span class="s2">, flags&quot;</span><span class="p">,</span>
+  <span class="n">dkey</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">dkey</span><span class="o">.</span><span class="n">command</span><span class="p">,</span> <span class="n">dkey</span><span class="o">.</span><span class="n">argument</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dkey</span><span class="o">.</span><span class="n">flags</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot; </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">dkey</span><span class="o">.</span><span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="leaving-tty-control">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Leaving tty control</a></h3>
+<p>Let's now leave the tty:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Leaving tty... &quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">brlapi_leaveTtyMode</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;Ok</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>But control of another tty can still be get for instance, by calling
+<code class="docutils literal notranslate"><span class="pre">brlapi_enterTtyMode()</span></code> again...</p>
+</section>
+<section id="disconnecting-from-brlapi">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Disconnecting from <em>BrlAPI</em></a></h3>
+<p>Let's disconnect from <em>BrlAPI</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brlapi_closeConnection</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>The application can as well still need to connect to another server on another
+computer for instance, by calling <code class="docutils literal notranslate"><span class="pre">brlapi_openConnection()</span></code>
+again...</p>
+</section>
+<section id="putting-everything-together">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">Putting everything together...</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;brlapi.h&gt;
+
+int main()
+{
+  brlapi_keyCode_t key;
+  char name[BRLAPI_MAXNAMELENGTH+1];
+  unsigned int x, y;
+
+/* Connect to BrlAPI */
+  if (brlapi_openConnection(NULL, NULL)==BRLAPI_INVALID_FILE_DESCRIPTOR)
+  {
+    brlapi_perror(&quot;brlapi_openConnection&quot;);
+    exit(1);
+  }
+
+/* Get driver name */
+  if (brlapi_getDriverName(name, sizeof(name)) &lt; 0)
+    brlapi_perror(&quot;brlapi_getDriverName&quot;);
+  else
+    fprintf(stderr, &quot;Driver name: %s\n&quot;, name);
+
+/* Get display size */
+  if (brlapi_getDisplaySize(&amp;x, &amp;y) &lt; 0)
+    brlapi_perror(&quot;brlapi_getDisplaySize&quot;);
+  else
+    fprintf(stderr, &quot;Braille display has %d line%s of %d column%s\n&quot;,
+      y, y&gt;1?&quot;s&quot;:&quot;&quot;, x, x&gt;1?&quot;s&quot;:&quot;&quot;);
+
+/* Try entering raw mode, immediately go out from raw mode */
+  fprintf(stderr, &quot;Trying to enter in raw mode... &quot;);
+  if (brlapi_enterRawMode(name) &lt; 0)
+    brlapi_perror(&quot;brlapi_enterRawMode&quot;);
+  else {
+    fprintf(stderr, &quot;Ok, leaving raw mode immediately\n&quot;);
+    brlapi_leaveRawMode();
+  }
+
+/* Get tty control */
+  fprintf(stderr, &quot;Taking control of the tty... &quot;);
+  if (brlapi_enterTtyMode(BRLAPI_TTY_DEFAULT, NULL) &gt;= 0)
+  {
+    fprintf(stderr, &quot;Ok\n&quot;);
+
+/* Write something on the display */
+    fprintf(stderr, &quot;Writing to braille display... &quot;);
+    if (brlapi_writeText(0, &quot;Press a braille key to continue...&quot;) &gt;= 0)
+    {
+      fprintf(stderr, &quot;Ok\n&quot;);
+
+/* Wait for a key press */
+      fprintf(stderr, &quot;Waiting until a braille key is pressed to continue... &quot;);
+      if (brlapi_readKey(1, &amp;key) &gt; 0) {
+        brlapi_expandedKeyCode_t ekey;
+        brlapi_describedKeyCode_t dkey;
+        int i;
+
+        fprintf(stderr, &quot;got it! (code=%&quot;BRLAPI_PRIxKEYCODE&quot;)\n&quot;, key);
+
+        brlapi_expandKeyCode(key, &amp;ekey);
+        fprintf(stderr, &quot;type %u, command %u, argument %u, flags %u\n&quot;,
+          ekey.type, ekey.command, ekey.argument, ekey.flags);
+
+        brlapi_describeKeyCode(key, &amp;dkey);
+        fprintf(stderr, &quot;type %s, command %s, argument %u, flags&quot;,
+          dkey.type, dkey.command, dkey.argument);
+        for (i = 0; i &lt; dkey.flags; i++)
+          fprintf(stderr, &quot; %s&quot;, dkey.flag[i]);
+        fprintf(stderr, &quot;\n&quot;);
+      } else brlapi_perror(&quot;brlapi_readKey&quot;);
+
+    } else brlapi_perror(&quot;brlapi_writeText&quot;);
+
+/* Leave tty control */
+    fprintf(stderr, &quot;Leaving tty... &quot;);
+    if (brlapi_leaveTtyMode() &gt;= 0)
+      fprintf(stderr, &quot;Ok\n&quot;);
+    else brlapi_perror(&quot;brlapi_leaveTtyMode&quot;);
+
+  } else brlapi_perror(&quot;brlapi_enterTtyMode&quot;);
+
+/* Disconnect from BrlAPI */
+  brlapi_closeConnection();
+  return 0;
+}
+</pre></div>
+</div>
+<p>This should compile well thanks to
+<code class="docutils literal notranslate"><span class="pre">gcc</span> <span class="pre">apiclient.c</span> <span class="pre">-o</span> <span class="pre">apiclient</span> <span class="pre">-lbrlapi</span></code></p>
+</section>
+</section>
+<section id="writing-brlapi-compliant-drivers-for-brltty">
+<span id="sec-drivers"></span><h2><a class="toc-backref" href="#id28" role="doc-backlink">Writing (<em>BrlAPI</em>-compliant) drivers for <em>brltty</em></a></h2>
+<p>In this chapter, we will describe in details how to write a
+driver for <em>brltty</em>. We begin with a general description of the
+structure the driver should have, before explaining more precisely
+what each function is supposed to do.</p>
+<section id="overview-of-the-driver-s-structure">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">Overview of the driver's structure</a></h3>
+<p>A braille driver is in fact a library that is either
+dynamically loaded by <em>brltty</em> at startup, or statically linked to
+it during the compilation, depending on the options given to the
+<code class="docutils literal notranslate"><span class="pre">./configure</span></code> script.</p>
+<p>This library has to provide every function needed by the core,
+plus some additional functions, that are not mandatory, but which
+improve communication with <em>BrlAPI</em> and the service level provided
+to client applications.</p>
+<p>Basically, a driver library needs to provide a function to open
+the communication with the braille terminal, one to close this
+communication, one to read key codes from the braille keyboard, and
+one to write text on the braille display. As we will see in a
+moment, other functions are required.</p>
+<p>Moreover, a driver can provide additional functionalities, by
+defining some macros asserting that it has these functionalities,
+and by defining associated functions.</p>
+</section>
+<section id="basic-driver-structure">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">Basic driver structure</a></h3>
+<p><em>Every</em> <em>brltty</em> driver <em>must</em> consist in at least
+a file called braille.c, located in an appropriate subdirectory of
+the BrailleDrivers subdirectory. This braille.c file must have the
+following layout</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;prologue.h&quot;</span>
+<span class="o">/*</span> <span class="n">Include</span> <span class="n">standard</span> <span class="n">C</span> <span class="n">headers</span> <span class="o">*/</span>
+<span class="c1">#include &quot;Programs/brl.h&quot;</span>
+<span class="c1">#include &quot;Programs/misc.h&quot;</span>
+<span class="c1">#include &quot;Programs/scr.h&quot;</span>
+<span class="c1">#include &quot;Programs/message.h&quot;</span>
+<span class="o">/*</span> <span class="n">Include</span> <span class="n">other</span> <span class="n">files</span> <span class="o">*/</span>
+
+<span class="n">static</span> <span class="n">void</span> <span class="n">brl_identify</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="n">static</span> <span class="nb">int</span> <span class="n">brl_open</span><span class="p">(</span><span class="n">BrailleDisplay</span> <span class="o">*</span><span class="n">brl</span><span class="p">,</span> <span class="n">char</span> <span class="o">**</span><span class="n">parameters</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">tty</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="n">static</span> <span class="n">void</span> <span class="n">brl_close</span><span class="p">(</span><span class="n">BrailleDisplay</span> <span class="o">*</span><span class="n">brl</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="n">static</span> <span class="n">void</span> <span class="n">brl_writeWindow</span><span class="p">(</span><span class="n">BrailleDisplay</span> <span class="o">*</span><span class="n">brl</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="n">static</span> <span class="n">void</span> <span class="n">brl_writeStatus</span><span class="p">(</span><span class="n">BrailleDisplay</span> <span class="o">*</span><span class="n">brl</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="n">static</span> <span class="nb">int</span> <span class="n">brl_readCommand</span><span class="p">(</span><span class="n">BrailleDisplay</span> <span class="o">*</span><span class="n">brl</span><span class="p">,</span> <span class="n">DriverCommandContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Before giving a detailed description of what each function is
+supposed to do, we define the <code class="docutils literal notranslate"><span class="pre">BrailleDisplay</span></code> structure,
+since each function has an argument of type <code class="docutils literal notranslate"><span class="pre">BrailleDisplay</span>
+<span class="pre">*</span></code>. The <code class="docutils literal notranslate"><span class="pre">BrailleDisplay</span></code> structure is defined like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
+
+  <span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span> <span class="o">/*</span> <span class="n">The</span> <span class="n">dimensions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">display</span> <span class="o">*/</span>
+
+  <span class="nb">int</span> <span class="n">helpPage</span><span class="p">;</span> <span class="o">/*</span> <span class="n">The</span> <span class="n">page</span> <span class="n">number</span> <span class="n">within</span> <span class="n">the</span> <span class="n">help</span> <span class="n">file</span> <span class="o">*/</span>
+
+  <span class="n">unsigned</span> <span class="n">char</span> <span class="o">*</span><span class="n">buffer</span><span class="p">;</span> <span class="o">/*</span> <span class="n">The</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">the</span> <span class="n">display</span> <span class="o">*/</span>
+
+  <span class="n">unsigned</span> <span class="n">isCoreBuffer</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span> <span class="o">/*</span> <span class="n">The</span> <span class="n">core</span> <span class="n">allocated</span> <span class="n">the</span> <span class="n">buffer</span> <span class="o">*/</span>
+
+  <span class="n">unsigned</span> <span class="n">resizeRequired</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span> <span class="o">/*</span> <span class="n">The</span> <span class="n">display</span> <span class="n">size</span> <span class="n">has</span> <span class="n">changed</span> <span class="o">*/</span>
+
+  <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">writeDelay</span><span class="p">;</span>
+
+  <span class="n">void</span> <span class="p">(</span><span class="o">*</span><span class="n">bufferResized</span><span class="p">)(</span><span class="nb">int</span> <span class="n">rows</span><span class="p">,</span> <span class="nb">int</span> <span class="n">columns</span><span class="p">);</span>
+
+<span class="p">}</span> <span class="n">BrailleDisplay</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>We now describe each function's semantics and calling
+convention.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">brl_identify()</span></code> function takes no argument and returns
+nothing. It is called as soon as the driver is loaded, and its
+purpose is to print some information about the driver in the system
+log. To achieve this, the only thing this function has to do is to
+call LOG_PRINT with appropriate arguments (log level and string to
+put in the syslog).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">brl_open()</span></code> function takes 3 arguments and returns an int. Its
+purpose is to initialize the communication with the braille
+terminal. Generally, this function has to open the file referred to by
+the <code class="docutils literal notranslate"><span class="pre">tty</span></code> argument, and to configure the associated communication
+port. The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> argument contains parameters passed to the
+driver with the -B command-line option. It's up to the driver's
+author to decide whether or not he/she wants to use this argument,
+and what for. The function can perform some additional tasks such
+as trying to identify precisely which braille terminal model is
+connected to the computer, by sending it a request and analyzing its
+answer. The value that is finally returned depends on the success of
+the initialization process. If it fails, th function has to return
+-1. The function returns 0 on success.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">brl_close()</span></code> function takes just one argument, and returns
+nothing. The name of this function should be self-explanatory; it's
+goal is to close (finish) the communication between the computer and
+the braille terminal. In general, the only thing this function has
+to do is to close the file descriptor associated to the braille
+terminal's communication port.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">brl_writeWindow()</span></code> function takes just one argument of type
+BrailleDisplay, and returns nothing. This function displays the
+specified text on the braille window. This routine is the right
+place to check if the text that has to be displayed is not already
+on the braille display, to send it only if necessary. More
+generally, if the braille terminal supports partial refresh of the
+display, the calculus of what exactly has to be sent to the braille
+display to have a proper display, according to what was previously
+displayed should be done in this function.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">brl_writeStatus()</span></code> function is very similar to <code class="docutils literal notranslate"><span class="pre">brl_writeWindow()</span></code>.
+The only difference is that whereas <code class="docutils literal notranslate"><span class="pre">brl_writeWindow()</span></code> writes on the
+main braille display, <code class="docutils literal notranslate"><span class="pre">brl_writeStatus()</span></code> writes on an auxiliary braille
+display, which occasionally appears on some braille terminals. The
+remarks that have been done concerning optimizations for refreshing
+the display still apply here.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">brl_readCommand()</span></code> function takes two arguments, and returns an
+integer. Its purpose is to read commands from the braille keyboard
+and to pass them to <em>brltty</em>'s core, which in turn will process them.
+The first argument, of type <code class="docutils literal notranslate"><span class="pre">BrailleDisplay</span></code>, is for future use, and
+can safely be ignored for the moment. The second argument indicates
+in which context (state) <em>brltty</em> is. For instance, it specifies if
+<em>brltty</em> is in a menu, displays a help screen, etc. This information
+can indeed be of some interest when translating a key into a
+command, especially if the keys can have different meanings,
+depending on the context. So, this function has to read keypresses
+from the braille keyboard, and to convert them into commands,
+according to the given context, these commands then being returned
+to <em>brltty</em>. For a complete list of available command codes, please
+have a look at <code class="docutils literal notranslate"><span class="pre">brl.h</span></code> in the Programs subdirectory. Two codes have special
+meanings:</p>
+<dl class="simple">
+<dt>eof</dt><dd><p>specifies that no command is available now, and that
+no key is waiting to be converted into command in a near future.</p>
+</dd>
+<dt>CMD_NOOP</dt><dd><p>specifies that no command is available, but
+that one will be, soon. As a consequence, brl_readCommand will be
+called again immediately. Returning CMD_NOOP is appropriate for
+instance when a key is composed of two consecutive data packets.
+When the first of them is received, one can expect that the second
+will arrive quickly, so that trying to read it as soon as possible
+is a good idea.</p>
+</dd>
+</dl>
+</section>
+<section id="enhancements-for-brlapi">
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">Enhancements for <em>BrlAPI</em></a></h3>
+<p>To improve the level of service provided to client
+applications communicating with braille drivers through <em>BrlAPI</em>, the
+drivers should declare some additional functions that will then be
+called by the API when needed.</p>
+<p>For each additional feature that has to be implemented in a
+driver, a specific macro must be defined, in addition to the
+functions implementing that feature. For the moment, two features
+are supported by <em>BrlAPI</em>:</p>
+<ul class="simple">
+<li><p>reading braille terminal specific key codes,</p></li>
+<li><p>exchanging raw data packets between the braille
+terminal and a client application running on the PC.</p></li>
+</ul>
+<p>For each feature presented below, only a short description of each
+concerned macro and function will be given. For a more complete description
+of concepts used here, please refer to chapters <a class="reference internal" href="#sec-intro"><span class="std std-ref">Introduction</span></a> and <a class="reference internal" href="#sec-general"><span class="std std-ref">General description</span></a>.</p>
+<section id="exchanging-raw-data-packets">
+<h4>Exchanging raw data packets</h4>
+<p>Under some circumstances, an application running on the PC
+can be interested in a raw level communication with the braille
+terminal. For instance, to implement a file transfer protocol,
+commands to display braille or to read keys are not enough. In
+such a case, one must have a way to send raw data to the
+terminal, and to receive them from it.</p>
+<p>A driver that wants to provide such a mechanism has to define
+three functions: one to send packets, another one to receive them,
+and the last one to reset the communication when problems occur.</p>
+<p>The macro that declares that a driver is able to transmit packets
+is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#define BRL_HAVE_PACKET_IO</span>
+</pre></div>
+</div>
+<p>The prototypes of the functions the driver should define are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="nb">int</span> <span class="n">brl_writePacket</span><span class="p">(</span><span class="n">BrailleDisplay</span> <span class="o">*</span><span class="n">brl</span><span class="p">,</span> <span class="n">const</span> <span class="n">unsigned</span> <span class="n">char</span> <span class="o">*</span><span class="n">packet</span><span class="p">,</span> <span class="nb">int</span> <span class="n">size</span><span class="p">);</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">brl_readPacket</span><span class="p">(</span><span class="n">BrailleDisplay</span> <span class="o">*</span><span class="n">brl</span><span class="p">,</span> <span class="n">unsigned</span> <span class="n">char</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="nb">int</span> <span class="n">size</span><span class="p">);</span>
+<span class="n">static</span> <span class="n">void</span> <span class="n">brl_rescue</span><span class="p">(</span><span class="n">BrailleDisplay</span> <span class="o">*</span><span class="n">brl</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">brl_writePacket()</span></code> sends a packet of <code class="docutils literal notranslate"><span class="pre">size</span></code> bytes, stored
+at <code class="docutils literal notranslate"><span class="pre">packet</span></code>, to the braille terminal. If the communication protocol
+allows to determined if a packet has been send properly (e.g. the
+terminal sends back an acknowledgement for each packet he
+receives), then this function should wait the acknowledgement,
+and, if it is not received, retransmission of the packet should take
+place.</p>
+<p><code class="docutils literal notranslate"><span class="pre">brl_readPacket()</span></code> reads a packet of at most <code class="docutils literal notranslate"><span class="pre">size</span></code> bytes, and
+stores it at the specified address. The read must not block. I.e.,
+if no packet is available, the function should return immediately,
+returning 0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">brl_rescue()</span></code> is called by <em>BrlAPI</em> when a client
+application terminates without properly leaving the raw mode. This
+function should restore the terminal's state, so that it is
+able to display text in braille again.</p>
+<section id="id1">
+<h5>Remarks.</h5>
+<ul class="simple">
+<li><p>If the driver provides such functions, every other
+functions should use them, instead of trying to communicate
+directly with the braille terminal. For instance, <code class="docutils literal notranslate"><span class="pre">readCommand()</span></code>
+should call <code class="docutils literal notranslate"><span class="pre">readPacket()</span></code>, and then extract a key from the packet,
+rather than reading directly from the communication port's file
+descriptor. The same applies for <code class="docutils literal notranslate"><span class="pre">brl_writeWindow()</span></code>, which should
+use <code class="docutils literal notranslate"><span class="pre">brl_writePacket()</span></code>, rather than writing on the communication
+port's file descriptor.</p></li>
+<li><p>For the moment, the argument of type BrailleDisplay
+can safely be ignored by the functions described here.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="protocol-reference">
+<span id="sec-protocol"></span><h2><a class="toc-backref" href="#id32" role="doc-backlink">Protocol reference</a></h2>
+<p>Under some circumstances, it may be preferable to communicate directly with
+<em>BrlAPI</em>'s server rather than using <em>BrlAPI</em>'s
+library. Here are the needed details to be able
+to do this. This chapter is also of interest if a precise understanding of
+how the communication stuff works is desired, to be sure to understand how
+to write multithreaded clients, for instance.</p>
+<p>In all the following, <em>integer</em> will mean an unsigned 32 bits integer in
+network byte order (ie most significant bytes first).</p>
+<section id="reliable-packet-transmission-channel">
+<h3><a class="toc-backref" href="#id33" role="doc-backlink">Reliable packet transmission channel</a></h3>
+<p>The protocol between <em>BrlAPI</em>'s server and clients is based on exchanges
+of packets. So as to avoid locks due to packet loss, these exchanges are
+supposed reliable, and ordering must be preserved, thus <em>BrlAPI</em> needs
+a reliable packet transmission channel.</p>
+<p>To achieve this, <em>BrlAPI</em> uses a TCP-based connection, on which packets
+are transmitted this way:</p>
+<ul class="simple">
+<li><p>the size in bytes of the packet is transmitted first as an integer,</p></li>
+<li><p>then the type of the packet, as an integer,</p></li>
+<li><p>and finally the packet data.</p></li>
+</ul>
+<p>The size does not include the { size, type } header, so that packets which
+don't need any data have a size of 0 byte. The type of the packet can be
+either of <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_*</span></code> constants defined in <code class="docutils literal notranslate"><span class="pre">api_protocol.h</span></code>. Each type of
+packet will be further discussed below.</p>
+<p><em>BrlAPI</em>'s library ships two functions to achieve packets sending and receiving
+using this protocol: <code class="docutils literal notranslate"><span class="pre">brlapi_writePacket</span></code> and <code class="docutils literal notranslate"><span class="pre">brlapi_readPacket</span></code>. It
+is a good idea to use these functions rather than rewriting them, since this protocol
+might change one day in favor of a real reliable packet transmission protocol
+such as the experimental RDP.</p>
+</section>
+<section id="responses-from-the-server">
+<h3><a class="toc-backref" href="#id34" role="doc-backlink">Responses from the server</a></h3>
+<p>As described below, many packets are 'acknowledged'. It means that upon
+reception, the server sends either:</p>
+<ul class="simple">
+<li><p>a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ACK</span></code> packet, with no data, which means the operation
+corresponding to the received packet was successful,</p></li>
+<li><p>or a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ERROR</span></code> packet, the data being an integer
+which should be one of <code class="docutils literal notranslate"><span class="pre">BRLAPI_ERROR_*</span></code> constants. This
+means the operation corresponding to the received packet failed.</p></li>
+</ul>
+<p>Some other packets need some information as a response.
+Upon reception, the server will send either:</p>
+<ul class="simple">
+<li><p>a packet of the same type, its data being the response,</p></li>
+<li><p>or a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ERROR</span></code> packet.</p></li>
+</ul>
+<p>If at some point an ill-formed or non-sense packet is received by the server,
+and <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_EXCEPTION</span></code> is returned, holding the guilty packet for
+further analysis.</p>
+</section>
+<section id="operating-modes">
+<h3><a class="toc-backref" href="#id35" role="doc-backlink">Operating modes</a></h3>
+<p>The connection between the client and the server can be in either of the
+four following modes:</p>
+<ul>
+<li><p>authorization mode: this is the initial mode, when the client hasn't
+got the authorization to use the server yet. The server first sends a
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_VERSION</span></code> packet that announces the server version. The client
+must send back a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_VERSION</span></code> for announcing its own version too.
+The server then sends a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_AUTH</span></code> packet that announces
+which authorization methods are allowed. The client can then send
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_AUTH</span></code> packets, which makes the connection enter normal mode.
+If no authorization is needed, the server can announce the <code class="docutils literal notranslate"><span class="pre">NONE</span></code> method, the
+client then doesn't need to send a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_AUTH</span></code> packet.</p></li>
+<li><p>normal mode: the client is authorized to use the server, but didn't ask for a tty
+or raw mode. The client can send either of these types of packet:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_GETDRIVERNAME</span></code>
+or <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_GETDISPLAYSIZE</span></code> to get pieces of information from the server,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ENTERTTYMODE</span></code> to enter tty handling mode,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ENTERRAWMODE</span></code> to enter raw mode,</p></li>
+</ul>
+</li>
+<li><p>tty handling mode: the client holds the control of a tty: <em>brltty</em> has
+no power on it any more, masked keys excepted. It's up to the client to manage
+display and keypresses. For this, it can send either of these types of packet:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_LEAVETTYMODE</span></code> to leave tty handling mode and go back to
+normal mode,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_IGNOREKEYRANGE</span></code> and <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ACCEPTKEYRANGE</span></code> to mask and unmask keys,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_WRITE</span></code> to display text on this tty,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ENTERRAWMODE</span></code> to enter raw mode,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_GETDRIVERNAME</span></code>
+or <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_GETDISPLAYSIZE</span></code> to get pieces of information from the server,</p></li>
+</ul>
+<p>And the server might send <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_KEY</span></code> packets to signal key presses.</p>
+</li>
+<li><p>raw mode: the client wants to exchange packets directly with the braille
+terminal. Only these types of packet will be accepted.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_LEAVERAWMODE</span></code> to get back to previous mode, either normal or
+tty handling mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PACKET</span></code> to send a packet to the braille terminal.</p></li>
+</ul>
+<p>And the server might send <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PACKET</span></code> packets to give received packets
+from the terminal to the client.</p>
+</li>
+<li><p>suspend mode: the client wants to completely drive the braille terminal.
+The device driver is hence kept closed. No type of packet is allowed except
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_RESUME</span></code></p></li>
+</ul>
+<p>Termination of the connection is initiated by the client in normal mode by
+simply closing its side of the socket. The server will then close the
+connection.</p>
+</section>
+<section id="details-for-each-type-of-packet">
+<h3><a class="toc-backref" href="#id36" role="doc-backlink">Details for each type of packet</a></h3>
+<p>Here is described the semantics of each type of packet. Most of them are
+directly linked to some of <em>BrlAPI</em>'s library's functions. Reading their
+online manual page as well will hence be of good help for understanding.</p>
+<section id="brlapi-packet-version">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_VERSION</span></code></h4>
+<p>This must be the first packet ever transmitted from the server to the client and
+from the client to the server. The server sends one first for letting the client
+know its protocol version. Data is an integer indicating the protocol version.</p>
+<p>Then client must then respond the same way for giving its
+version.  If the protocol version can't be handled by the server, a
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_ERROR_PROTOCOL_VERSION</span></code> error packet is returned and the connection
+is closed.</p>
+</section>
+<section id="brlapi-packet-auth">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_AUTH</span></code></h4>
+<p>This must be the second packet ever transmitted from the server to the client
+and from the client to the server. The server sends one first for letting the
+client know which authorization methods are available.  Data is the allowed
+authorization types, as integers.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">NONE</span></code> method is not announced by the server, the client can then try
+to get authorized by sending packets whose data is the type of authorization
+that is tried (as an integer), and eventually some data (if the authorization
+type needs it).</p>
+<p>If the authorization is successful, the server acknowledges the packet, and
+other types of packets might be used, other <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_AUTH</span></code> shouldn't be
+sent by the client.</p>
+<p>If the authorization is not successful, the server sends a
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_ERROR_AUTHENTICATION</span></code> error, and the client can try another
+authorization method.</p>
+<p>Authorization methods are as follow:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the client doesn't need to send an authorization packet.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KEY</span></code>: data holds a secret key, the authorization is successful only
+if the key matches the server secret key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CREDENTIALS</span></code>: Operating-System-specific credentials are explicitly
+sent over the socket, the authorization is successful if the server considers
+the credentials sufficient.</p></li>
+</ul>
+<p>Note: when the Operating system permits it, the server may use implicit
+credential check, and then advertise the <code class="docutils literal notranslate"><span class="pre">none</span></code> method.</p>
+</section>
+<section id="brlapi-packet-getdrivername-see-brlapi-getdrivername">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_GETDRIVERNAME</span></code> (see <em>brlapi_getDriverName()</em>)</h4>
+<p>This should be sent by the client when it needs the full name of
+the current <code class="docutils literal notranslate"><span class="pre">brltty</span></code> driver. The returned string is \0 terminated.</p>
+</section>
+<section id="brlapi-packet-getmodelid-see-brlapi-getmodelidentifier">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_GETMODELID</span></code> (see <em>brlapi_getModelIdentifier()</em>)</h4>
+<p>This should be sent by the client when it needs to identify
+which model of braille display is currently used by <code class="docutils literal notranslate"><span class="pre">brltty</span></code>.
+The returned string is \0 terminated.</p>
+</section>
+<section id="brlapi-packet-getdisplaysize-see-brlapi-getdisplaysize">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_GETDISPLAYSIZE</span></code> (see <em>brlapi_getDisplaySize()</em>)</h4>
+<p>This should be sent by the client when it needs to know the braille display
+size. The returned data are two integers: width and then height.</p>
+</section>
+<section id="brlapi-packet-enterttymode-see-brlapi-enterttymode-and-brlapi-enterttymodewithpath">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ENTERTTYMODE</span></code> (see <em>brlapi_enterTtyMode()</em> and <em>brlapi_enterTtyModeWithPath()</em>)</h4>
+<p>This should be sent by the client to get control of a tty. Sent data are
+first a series of integers: the first one gives the number of following
+integers, which are the numbers of ttys that leads to the tty that
+the application wants to take control of (it can be empty if the tty is
+one of the machine's VT). The last integer of this series tells the number of
+the tty to get control of. Finally, how key presses should be reported is sent:
+either a driver name or &quot;&quot;, preceded by the number of characters in the driver
+name (0 in the case of &quot;&quot;), as an unsigned byte. This packet is then
+acknowledged by the server.</p>
+</section>
+<section id="brlapi-packet-key-see-brlapi-readkey">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_KEY</span></code> (see <em>brlapi_readKey()</em>)</h4>
+<p>As soon as the client gets a tty, it must be prepared to handle
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_KEY</span></code> incoming packets
+at any time (as soon as the key
+was pressed on the braille terminal, hopefully).
+The data holds a key code as 2 integers, or
+the key flags then the command code
+as 2 integers, depending on what has been request in the
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ENTERTTYMODE</span></code> packet.</p>
+</section>
+<section id="brlapi-packet-setfocus-see-brlapi-setfocus">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_SETFOCUS</span></code> (see <em>brlapi_setFocus()</em>)</h4>
+<p>For the server to know which tty is active, one particular client is responsible
+for sending <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_SETFOCUS</span></code> packets. They hold a single integer telling
+the new current tty. For instance, when running an X server on VT 7, the
+<code class="docutils literal notranslate"><span class="pre">xbrlapi</span></code> client would have sent a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ENTERTTYMODE(7)</span></code> and will send
+window IDs whenever X focus changes, allowing display and keypresses switching
+between xterms.</p>
+</section>
+<section id="brlapi-packet-leavettymode-see-brlapi-leavettymode">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_LEAVETTYMODE</span></code> (see <em>brlapi_leaveTtyMode()</em>)</h4>
+<p>This should be sent to free the tty and masked keys lists.
+This is acknowledged by the server.</p>
+</section>
+<section id="brlapi-packet-ignorekeyrange-and-brlapi-packet-acceptkeyrange-see-brlapi-ignorekeyrange-and-brlapi-acceptkeyrange">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_IGNOREKEYRANGE</span></code> and <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ACCEPTKEYRANGE</span></code> (see <em>brlapi_ignoreKeyRange()</em> and <em>brlapi_acceptKeyRange()</em>)</h4>
+<p>If the client doesn't want every key press to be signaled to it, but some of
+them to be given to <code class="docutils literal notranslate"><span class="pre">brltty</span></code> for normal processing, it can send
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_IGNOREKEYRANGE</span></code> packets to
+tell ranges of key codes which shouldn't be
+sent to it, but given to <code class="docutils literal notranslate"><span class="pre">brltty</span></code>, and <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ACCEPTKEYRANGE</span></code>
+packets to tell ranges
+of key codes which should be sent to it, and not given to
+<code class="docutils literal notranslate"><span class="pre">brltty</span></code>. The server keeps a dynamic list of ranges, so that arbitrary
+sequences of such packets can be sent.
+A range is composed of 2 keycodes: the &quot;first&quot; and the &quot;last&quot; boundaries.
+Each keycode is composed of 2 integers: the key flags then the command code.
+The range expressed by these two keycodes is the set of keycodes whose command
+codes are between the command code of the &quot;first&quot; keycode and the &quot;last&quot; keycode
+(inclusive), and whose flags contain at least the flags of the &quot;first&quot; keycode
+and at most the flags of the &quot;last&quot; keycode. Setting the &quot;first&quot; and &quot;last&quot;
+keycode to the same value express only one keycode, for instance. Setting the
+first and last keycode to the same command code but setting no flags in the
+&quot;first&quot; keycode and setting one flag in the &quot;last&quot; keycode expresses only two
+keycode, with the same command code and no flags set except possibly the flag
+that is set in the &quot;last&quot; keycode. Setting one flag <em>i</em> in the &quot;first&quot;
+keycode and setting the same flag plus another flag <em>j</em> in the &quot;last&quot; keycode
+expresses that the keycodes in the range have flag <em>i</em> set and possibly flag
+<em>j</em> set, but no other flag. Several such ranges can be provided one after the
+other.</p>
+</section>
+<section id="brlapi-packet-write-see-brlapi-write">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_WRITE</span></code> (see <em>brlapi_write()</em>)</h4>
+<p>To display text on the braille terminal and set the position of the cursor,
+the client can send a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_WRITE</span></code> packet. The packet begins
+with an integer holding flags (see <code class="docutils literal notranslate"><span class="pre">BRLAPI_WF_*</span></code>). These flags indicate
+which data will then be available, in the following order (corresponding to
+flag weight):</p>
+<ul class="simple">
+<li><p>A display number can be given as a integer, in case the braille
+display has several. If not given, usual display is used.</p></li>
+<li><p>A region must be given as two integers indicating the beginning and the
+number of characters of the part of the braille display which is to be updated,
+the first cell of the display being numbered 1. For braille displays that have
+several lines, the first cell of the second line of the display is numbered the
+length of lines plus one, etc., in other words the display is handled as the
+concatenation of the lines of the display.
+If the number is negative, its absolute value is taken into account, and the
+update is padded or truncated to fill the rest of the display.</p></li>
+<li><p>The text to display can then be given, preceded by its size in bytes
+expressed as an integer. It will erase the corresponding region in the AND and
+OR fields. If the region size is positive, the text's length in characters must exactly match the region
+size. For multibyte text, this is the number of wide characters. Notably,
+combining and double-width characters count for 1.</p></li>
+<li><p>Then an AND field can be given, one byte per character: the 8-dot
+representation of the above text will be AND-ed with this field, hence allowing
+to erase some unwanted parts of characters. Dots are coded as described in
+ISO/TR 11548-1: dot 1 is set iff bit 0 is set, dot 2 is set iff bit 1 is set,
+...  dot <em>i+1</em> is set if bit <em>i</em> is set. This also corresponds to the
+low-order byte of the coding of unicode's braille row <code class="docutils literal notranslate"><span class="pre">U+2800</span></code>.</p></li>
+<li><p>As well, an OR field may be given, one byte per character: the 8-dot
+result of the AND operation above (or the 8-dot representation of the text if
+no AND operation was performed) is OR-ed with this field, hence allowing
+to set some dots, to underline characters for instance.</p></li>
+<li><p>A cursor position can be specified. 1 representing
+the first character of the display, 0 turning the cursor off. If not given,
+the cursor (if any) is left unmodified.</p></li>
+<li><p>Last but not least, the charset of the text can be specified: the length
+of the name first in one byte, then the name itself in ASCII characters. If the
+charset is not specified, an 8-bit charset is assumed, and it is assumed to be
+the same as the server's. Multibyte charsets may be used, AND and OR fields'
+bytes will correspond to each text's wide <em>character</em>, be it a combining or a
+double-width character.</p></li>
+</ul>
+<p>A <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_WRITE</span></code> packet without any flag (and hence no data) means a
+&quot;void&quot; WRITE: the server clears the output buffer for this connection.</p>
+</section>
+<section id="brlapi-packet-enterrawmode-see-brlapi-enterrawmode">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ENTERRAWMODE</span></code> (see <em>brlapi_enterRawMode()</em>)</h4>
+<p>To enter raw mode, the client must send a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ENTERRAWMODE</span></code> packet,
+which is acknowledged. Once in raw mode, no other packet than
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_LEAVERAWMODE</span></code> or <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PACKET</span></code> will be accepted.
+The data must hold the special value <code class="docutils literal notranslate"><span class="pre">BRLAPI_DEVICE_MAGIC</span></code>: <code class="docutils literal notranslate"><span class="pre">0xdeadbeef</span></code>, then
+the name of the driver (one byte for the length, then the name) to avoid
+erroneous raw mode activating.</p>
+</section>
+<section id="brlapi-packet-leaverawmode-see-brlapi-leaverawmode">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_LEAVERAWMODE</span></code> (see <em>brlapi_leaveRawMode()</em>)</h4>
+<p>To leave raw mode, the client must send a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_LEAVERAWMODE</span></code> packet, which
+is acknowledged.</p>
+</section>
+<section id="brlapi-packet-packet-see-brlapi-sendraw-and-brlapi-recvraw">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PACKET</span></code> (see <em>brlapi_sendRaw()</em> and <em>brlapi_recvRaw()</em>)</h4>
+<p>While in raw mode, only <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PACKET</span></code> packets can be exchanged between
+the client and the server: to send a packet to the braille terminal, the
+client merely sends a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PACKET</span></code> packet, its data being the packet to
+send to the terminal. Whenever its receives a packet from the terminal, the
+server does exactly the same, so that packet exchanges between the terminal and
+the server are exactly reproduced between the server and the client.</p>
+</section>
+<section id="brlapi-packet-suspenddriver-see-brlapi-suspenddriver">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_SUSPENDDRIVER</span></code> (see <em>brlapi_suspendDriver()</em>)</h4>
+<p>To enter suspend mode, the client must send a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_SUSPEND</span></code> packet,
+which is acknowledge. Once in suspend mode, no other packet than
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_RESUME</span></code> will be accepted.
+The data must hold the special value <code class="docutils literal notranslate"><span class="pre">BRLAPI_DEVICE_MAGIC</span></code>: <code class="docutils literal notranslate"><span class="pre">0xdeadbeef</span></code>,
+then the name of the driver (one byte for the length, then the name) to avoid
+erroneous raw mode activating.</p>
+</section>
+<section id="brlapi-packet-param-request">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_REQUEST</span></code></h4>
+<p>This packet is sent by the client to request values of parameters. The packet
+begins with an integer which holds flags (see <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_*</span></code>) which
+describe which, how, and when the value should be returned by the server:</p>
+<ul class="simple">
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_GLOBAL</span></code> flag is set, the server will
+return/subscribe the global value instead of the local value.</p></li>
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_GET</span></code> flag is set, the server acknowledges the
+request by returning the latest value with a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_VALUE</span></code>
+packet. Otherwise the server acknowledges the request with a
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_ACK</span></code> packet, without providing the value.</p></li>
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_SUBSCRIBE</span></code> flag is set, the server will keep
+sending asynchronously the value of the parameter whenever it changes, with
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_UPDATE</span></code> packets, until
+another request packet has the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_UNSUBSCRIBE</span></code> flag set for this
+parameter.</p></li>
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_SELF</span></code> flag is set along
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_SUBSCRIBE</span></code>, the server will send the value of the parameter
+when it is changed even by the client itself.</p></li>
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_UNSUBSCRIBE</span></code> flag is set, the server
+will stop sending asynchronously the value of the parameter with
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_UPDATE</span></code> packets.</p></li>
+</ul>
+<p>It does not make sense to set both the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_SUBSCRIBE</span></code> and
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_UNSUBSCRIBE</span></code> flags.</p>
+<p>Then an integer representing the parameter to be requested.
+Then two integers that form (in big-endian order) a 64bit value used to
+subspecify the precise parameter to be requested (e.g. a keycode number).</p>
+<p>If several <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_SUBSCRIBE</span></code> packets are sent by the client, as
+many <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_UNSUBSCRIBE</span></code> packets have to be sent by the client before
+the server stops sending <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_UPDATE</span></code> packets.</p>
+</section>
+<section id="brlapi-packet-param-value">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_VALUE</span></code></h4>
+<p>This packet is sent by the client or the server to provide the value of a
+parameter. The packet begins with an integer which holds flags (see
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PVF_*</span></code>) which describe which value is being transmitted:</p>
+<ul class="simple">
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PVF_GLOBAL</span></code> flag is set, the value is the global value
+instead of the local value.</p></li>
+</ul>
+<p>Then an integer representing the parameter being transmitted. Then two integers
+that form (in big-endian order) a 64bit value used to subspecify the precise
+parameter being transmitted (e.g. a keycode number).  Eventually, the packet
+contains the value.</p>
+<p>When the packet is sent by the client, it defines the new value of the
+parameter, and if it is a global value, the server broadcasts the new value to
+all clients which have subscribed to updates. The packet is then acknowledged by
+the server on success. If the value can not be changed, the server returns an
+error (e.g. <code class="docutils literal notranslate"><span class="pre">BRLAPI_ERROR_READONLY_PARAMETER</span></code>).</p>
+</section>
+<section id="brlapi-packet-param-update">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_UPDATE</span></code></h4>
+<p>This packet is sent asynchronously by the server to provide an update of a
+value of a parameter. This is sent only if the client has previously sent a
+<code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_REQUEST</span></code> packet with the <code class="docutils literal notranslate"><span class="pre">BRLAPI_PARAMF_SUBSCRIBE</span></code>
+for the corresponding parameter.</p>
+<p>It is structured exactly like a <code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_PARAM_VALUE</span></code> packet.</p>
+</section>
+<section id="brlapi-packet-synchronize">
+<h4><code class="docutils literal notranslate"><span class="pre">BRLAPI_PACKET_SYNCHRONIZE</span></code></h4>
+<p>This packet is sent by the client and just acknowledged by the server. This
+allows the client to perform a round-try with the server, thus collecting any
+pending exception notification.</p>
+</section>
+</section>
+</section>
+<section id="authors">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink">Authors</a></h2>
+<ul class="simple">
+<li><p>Sébastien Hinderer <a class="reference external" href="mailto:Sebastien&#46;Hinderer&#37;&#52;&#48;ens-lyon&#46;org">&lt;Sebastien<span>&#46;</span>Hinderer<span>&#64;</span>ens-lyon<span>&#46;</span>org&gt;</a></p></li>
+<li><p>Samuel Thibault <a class="reference external" href="mailto:Samuel&#46;Thibault&#37;&#52;&#48;ens-lyon&#46;org">&lt;Samuel<span>&#46;</span>Thibault<span>&#64;</span>ens-lyon<span>&#46;</span>org&gt;</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

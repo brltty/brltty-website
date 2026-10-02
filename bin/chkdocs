@@ -40,7 +40,7 @@ do
 
       case "${fileExtension}"
       in
-         css | csv | doc | htm | html | js | pdf | png | sgml | txt)
+         css | csv | doc | htm | html | js | pdf | png | rst | txt)
             [ "${cacheState}" = "?" -a "${worktreeState}" = "?" ] && {
                addFile
                continue

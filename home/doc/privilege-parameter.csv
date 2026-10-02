@@ -1,0 +1,5 @@
+"platform","name","example","comment"
+"lx","path","/usr/sbin:/sbin:/usr/bin:/bin",""
+"lx","scfMode","no","[no,log,fail,kill]"
+"lx","shell","/bin/sh",""
+"lx","user","brltty",""

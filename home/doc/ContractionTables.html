@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="Docutils 0.21.2: https://docutils.sourceforge.io/" />
-<title>Contraction Tables</title>
-<style type="text/css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraction Tables</title>
+    <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
@@ -359,12 +358,10 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-</head>
-<body>
-<div class="document" id="contraction-tables">
-<h1 class="title">Contraction Tables</h1>
+  </head>
 
-<div class="contents topic" id="contents">
+  <body>
+    <div class="contents topic" id="contents">
 <p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
 <ul class="simple">
 <li><a class="reference internal" href="#description" id="toc-entry-1">Description</a></li>
@@ -423,6 +420,11 @@ ul.auto-toc {
 <li><a class="reference internal" href="#contraction-table-list" id="toc-entry-42">Contraction Table List</a></li>
 </ul>
 </div>
+<p>For a conceptual introduction — what contracted braille is
+and how to activate a contraction table —
+see the <em>Tables</em> chapter of the <em>BRLTTY Reference Manual</em>.
+This file documents the contraction-table file format,
+opcodes, and character-class machinery.</p>
 <div class="section" id="description">
 <h2><a class="toc-backref" href="#toc-entry-1">Description</a></h2>
 <p>Files with names of the form <tt class="docutils literal">*.ctb</tt> are contraction tables, and with names
@@ -837,14 +839,14 @@ operand of the contraction directive is to be written without any translation.</
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>auto</td>
-<td>locale-based autoselection</td>
-</tr>
 <tr><td>af</td>
 <td>Afrikaans (contracted)</td>
 </tr>
 <tr><td>am</td>
 <td>Amharic (uncontracted)</td>
+</tr>
+<tr><td>auto</td>
+<td>locale-based autoselection</td>
 </tr>
 <tr><td>de</td>
 <td>German</td>
@@ -861,9 +863,6 @@ operand of the contraction directive is to be written without any translation.</
 <tr><td>en</td>
 <td>English</td>
 </tr>
-<tr><td>en_US</td>
-<td>English (United States)</td>
-</tr>
 <tr><td>en-ueb-g1</td>
 <td>English (Unified, uncontracted)</td>
 </tr>
@@ -872,6 +871,9 @@ operand of the contraction directive is to be written without any translation.</
 </tr>
 <tr><td>en-us-g2</td>
 <td>English (United States, contracted)</td>
+</tr>
+<tr><td>en_US</td>
+<td>English (United States)</td>
 </tr>
 <tr><td>es</td>
 <td>Spanish (contracted)</td>
@@ -948,6 +950,5 @@ operand of the contraction directive is to be written without any translation.</
 </tbody>
 </table>
 </div>
-</div>
-</body>
+  </body>
 </html>

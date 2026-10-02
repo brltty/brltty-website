@@ -103,14 +103,16 @@ do
 
    for manual
    do
-      updateDirectory "${manual}" "${manual}" "*.sgml" "*.txt" "*.html" "*.htm" "*.pdf" "*.doc"
+      updateDirectory "${manual}" "${manual}" "*.rst" "*.txt" "*.html" "*.htm" "*.pdf" "*.doc"
    done
 done
 
 cd "${sourceRoot}/${documentSubdirectory}"
-for file in ../README BUGS ChangeLog CONTRIBUTORS HISTORY TODO
+for from in ../README.md BUGS ChangeLog CONTRIBUTORS HISTORY
 do
-   updateFile "${file}" "${file##*/}.txt"
+   to="${from##*/}"
+   to="${to%.*}"
+   updateFile "${from}" "${to}.txt"
 done
 
 for file in *.csv

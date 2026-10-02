@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="generator" content="Docutils 0.21.2: https://docutils.sourceforge.io/" />
-<title>Text Tables</title>
-<style type="text/css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Tables</title>
+    <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
@@ -359,12 +358,10 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-</head>
-<body>
-<div class="document" id="text-tables">
-<h1 class="title">Text Tables</h1>
+  </head>
 
-<div class="contents topic" id="contents">
+  <body>
+    <div class="contents topic" id="contents">
 <p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
 <ul class="simple">
 <li><a class="reference internal" href="#description" id="toc-entry-1">Description</a></li>
@@ -400,6 +397,10 @@ ul.auto-toc {
 <li><a class="reference internal" href="#text-table-list" id="toc-entry-27">Text Table List</a></li>
 </ul>
 </div>
+<p>For a conceptual introduction — what text tables are for
+and how to select one at run time —
+see the <em>Tables</em> chapter of the <em>BRLTTY Reference Manual</em>.
+This file documents the text-table file format and directive reference.</p>
 <div class="section" id="description">
 <h2><a class="toc-backref" href="#toc-entry-1">Description</a></h2>
 <p>Files with names of the form <tt class="docutils literal">*.ttb</tt> are text tables, and with names of the
@@ -987,14 +988,14 @@ conjunction with any other dot number.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>auto</td>
-<td>locale-based autoselection</td>
-</tr>
 <tr><td>ar</td>
 <td>Arabic (generic)</td>
 </tr>
 <tr><td>as</td>
 <td>Assamese</td>
+</tr>
+<tr><td>auto</td>
+<td>locale-based autoselection</td>
 </tr>
 <tr><td>awa</td>
 <td>Awadhi</td>
@@ -1044,6 +1045,9 @@ conjunction with any other dot number.</p>
 <tr><td>en</td>
 <td>English</td>
 </tr>
+<tr><td>en-nabcc</td>
+<td>English (North American Braille Computer Code)</td>
+</tr>
 <tr><td>en_CA</td>
 <td>English (Canada)</td>
 </tr>
@@ -1052,9 +1056,6 @@ conjunction with any other dot number.</p>
 </tr>
 <tr><td>en_US</td>
 <td>English (United States)</td>
-</tr>
-<tr><td>en-nabcc</td>
-<td>English (North American Braille Computer Code)</td>
 </tr>
 <tr><td>eo</td>
 <td>Esperanto</td>
@@ -1071,12 +1072,6 @@ conjunction with any other dot number.</p>
 <tr><td>fr</td>
 <td>French</td>
 </tr>
-<tr><td>fr_CA</td>
-<td>French (Canada)</td>
-</tr>
-<tr><td>fr_FR</td>
-<td>French (France)</td>
-</tr>
 <tr><td>fr-2007</td>
 <td>French (unified 2007)</td>
 </tr>
@@ -1085,6 +1080,12 @@ conjunction with any other dot number.</p>
 </tr>
 <tr><td>fr-vs</td>
 <td>French (VisioBraille)</td>
+</tr>
+<tr><td>fr_CA</td>
+<td>French (Canada)</td>
+</tr>
+<tr><td>fr_FR</td>
+<td>French (France)</td>
 </tr>
 <tr><td>ga</td>
 <td>Irish</td>
@@ -1100,6 +1101,9 @@ conjunction with any other dot number.</p>
 </tr>
 <tr><td>he</td>
 <td>Hebrew</td>
+</tr>
+<tr><td>he-old</td>
+<td>Hebrew (old version)</td>
 </tr>
 <tr><td>he_IL</td>
 <td>Hebrew (Israel)</td>
@@ -1212,9 +1216,6 @@ conjunction with any other dot number.</p>
 <tr><td>ru</td>
 <td>Russian</td>
 </tr>
-<tr><td>se</td>
-<td>Sami (Northern)</td>
-</tr>
 <tr><td>sa</td>
 <td>Sanskrit</td>
 </tr>
@@ -1223,6 +1224,9 @@ conjunction with any other dot number.</p>
 </tr>
 <tr><td>sd</td>
 <td>Sindhi</td>
+</tr>
+<tr><td>se</td>
+<td>Sami (Northern)</td>
 </tr>
 <tr><td>sk</td>
 <td>Slovak</td>
@@ -1260,6 +1264,5 @@ conjunction with any other dot number.</p>
 </tbody>
 </table>
 </div>
-</div>
-</body>
+  </body>
 </html>
