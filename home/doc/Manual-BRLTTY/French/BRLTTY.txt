@@ -84,7 +84,7 @@ Table des matières
 
     * Le menu des préférences
 
-    * Préférences sélectionnées
+    * Préférences notables
 
   * L'affichage d'état
 
@@ -92,15 +92,15 @@ Table des matières
 
     * Afficheurs de 20 cellules ou moins
 
-  * Mode apprentissage des commandes
+  * Mode d'apprentissage des commandes
 
 * Tables
 
-  * Tables de texte
-
-  * Tables d'attributs
+  * Tables de caractères
 
   * Tables de braille abrégé
+
+  * Tables d'attributs
 
   * Tables de touches
 
@@ -118,9 +118,9 @@ Table des matières
 
 * Synthétiseurs vocaux pris en charge
 
-* Codes d'identification des pilotes
-
 * Pilotes d'écran pris en charge
+
+* Codes d'identification des pilotes
 
 * Syntaxe des opérandes
 
@@ -170,14 +170,14 @@ commandes de BRLTTY.
 Parmi les fonctionnalités phares figurent la poursuite et le
 rapatriement du curseur, le braille abrégé (l'anglais et le français
 sont fournis d'origine ; de nombreuses autres langues sont couvertes
-par des tables additionnelles), le gel de l'écran pour une relecture
-posée, la revue des attributs, le copier-coller, des styles de curseur
-et de clignotement configurables, un menu interactif des préférences,
-un mode apprentissage en ligne pour découvrir les commandes, une
-sortie vocale optionnelle et une API programmable pour les
-applications clientes. Voir Premiers pas pour l'installation et les
-premiers pas, et Obtenir de l'aide pour la liste de diffusion et le
-suivi des problèmes.
+par des tables additionnelles), la possibilité de figer l'écran pour
+une relecture posée, la revue des attributs, le copier-coller, des
+styles de curseur et de clignotement configurables, un menu interactif
+des préférences, un mode d'apprentissage en ligne pour découvrir les
+commandes, une sortie vocale optionnelle et une API programmable pour
+les applications clientes. Voir Premiers pas pour l'installation et
+les premiers pas, et Obtenir de l'aide pour la liste de diffusion et
+le suivi des problèmes.
 
 Linux est la plateforme principale. D'autres plateformes sont prises
 en charge à divers degrés — voir "Documents/README.Android",
@@ -223,8 +223,8 @@ Une fois installé, lancez BRLTTY en tant que root
 Il lit sa configuration dans un fichier (voir Le fichier de
 configuration) qui fixe les valeurs par défaut comme le pilote
 braille, le périphérique auquel l'afficheur est connecté, et la table
-de texte. La plupart de ces valeurs peuvent être remplacées en ligne
-de commande (voir Options en ligne de commande).
+de caractères. La plupart de ces valeurs peuvent être remplacées en
+ligne de commande (voir Options en ligne de commande).
 
 Quelques options reviennent souvent juste après l'installation :
 
@@ -276,8 +276,8 @@ Deux commandes méritent d'être mémorisées avant toutes les autres :
 * LEARN — annonce le nom de chaque commande au fur et à mesure que
   vous appuyez sur sa touche ; pratique pour explorer les attributions
   de touches qui ne vous sont pas familières. Appuyez sur Entrée au
-  clavier pour quitter le mode apprentissage (voir Mode apprentissage
-  des commandes pour les détails).
+  clavier pour quitter le mode d'apprentissage (voir Mode
+  d'apprentissage des commandes pour les détails).
 
 Les deux sont des bascules : invoquez-les à nouveau pour revenir. Le
 chapitre Commandes regroupe toutes les commandes par finalité ;
@@ -529,7 +529,7 @@ s'applique globalement ; sa valeur initiale peut aussi être réglée
 dans le menu des préférences.
 
 FREEZE
-   Gèle l'image de l'écran, ce qui permet de lire à votre rythme même
+   Fige l'image de l'écran, ce qui permet de lire à votre rythme même
    si l'application continue d'écrire.
 
 DISPMD
@@ -538,23 +538,21 @@ DISPMD
    Utile pour repérer un élément mis en valeur. Par terminal virtuel.
 
 SIXDOTS
-   Affiche les caractères en braille à six points plutôt qu'à huit ;
-   les points 7 et 8 restent disponibles pour la représentation du
-   curseur et le soulignement des attributs. Si une table de braille
-   abrégé est en vigueur (voir l'option -c), elle est utilisée.
-   Modifiable aussi via la préférence Apparence du texte.
+   Bascule entre le braille informatique à 8 points et le braille
+   abrégé à 6 points. Les commandes CONTRACTED et COMPBRL6 changent
+   chacun de ces réglages séparément.
 
 SLIDEWIN
    Lorsque la poursuite du curseur est active, fait glisser la fenêtre
    horizontalement pour garder le curseur près du centre, plutôt que
    de sauter par pas d'une fenêtre. Modifiable aussi via la préférence
-   Faire défiler la fenêtre.
+   Fenêtre braille glissante.
 
 SKPIDLNS
    Saute les lignes dont le contenu correspond à la ligne courante.
    Affecte LNUP/LNDN ainsi que le comportement de bouclage de
    FWINLT/FWINRT et de FWINLTSKIP/FWINRTSKIP. Modifiable aussi via la
-   préférence Sauter les lignes identiques.
+   préférence Passer les lignes identiques.
 
 SKPBLNKWINS
    Saute les fenêtres vides lors de la lecture. Affecte FWINLT/FWINRT.
@@ -562,7 +560,7 @@ SKPBLNKWINS
 CSRVIS
    Montre le curseur en superposant un motif de points sur son
    caractère. Initialement **activée**. Modifiable aussi via la
-   préférence Afficher le curseur.
+   préférence Afficher le curseur de l'écran.
 
 CSRHIDE
    Cache le curseur (a priorité sur CSRVIS pour le terminal virtuel
@@ -577,11 +575,11 @@ CSRTRK
 CSRSIZE
    Représente le curseur par un bloc plein (les huit points) plutôt
    que par un soulignement (points 7 et 8). Modifiable aussi via la
-   préférence Apparence du curseur.
+   préférence Apparence du curseur de l'écran.
 
 CSRBLINK
    Fait clignoter la représentation du curseur. Modifiable aussi via
-   la préférence Curseur clignotant.
+   la préférence Clignotement du curseur de l'écran.
 
 ATTRVIS
    Souligne les caractères mis en relief par des combinaisons des
@@ -601,12 +599,12 @@ ATTRVIS
 
 ATTRBLINK
    Fait clignoter le soulignement des attributs. Initialement
-   **activée**. Modifiable aussi via la préférence Attributs
-   clignotants.
+   **activée**. Modifiable aussi via la préférence Clignotement des
+   attributs.
 
 CAPBLINK
    Fait clignoter les lettres majuscules. Modifiable aussi via la
-   préférence Majuscules clignotantes.
+   préférence Clignotement des majuscules.
 
 TUNES
    Joue une courte mélodie (voir Mélodies d'alerte) lors des
@@ -622,6 +620,15 @@ AUTOSPEAK
    Énonce automatiquement la nouvelle ligne lors d'un déplacement
    vertical, les caractères au fur et à mesure qu'ils sont tapés ou
    effacés, et le caractère vers lequel se déplace le curseur.
+
+CONTRACTED
+   Bascule entre le braille informatique et le braille abrégé (voir la
+   préférence Variante de braille).
+
+COMPBRL6
+   Bascule le braille informatique entre des cellules à 8 et à 6
+   points (voir la préférence Type de cellule du braille
+   informatique).
 
 ASPK_EMP_LINE
    Bascule l'annonce des lignes vides par AUTOSPEAK (au lieu de les
@@ -643,10 +650,10 @@ INFO
    Invoquez à nouveau pour quitter.
 
 LEARN
-   Bascule en mode apprentissage des commandes (voir Mode
-   apprentissage des commandes). Appuyez sur une touche pour découvrir
-   la commande qu'elle envoie. Invoquez "LEARN" à nouveau pour
-   quitter. Indisponible si BRLTTY a été compilé avec "--disable-
+   Bascule en mode d'apprentissage des commandes (voir Mode
+   d'apprentissage des commandes). Appuyez sur une touche pour
+   découvrir la commande qu'elle envoie. Invoquez "LEARN" à nouveau
+   pour quitter. Indisponible si BRLTTY a été compilé avec "--disable-
    learn-mode".
 
 
@@ -681,7 +688,7 @@ Contrôles de la synthèse vocale
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SAY_LINE
-   Énonce la ligne courante. La préférence Mode dire la ligne
+   Énonce la ligne courante. La préférence Mode dire-la-ligne
    détermine si l'énoncé en cours est interrompu d'abord.
 
 SAY_ABOVE
@@ -694,15 +701,15 @@ MUTE
    Coupe immédiatement la synthèse vocale.
 
 SPKHOME
-   Va à l'emplacement du curseur de lecture vocale.
+   Va à l'emplacement du curseur de la synthèse.
 
 SAY_SLOWER/SAY_FASTER
-   Diminue/augmente le débit de la synthèse vocale (voir Débit de la
-   synthèse). Dépend du pilote.
+   Diminue/augmente la vitesse de la synthèse vocale (voir Vitesse).
+   Dépend du pilote.
 
 SAY_SOFTER/SAY_LOUDER
-   Diminue/augmente le volume de la synthèse vocale (voir Volume de la
-   synthèse). Dépend du pilote.
+   Diminue/augmente le volume de la synthèse vocale (voir Volume).
+   Dépend du pilote.
 
 SPK_PUNCT_LEVEL
    Fait défiler le niveau de ponctuation — *aucun*, *partiel*,
@@ -713,8 +720,8 @@ SPK_PUNCT_LEVEL
 Navigation par la synthèse vocale
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ces commandes déplacent le curseur de lecture vocale et énoncent
-l'unité sur laquelle il se pose.
+Ces commandes déplacent le curseur de la synthèse et énoncent l'unité
+sur laquelle il se pose.
 
 SPEAK_CURR_CHAR / SPEAK_PREV_CHAR / SPEAK_NEXT_CHAR
    Énonce le caractère courant, précédent ou suivant.
@@ -892,18 +899,18 @@ dans les configurations utilisateur :
    chaque pilote. Contournable avec -B.
 
 "text-table" *fichier*|"auto"
-   La table de texte (correspondance caractère-vers-braille). "auto"
-   (le défaut) en sélectionne une d'après la locale. Contournable avec
-   -t.
+   La table de caractères (correspondance caractère-vers-braille).
+   "auto" (le défaut) en sélectionne une d'après la locale.
+   Contournable avec -t.
+
+"contraction-table" *fichier*
+   La table de braille abrégé utilisée lorsque le braille abrégé est
+   sélectionné (voir la préférence Variante de braille). Contournable
+   avec -c.
 
 "attributes-table" *fichier*
    La table d'attributs utilisée pour afficher l'information
    d'attributs d'écran. Contournable avec -a.
-
-"contraction-table" *fichier*
-   La table de braille abrégé utilisée lorsque le braille abrégé à 6
-   points est actif (voir la commande SIXDOTS et la préférence
-   Apparence du texte). Contournable avec -c.
 
 "keyboard-table" *fichier*|"auto"
    La table de touches qui associe les touches du clavier à des
@@ -948,13 +955,13 @@ Afficheur, pilote et périphérique :
 Tables :
 
 "-t"*fichier* "--text-table="*fichier*
-   Table de texte. Par défaut : selon la locale.
+   Table de caractères. Par défaut : selon la locale.
+
+"-c"*fichier* "--contraction-table="*fichier*
+   Table de braille abrégé pour le braille abrégé.
 
 "-a"*fichier* "--attributes-table="*fichier*
    Table d'attributs.
-
-"-c"*fichier* "--contraction-table="*fichier*
-   Table de braille abrégé pour le mode six points.
 
 "-k"*fichier* "--keyboard-table="*fichier*
    Table de touches associant les touches du clavier à des commandes.
@@ -1139,13 +1146,13 @@ l'application "gpm" est installée, il interagit avec le pointeur
 (souris).
 
 Déplacer le pointeur entraîne la fenêtre braille (voir la préférence
-Window Follows Pointer). Chaque fois que le pointeur sort du bord de
-la fenêtre braille, celle-ci est entraînée avec lui (un caractère à la
-fois). Cela donne au brailliste un autre moyen, en deux dimensions,
-d'inspecter le contenu de l'écran ou de déplacer rapidement la fenêtre
-braille à un endroit voulu. Cela permet aussi à un observateur voyant
-de déplacer facilement la fenêtre braille sur quelque chose qu'il
-aimerait faire lire au brailliste.
+Suivre le pointeur de l'écran). Chaque fois que le pointeur sort du
+bord de la fenêtre braille, celle-ci est entraînée avec lui (un
+caractère à la fois). Cela donne au brailliste un autre moyen, en deux
+dimensions, d'inspecter le contenu de l'écran ou de déplacer
+rapidement la fenêtre braille à un endroit voulu. Cela permet aussi à
+un observateur voyant de déplacer facilement la fenêtre braille sur
+quelque chose qu'il aimerait faire lire au brailliste.
 
 "gpm" utilise la vidéo inverse pour montrer où se trouve le pointeur.
 Le soulignement des caractères en surbrillance (voir la commande
@@ -1188,29 +1195,31 @@ Mélodies d'alerte
 
 BRLTTY signale les événements significatifs en jouant de courtes
 mélodies prédéfinies. Cette fonctionnalité s'active et se désactive
-soit par la commande TUNES, soit par la préférence Alert Tunes. Les
-mélodies sont jouées par défaut sur le bipeur interne, mais d'autres
-sorties sont disponibles via la préférence Tune Device.
+soit par la commande TUNES, soit par la préférence Mélodies d'alerte.
+Les mélodies sont jouées par défaut sur le bipeur interne, mais
+d'autres sorties sont disponibles via la préférence Périphérique pour
+les mélodies.
 
 Chaque événement significatif est associé, par ordre de priorité
 décroissant, à un ou plusieurs des éléments suivants :
 
 une mélodie
-   Si une mélodie est associée à l'événement, si la préférence Alert
-   Tunes (voir aussi la commande TUNES) est active, et si le
-   périphérique de son sélectionné (voir la préférence Tune Device)
-   peut être ouvert, la mélodie est jouée.
+   Si une mélodie est associée à l'événement, si la préférence
+   Mélodies d'alerte (voir aussi la commande TUNES) est active, et si
+   le périphérique de son sélectionné (voir la préférence Périphérique
+   pour les mélodies) peut être ouvert, la mélodie est jouée.
 
 un motif de points
    Si un motif de points est associé à l'événement, et si la
-   préférence Alert Dots est active, le motif est brièvement affiché
-   sur chaque cellule braille. Certains afficheurs ne réagissent pas
-   assez vite pour que ce mécanisme fonctionne efficacement.
+   préférence Points d'alerte est active, le motif est brièvement
+   affiché sur chaque cellule braille. Certains afficheurs ne
+   réagissent pas assez vite pour que ce mécanisme fonctionne
+   efficacement.
 
 un message
-   Si un message est associé à l'événement, et si la préférence Alert
-   Messages est active, il est affiché pendant quelques secondes (voir
-   l'option en ligne de commande -M).
+   Si un message est associé à l'événement, et si la préférence
+   Messages d'alerte est active, il est affiché pendant quelques
+   secondes (voir l'option en ligne de commande -M).
 
 Ces événements comprennent :
 
@@ -1228,7 +1237,7 @@ Ces événements comprennent :
 
 * L'activation ou la désactivation de la poursuite du curseur.
 
-* Le gel ou le dégel de l'image de l'écran.
+* Le passage de l'image de l'écran à l'état figé ou en direct.
 
 * Le retour à la ligne de la fenêtre braille, vers le début de la
   ligne suivante ou vers la fin de la ligne précédente.
@@ -1261,8 +1270,8 @@ elles ne sont donc pas modifiables à la main — BRLTTY fournit un menu
 intégré à la place. Le menu s'active par la commande PREFMENU ;
 appelez-la de nouveau pour appliquer les nouveaux réglages, sortir du
 menu et reprendre le fonctionnement normal. "PREFLOAD" annule toutes
-les modifications faites depuis l'entrée dans le menu. Voir Menu
-Navigation Commands pour l'ensemble des touches qui sélectionnent les
+les modifications faites depuis l'entrée dans le menu. Voir Navigation
+dans le menu pour l'ensemble des touches qui sélectionnent les
 éléments et ajustent les réglages ; les touches de routage permettent
 aussi de choisir directement un réglage.
 
@@ -1274,36 +1283,41 @@ depuis BRLTTY 6.5, et quelques réglages que les nouveaux utilisateurs
 ajustent typiquement très tôt.
 
 
-Préférences sélectionnées
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Préférences notables
+~~~~~~~~~~~~~~~~~~~~
 
-Apparence du texte
-   Afficher le contenu de l'écran avec les huit points ("8-dot") ou
-   seulement les points 1 à 6 ("6-dot"). En mode 6 points, si une
-   table de braille abrégé est sélectionnée, le braille abrégé est
-   affiché. Modifiable aussi via la commande SIXDOTS.
+Variante de braille
+   Afficher le contenu de l'écran en "Braille informatique" (une
+   cellule par caractère, selon la table de caractères) ou en "Braille
+   abrégé" (selon la table de braille abrégé). Modifiable aussi via la
+   commande CONTRACTED.
+
+Type de cellule du braille informatique
+   Afficher le braille informatique avec les huit points ("8 points")
+   ou seulement les points 1 à 6 ("6 points"). Modifiable aussi via la
+   commande COMPBRL6.
 
 Passer les lignes identiques
    Lors d'un déplacement d'une ligne vers le haut ou vers le bas,
    passer les lignes dont le contenu est identique à la ligne
    courante. Modifiable aussi via la commande SKPIDLNS.
 
-Fenêtre glissante
+Fenêtre braille glissante
    Quand la poursuite du curseur ferait sortir le curseur de la
    fenêtre braille, faire glisser la fenêtre pour que le curseur reste
    près du centre, plutôt que de sauter par largeurs de fenêtre
    entières. Modifiable aussi via la commande SLIDEWIN.
 
-Afficher le curseur
+Afficher le curseur de l'écran
    Afficher ou non le curseur de l'écran sur l'afficheur braille.
    Modifiable aussi via la commande CSRVIS.
 
-Apparence du curseur
+Apparence du curseur de l'écran
    Représenter le curseur par les huit points (un bloc plein) ou
    seulement les points 7 et 8 (un soulignement). Modifiable aussi via
    la commande CSRSIZE.
 
-Clignotement du curseur
+Clignotement du curseur de l'écran
    Rendre le curseur alternativement visible et invisible à un rythme
    fixe. Modifiable aussi via la commande CSRBLINK.
 
@@ -1319,95 +1333,96 @@ Clignotement des majuscules
    Faire clignoter les lettres majuscules pour qu'elles ressortent.
    Modifiable aussi via la commande CAPBLINK.
 
-Répétition automatique
+Répétition automatique activée
    Tant que la combinaison de touches d'une commande répétable reste
    enfoncée, répéter la commande à intervalle régulier après un délai
    initial. La fiabilité dépend de ce que le pilote d'afficheur
    braille remonte ou non les événements de relâchement de touche.
    Modifiable aussi via la commande AUTOREPEAT.
 
-La fenêtre suit le pointeur
+Suivre le pointeur de l'écran
    Lorsque le pointeur de la souris se déplace, entraîner la fenêtre
    braille avec lui. Disponible uniquement si la prise en charge de
    GPM a été compilée.
 
-Périphérique pour les sons
+Périphérique pour les mélodies
    Périphérique audio sur lequel jouer les mélodies d'alerte : bipeur
    interne, PCM (interface audio numérique de la carte son), MIDI ou
    synthèse FM. Des sous-réglages de volume distincts sont disponibles
-   pour PCM, MIDI et FM. La valeur par défaut est "Beeper" lorsqu'il
+   pour PCM, MIDI et FM. La valeur par défaut est "Bipeur" lorsqu'il
    est pris en charge, sinon "PCM".
 
-Points d'avertissement
+Points d'alerte
    Lorsqu'un événement significatif a un motif de points associé (voir
-   Alert Tunes), afficher brièvement le motif sur chaque cellule
-   braille. Un réglage distinct *Alert Dots Duration* (ajouté après
-   BRLTTY 6.5 ; valeur par défaut : 0,4 s) contrôle la durée
+   Mélodies d'alerte), afficher brièvement le motif sur chaque cellule
+   braille. Un réglage distinct *Durée des points d'alerte* (ajouté
+   après BRLTTY 6.5 ; valeur par défaut : 0,4 s) contrôle la durée
    d'affichage du motif — utile pour les afficheurs dont les
    actuateurs réagissent lentement. Supprimé si une mélodie se
    déclenche pour le même événement.
 
-Messages d'avertissement
-   Lorsqu'un événement significatif a un message associé (voir Alert
-   Tunes), l'afficher sur l'afficheur braille pendant quelques
-   secondes (voir l'option en ligne de commande -M). Supprimé si une
-   mélodie ou des points d'avertissement se déclenchent pour le même
+Messages d'alerte
+   Lorsqu'un événement significatif a un message associé (voir
+   Mélodies d'alerte), l'afficher sur l'afficheur braille pendant
+   quelques secondes (voir l'option en ligne de commande -M). Supprimé
+   si une mélodie ou des points d'alerte se déclenchent pour le même
    événement.
 
 Mode dire-la-ligne
    À l'exécution de la commande SAY_LINE, soit abandonner la synthèse
-   en cours ("Immediate", valeur par défaut), soit mettre la nouvelle
-   ligne en file derrière ("Enqueue").
+   en cours ("Immédiat", valeur par défaut), soit mettre la nouvelle
+   ligne en file derrière ("Dans la file").
 
-Lecture automatique
+Annonce automatique
    Quand cette préférence est activée, énoncer automatiquement la
    nouvelle ligne lors d'un déplacement vertical de la fenêtre
    braille, les caractères saisis ou supprimés, et le caractère sur
    lequel le curseur se déplace. Modifiable aussi via la commande
    AUTOSPEAK.
 
-Vitesse de la synthèse
-   Régler le débit de la synthèse vocale ("0" le plus lent, "20" le
-   plus rapide). Dépendant du pilote ; modifiable aussi via les
-   commandes SAY_SLOWER/SAY_FASTER.
+Vitesse
+   Régler la vitesse de la synthèse vocale, de "-10" (la plus lente) à
+   "10" (la plus rapide) ; "0" est la valeur par défaut. Dépendant du
+   pilote ; modifiable aussi via les commandes SAY_SLOWER/SAY_FASTER.
 
-Volume de la synthèse
-   Régler le volume de la synthèse vocale ("0" le plus faible, "20" le
-   plus fort). Dépendant du pilote ; modifiable aussi via les
-   commandes SAY_SOFTER/SAY_LOUDER.
+Volume
+   Régler le volume de la synthèse vocale, de "0%" (le plus faible) à
+   "200%" ; "100%" est la valeur par défaut. Dépendant du pilote ;
+   modifiable aussi via les commandes SAY_SOFTER/SAY_LOUDER.
 
 Niveau de ponctuation
    Quantité de ponctuation que la synthèse vocale énonce à voix haute.
-   Les niveaux disponibles sont "None", "Some", "Most" et "All" — le
-   niveau "Most" (ajouté après BRLTTY 6.5) se situe entre "Some" et
-   "All" pour les utilisateurs qui veulent l'essentiel de la
-   ponctuation mais trouvent "All" trop bavard. Dépendant du pilote.
+   Les niveaux disponibles sont "Aucune", "Quelques", "La plupart" et
+   "Toutes" — le niveau "La plupart" (ajouté après BRLTTY 6.5) se
+   situe entre "Quelques" et "Toutes" pour les utilisateurs qui
+   veulent l'essentiel de la ponctuation mais trouvent "Toutes" trop
+   bavard. Dépendant du pilote.
 
-Énoncer les lignes vides
-   Lorsque réglé sur "Yes" (valeur par défaut depuis son ajout après
+Dire les lignes vides
+   Lorsque réglé sur "Oui" (valeur par défaut depuis son ajout après
    BRLTTY 6.5), annoncer quand le curseur arrive sur une ligne vide
-   pour que le saut de ligne soit audible. Réglez sur "No" pour passer
-   les lignes vides en silence.
+   pour que le saut de ligne soit audible. Réglez sur "Non" pour
+   passer les lignes vides en silence.
 
-Table de texte
-   Sélectionner la table de texte à l'exécution. Voir Text Tables et
-   l'option en ligne de commande -t. Cette préférence n'est pas
-   sauvegardée.
-
-Table d'attributs
-   Sélectionner la table d'attributs à l'exécution. Voir Attributes
-   Tables et l'option en ligne de commande -a. Cette préférence n'est
-   pas sauvegardée.
+Table de caractères
+   Sélectionner la table de caractères à l'exécution. Voir Tables de
+   caractères et l'option en ligne de commande -t. Cette préférence
+   n'est pas sauvegardée.
 
 Table de braille abrégé
-   Sélectionner la table de braille abrégé à l'exécution. Voir
-   Contraction Tables et l'option en ligne de commande -c. Cette
+   Sélectionner la table de braille abrégé à l'exécution. Voir Tables
+   de braille abrégé et l'option en ligne de commande -c. Cette
    préférence n'est pas sauvegardée.
 
+Table d'attributs
+   Sélectionner la table d'attributs à l'exécution. Voir Tables
+   d'attributs et l'option en ligne de commande -a. Cette préférence
+   n'est pas sauvegardée.
+
 Table de touches du clavier
-   Sélectionner la table de touches à l'exécution. Voir Key Tables et
-   l'option en ligne de commande -k. Cette préférence n'est pas
-   sauvegardée.
+   Sélectionner la table de touches à l'exécution. Voir Tables de
+   touches et l'option en ligne de commande -k. Cette préférence n'est
+   pas sauvegardée.
 
 
 L'affichage d'état
@@ -1483,13 +1498,13 @@ peu cryptiques, afin de respecter la disposition exacte en colonnes.
       La surbrillance de l'écran (les attributs) est affichée.
 
 *f*
-   L'état de la fonction de gel d'écran (voir la commande FREEZE).
+   Indique si l'écran est figé (voir la commande FREEZE).
 
    vide
-      L'écran n'est pas gelé.
+      L'écran n'est pas figé.
 
    "f"
-      L'écran est gelé.
+      L'écran est figé.
 
 *d*
    Le nombre de points braille utilisés pour afficher chaque caractère
@@ -1537,7 +1552,7 @@ peu cryptiques, afin de respecter la disposition exacte en colonnes.
    active si le point qui lui correspond est levé.
 
    Point 1
-      Image d'écran gelée (voir la commande FREEZE).
+      Image d'écran figée (voir la commande FREEZE).
 
    Point 2
       Affichage des attributs (voir la commande DISPMD).
@@ -1558,7 +1573,7 @@ peu cryptiques, afin de respecter la disposition exacte en colonnes.
       Poursuite du curseur (voir la commande CSRTRK).
 
    Point 8
-      Fenêtre glissante (voir la commande SLIDEWIN).
+      Fenêtre braille glissante (voir la commande SLIDEWIN).
 
 *vt*
    Le numéro (à partir de 1) du terminal virtuel courant.
@@ -1601,13 +1616,13 @@ peu cryptiques, afin de respecter la disposition exacte en colonnes.
       La surbrillance de l'écran (les attributs) est affichée.
 
 *f*
-   L'état de la fonction de gel d'écran (voir la commande FREEZE).
+   Indique si l'écran est figé (voir la commande FREEZE).
 
    vide
-      L'écran n'est pas gelé.
+      L'écran n'est pas figé.
 
    "f"
-      L'écran est gelé.
+      L'écran est figé.
 
 *d*
    Le nombre de points braille utilisés pour afficher chaque caractère
@@ -1630,10 +1645,10 @@ peu cryptiques, afin de respecter la disposition exacte en colonnes.
       Les majuscules clignotent.
 
 
-Mode apprentissage des commandes
---------------------------------
+Mode d'apprentissage des commandes
+----------------------------------
 
-Le mode apprentissage des commandes est une façon interactive
+Le mode d'apprentissage des commandes est une façon interactive
 d'apprendre ce que font les touches de l'afficheur braille. On y
 accède soit par la commande LEARN, soit via l'utilitaire "brltest".
 Cette fonctionnalité n'est pas disponible si l'option de compilation
@@ -1665,7 +1680,7 @@ Le comportement de BRLTTY se règle au moyen de quatre familles de
 tables, toutes au format texte simple. Elles partagent la même syntaxe
 de base — une directive par ligne, encodage "UTF-8", lignes vides et
 lignes commençant par "#" ignorées — et peuvent être réparties dans
-des sous-tables ("*.tti", "*.ati", "*.cti", "*.kti") tirées au moyen
+des sous-tables ("*.tti", "*.cti", "*.ati", "*.kti") tirées au moyen
 d'une directive "include". Ce chapitre explique à quoi sert chaque
 famille et comment en sélectionner une à l'exécution. Pour la syntaxe
 exacte des directives — la référence nécessaire pour écrire ou
@@ -1673,24 +1688,25 @@ modifier une table — reportez-vous au fichier README spécifique à
 chaque famille, indiqué dans la section correspondante.
 
 
-Tables de texte
----------------
+Tables de caractères
+--------------------
 
-Les fichiers nommés "*.ttb" sont des tables de texte. Elles indiquent
-à BRLTTY comment traduire chaque caractère affiché à l'écran en sa
-configuration braille informatique correspondante à huit points. La
-correspondance entre caractères et points varie d'une langue à l'autre
-(et même entre conventions au sein d'une même langue) ; BRLTTY fournit
-donc une table de texte par locale.
+Les fichiers nommés "*.ttb" sont des tables de caractères. Elles se
+trouvent habituellement dans le répertoire "/etc/brltty/Text/". Elles
+indiquent à BRLTTY comment traduire chaque caractère affiché à l'écran
+en sa configuration braille informatique correspondante à huit points.
+La correspondance entre caractères et points varie d'une langue à
+l'autre (et même entre conventions au sein d'une même langue) ; BRLTTY
+fournit donc une table de caractères par locale.
 
-La table de texte est sélectionnée automatiquement au démarrage en
-fonction de votre locale, avec repli sur la table North American
+La table de caractères est sélectionnée automatiquement au démarrage
+en fonction de votre locale, avec repli sur la table North American
 Braille Computer Code (NABCC) à défaut de meilleure correspondance.
 Pour en choisir une explicitement, utilisez l'option en ligne de
 commande -t, la directive text-table du fichier de configuration, ou
 la préférence Text Table.
 
-Les tables de texte fournies sont les suivantes :
+Les tables de caractères fournies sont les suivantes :
 
 +----------------------------------------------------+----------------------------------------------------+
 | name                                               | description                                        |
@@ -1881,57 +1897,25 @@ Les tables de texte fournies sont les suivantes :
 +----------------------------------------------------+----------------------------------------------------+
 
 Voir "Documents/README.TextTables" pour le format de fichier des
-tables de texte et la référence des directives.
-
-
-Tables d'attributs
-------------------
-
-Les fichiers nommés "*.atb" sont des tables d'attributs. Au lieu
-d'afficher le texte présent à l'écran, elles permettent d'en afficher
-les attributs *visuels* — couleur de premier plan et d'arrière-plan,
-intensité, clignotement — sous forme de configurations de points
-braille. Le mode attributs s'active et se désactive avec la commande
-DISPMD ; une table d'attributs détermine la façon dont les huit bits
-d'attribut "VGA" se traduisent en huit points d'une cellule braille.
-
-Les tables d'attributs fournies avec BRLTTY sont les suivantes :
-
-+----------------------------------------------------+----------------------------------------------------+
-| name                                               | description                                        |
-|====================================================|====================================================|
-| invleft_right                                      | inverse foreground colour in the left column and   |
-|                                                    | background colour in the right column              |
-+----------------------------------------------------+----------------------------------------------------+
-| left_right                                         | foreground colour in the left column and           |
-|                                                    | background colour in the right column              |
-+----------------------------------------------------+----------------------------------------------------+
-| upper_lower                                        | foreground colour in the upper square and          |
-|                                                    | background colour in the lower square              |
-+----------------------------------------------------+----------------------------------------------------+
-
-Pour en choisir une, utilisez l'option en ligne de commande -a, la
-directive attributes-table du fichier de configuration, ou la
-préférence Attributes Table.
-
-Voir "Documents/README.AttributesTables" pour le format de fichier des
-tables d'attributs et la référence des directives.
+tables de caractères et la référence des directives.
 
 
 Tables de braille abrégé
 ------------------------
 
-Les fichiers nommés "*.ctb" sont des tables de braille abrégé. Là où
-une table de texte associe un caractère à une cellule braille, une
-table de braille abrégé encode les conventions d'abréviation propres
-au braille littéraire : séquences de lettres courantes, mots entiers
-et motifs de ponctuation se traduisent chacun par des séquences de
-cellules plus courtes. C'est ce qui permet de tenir bien plus de texte
-sur un afficheur de petite taille. Cette abréviation porte
-historiquement le nom de braille « grade 2 » (par opposition au
-braille « grade 1 », non abrégé) ; les règles diffèrent selon la
-langue, si bien que les tables de braille abrégé, comme les tables de
-texte, sont fournies à raison d'une par locale.
+Les fichiers nommés "*.ctb" sont des tables de braille abrégé. Elles
+se trouvent habituellement dans le répertoire
+"/etc/brltty/Contraction/". Là où une table de caractères associe un
+caractère à une cellule braille, une table de braille abrégé encode
+les conventions d'abréviation propres au braille littéraire :
+séquences de lettres courantes, mots entiers et motifs de ponctuation
+se traduisent chacun par des séquences de cellules plus courtes. C'est
+ce qui permet de tenir bien plus de texte sur un afficheur de petite
+taille. Cette abréviation porte historiquement le nom de braille «
+grade 2 » (par opposition au braille « grade 1 », non abrégé) ; les
+règles diffèrent selon la langue, si bien que les tables de braille
+abrégé, comme les tables de texte, sont fournies à raison d'une par
+locale.
 
 Le braille abrégé est affiché lorsque les deux conditions suivantes
 sont réunies :
@@ -1940,9 +1924,8 @@ sont réunies :
   ligne de commande -c et la directive contraction-table du fichier de
   configuration, et
 
-* le mode braille à six points est actif — basculez-le avec la
-  commande SIXDOTS, ou définissez l'état initial via la préférence
-  Text Style.
+* le braille abrégé est sélectionné — via la préférence Variante de
+  braille ou la commande CONTRACTED.
 
 La prise en charge du braille abrégé n'est pas compilée si l'option de
 compilation "--disable-contracted-braille" a été utilisée.
@@ -2030,6 +2013,42 @@ des tables de braille abrégé, la référence des opcodes et la mécanique
 des classes de caractères.
 
 
+Tables d'attributs
+------------------
+
+Les fichiers nommés "*.atb" sont des tables d'attributs. Elles se
+trouvent habituellement dans le répertoire "/etc/brltty/Attributes/".
+Au lieu d'afficher le texte présent à l'écran, elles permettent d'en
+afficher les attributs *visuels* — couleur de premier plan et d
+'arrière-plan, intensité, clignotement — sous forme de configurations
+de points braille. Le mode attributs s'active et se désactive avec la
+commande DISPMD ; une table d'attributs détermine la façon dont les
+huit bits d'attribut "VGA" se traduisent en huit points d'une cellule
+braille.
+
+Les tables d'attributs fournies avec BRLTTY sont les suivantes :
+
++----------------------------------------------------+----------------------------------------------------+
+| name                                               | description                                        |
+|====================================================|====================================================|
+| invleft_right                                      | inverse foreground colour in the left column and   |
+|                                                    | background colour in the right column              |
++----------------------------------------------------+----------------------------------------------------+
+| left_right                                         | foreground colour in the left column and           |
+|                                                    | background colour in the right column              |
++----------------------------------------------------+----------------------------------------------------+
+| upper_lower                                        | foreground colour in the upper square and          |
+|                                                    | background colour in the lower square              |
++----------------------------------------------------+----------------------------------------------------+
+
+Pour en choisir une, utilisez l'option en ligne de commande -a, la
+directive attributes-table du fichier de configuration, ou la
+préférence Attributes Table.
+
+Voir "Documents/README.AttributesTables" pour le format de fichier des
+tables d'attributs et la référence des directives.
+
+
 Tables de touches
 -----------------
 
@@ -2044,16 +2063,18 @@ de touches devient intéressante si vous souhaitez réattribuer des
 touches, adapter un afficheur récent à un pilote plus ancien, ou
 utiliser votre clavier d'ordinateur en saisie braille.
 
-Deux conventions de nommage coexistent :
+Il existe deux sortes de tables de touches :
 
-* **Les tables de touches d'afficheur braille** ont des noms de la
-  forme "brl-"*xx*"-"*modèle*".ktb", où *xx* est le code
-  d'identification de pilote à deux lettres et *modèle* identifie
-  l'afficheur.
+* **Les tables de touches d'afficheur braille** se trouvent
+  habituellement dans le répertoire "/etc/brltty/Input/"*xx*"/", où
+  *xx* est le code d'identification de pilote à deux lettres. Le nom
+  de chacune identifie le ou les modèles auxquels elle s'applique, et
+  le pilote choisit celle à utiliser.
 
-* **Les tables de clavier** ont des noms de la forme
-  "kbd-"*type*".ktb" et pilotent le clavier d'ordinateur ordinaire
-  lorsque BRLTTY le surveille.
+* **Les tables de clavier** se trouvent habituellement dans le
+  répertoire "/etc/brltty/Keyboard/" et pilotent le clavier
+  d'ordinateur ordinaire lorsque BRLTTY le surveille. Le nom de
+  chacune décrit le type de clavier auquel elle est destinée.
 
 Les tables de clavier fournies avec BRLTTY sont les suivantes :
 
@@ -2075,7 +2096,7 @@ Les tables de clavier fournies avec BRLTTY sont les suivantes :
 
 Pour spécifier une table de clavier, utilisez l'option en ligne de
 commande -k, la directive keyboard-table du fichier de configuration,
-ou la préférence Keyboard Table.
+ou la préférence Table de touches du clavier.
 
 Voir "Documents/README.KeyTables" pour le format de fichier des tables
 de touches et la référence complète des directives ("bind", "context",
@@ -2151,7 +2172,7 @@ Pour les questions d'implémentation ou le comportement spécifique d'un
 pilote, l'arborescence des sources contient une famille de README
 thématiques dans "Documents/" : "Bluetooth", "Devices", "Customize",
 "Profiles", "Polling", "Systemd", "X11", "CommandReference",
-"TextTables", "AttributesTables", "ContractionTables", "KeyTables",
+"TextTables", "ContractionTables", "AttributesTables", "KeyTables",
 "BrailleDots", et d'autres. "Documents/brltty.conf" est le modèle de
 configuration largement commenté — la référence la plus rapide pour la
 syntaxe de toute directive. Le manuel de BrlAPI couvre séparément
@@ -2375,6 +2396,52 @@ BRLTTY prend en charge les synthétiseurs vocaux suivants :
 +---------------------------+---------------------------+---------------------------+---------------------------+
 
 
+Pilotes d'écran pris en charge
+==============================
+
+BRLTTY prend en charge les pilotes d'écran suivants :
+
++-----------------------------------+-----------------------------------+-----------------------------------+
+| code                              | name                              | usage                             |
+|===================================|===================================|===================================|
+| a2                                | AtSpi2                            | X11 desktop via AT-SPI 2          |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| an                                | Android                           | Android operating system          |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| as                                | AtSpi                             | X11 desktop via AT-SPI 1          |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| em                                | TerminalEmulator                  | terminal emulator with shared     |
+|                                   |                                   | memory segment                    |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| hu                                | Hurd                              | The Hurd operating system         |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| lx                                | Linux                             | Linux operating system            |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| mo                                | MacOS                             | MacOS operating system via its    |
+|                                   |                                   | accessibility API                 |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| pb                                | PcBios                            | MS-DOS operating system           |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| sc                                | Screen                            | screen (patched) terminal         |
+|                                   |                                   | multiplexer                       |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| tx                                | Tmux                              | tmux terminal multiplexer         |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| vw                                | FileViewer                        | file viewer                       |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| wn                                | Windows                           | Microsoft Windows operating       |
+|                                   |                                   | system                            |
++-----------------------------------+-----------------------------------+-----------------------------------+
+
+Le pilote natif de votre système d'exploitation ("lx" sous Linux, "hd"
+sous Hurd, "wn" sous Windows, "an" sous Android) est sélectionné
+automatiquement. Le pilote "sc" donne accès aux sessions "screen" et
+sert de solution de repli par défaut sur les systèmes dépourvus de
+pilote natif — "screen" doit être patché (voir le sous-répertoire
+"Patches") et en cours d'exécution. Le pilote "tx", utilisé par
+brltty-tmux, surveille une session tmux.
+
+
 Codes d'identification des pilotes
 ==================================
 
@@ -2505,52 +2572,6 @@ Codes d'identification des pilotes
 +-----------------------------------+-----------------------------------+-----------------------------------+
 | xs                                | ExternalSpeech                    | speech                            |
 +-----------------------------------+-----------------------------------+-----------------------------------+
-
-
-Pilotes d'écran pris en charge
-==============================
-
-BRLTTY prend en charge les pilotes d'écran suivants :
-
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| code                              | name                              | usage                             |
-|===================================|===================================|===================================|
-| a2                                | AtSpi2                            | X11 desktop via AT-SPI 2          |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| an                                | Android                           | Android operating system          |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| as                                | AtSpi                             | X11 desktop via AT-SPI 1          |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| em                                | TerminalEmulator                  | terminal emulator with shared     |
-|                                   |                                   | memory segment                    |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| hu                                | Hurd                              | The Hurd operating system         |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| lx                                | Linux                             | Linux operating system            |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| mo                                | MacOS                             | MacOS operating system via its    |
-|                                   |                                   | accessibility API                 |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| pb                                | PcBios                            | MS-DOS operating system           |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| sc                                | Screen                            | screen (patched) terminal         |
-|                                   |                                   | multiplexer                       |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| tx                                | Tmux                              | tmux terminal multiplexer         |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| vw                                | FileViewer                        | file viewer                       |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| wn                                | Windows                           | Microsoft Windows operating       |
-|                                   |                                   | system                            |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-
-Le pilote natif de votre système d'exploitation ("lx" sous Linux, "hd"
-sous Hurd, "wn" sous Windows, "an" sous Android) est sélectionné
-automatiquement. Le pilote "sc" donne accès aux sessions "screen" et
-sert de solution de repli par défaut sur les systèmes dépourvus de
-pilote natif — "screen" doit être patché (voir le sous-répertoire
-"Patches") et en cours d'exécution. Le pilote "tx", utilisé par
-brltty-tmux, surveille une session tmux.
 
 
 Syntaxe des opérandes
@@ -2717,12 +2738,12 @@ historique conservé pour les utilisateurs francophones.
 North American Braille Computer Code (NABCC)
 --------------------------------------------
 
-La table de texte par défaut de BRLTTY met en œuvre le *North American
-Braille Computer Code* (NABCC), un codage à huit points qui étend le
-braille ASCII à six points pour couvrir l'ensemble du jeu Latin-1. La
-correspondance caractère/points faisant foi se trouve dans le fichier
-"Tables/Text/en-nabcc.tti" à la racine de l'arborescence des sources
-de BRLTTY.
+La table de caractères par défaut de BRLTTY met en œuvre le *North
+American Braille Computer Code* (NABCC), un codage à huit points qui
+étend le braille ASCII à six points pour couvrir l'ensemble du jeu
+Latin-1. La correspondance caractère/points faisant foi se trouve dans
+le fichier "Tables/Text/en-nabcc.tti" à la racine de l'arborescence
+des sources de BRLTTY.
 
 
 Table française unifiée

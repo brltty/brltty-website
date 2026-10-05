@@ -30,7 +30,7 @@ viewing options on and off, and trigger BRLTTY's various commands.
 Headline features include cursor tracking and routing, contracted
 braille (English and French ship in the box; many more languages
 are covered by add-on tables), screen freezing for leisurely
-review, attribute review, cut-and-paste, configurable cursor and
+review, attribute review, copy-and-paste, configurable cursor and
 blink styles, an interactive preferences menu, an on-line learn
 mode for discovering commands, optional speech output, and a
 programmable API for client applications. See :ref:`Getting
@@ -340,7 +340,7 @@ PRPROMPT/NXPROMPT
 
 PRSEARCH/NXSEARCH
   Search backward/forward for the clipboard contents
-  (see :ref:`Cut and Paste <cut>`). Wraps at the screen edge; not
+  (see :ref:`Copy and Paste <copy-and-paste>`). Wraps at the screen edge; not
   case-sensitive.
 
 The :ref:`PRINDENT/NXINDENT <command-PRINDENT-NXINDENT>` and
@@ -441,12 +441,10 @@ DISPMD
 .. _command-SIXDOTS:
 
 SIXDOTS
-  Show characters using 6-dot rather than 8-dot braille; dots 7 and 8
-  remain available for the cursor representation and attribute
-  underline. If a contraction table is in effect (see the
-  :ref:`-c <options-contraction-table>` option), it is used. Also
-  changeable via the
-  :ref:`Text Style <preference-text-style>` preference.
+  Switch between 8-dot computer braille and 6-dot contracted braille.
+  The :ref:`CONTRACTED <command-CONTRACTED>` and
+  :ref:`COMPBRL6 <command-COMPBRL6>` commands change each of these
+  separately.
 
 .. _command-SLIDEWIN:
 
@@ -454,7 +452,7 @@ SLIDEWIN
   When cursor tracking is on, slide the window horizontally so the
   cursor stays near the centre, instead of jumping in window-sized
   steps. Also changeable via the
-  :ref:`Sliding Window <preference-sliding-window>` preference.
+  :ref:`Sliding Braille Window <preference-sliding-window>` preference.
 
 .. _command-SKPIDLNS:
 
@@ -478,7 +476,7 @@ SKPBLNKWINS
 CSRVIS
   Show the cursor by superimposing a dot pattern on its character.
   Initially **on**. Also changeable via the
-  :ref:`Show Cursor <preference-show-cursor>` preference.
+  :ref:`Show Screen Cursor <preference-show-cursor>` preference.
 
 .. _command-CSRHIDE:
 
@@ -499,13 +497,13 @@ CSRTRK
 CSRSIZE
   Represent the cursor as a solid block (all eight dots) rather than
   as an underline (dots 7 and 8). Also changeable via the
-  :ref:`Cursor Style <preference-cursor-style>` preference.
+  :ref:`Screen Cursor Style <preference-cursor-style>` preference.
 
 .. _command-CSRBLINK:
 
 CSRBLINK
   Blink the cursor representation. Also changeable via the
-  :ref:`Blinking Cursor <preference-blinking-cursor>` preference.
+  :ref:`Blinking Screen Cursor <preference-blinking-cursor>` preference.
 
 .. _command-ATTRVIS:
 
@@ -558,6 +556,19 @@ AUTOSPEAK
   Automatically speak the new line on vertical motion, characters as
   they're typed or deleted, and the character to which the cursor
   moves.
+
+.. _command-CONTRACTED:
+
+CONTRACTED
+  Switch between computer braille and contracted braille (see the
+  :ref:`Braille Variant <preference-braille-variant>` preference).
+
+.. _command-COMPBRL6:
+
+COMPBRL6
+  Switch computer braille between 8-dot and 6-dot cells (see the
+  :ref:`Computer Braille Cell Type
+  <preference-computer-braille-cell-type>` preference).
 
 .. _command-ASPK_EMP_LINE:
 
@@ -648,7 +659,7 @@ Speech Controls
 
 SAY_LINE
   Speak the current line. The
-  :ref:`Say-Line Mode <preference-sayline-mode>` preference controls
+  :ref:`Say Line Mode <preference-sayline-mode>` preference controls
   whether pending speech is interrupted first.
 
 .. _command-SAY_ABOVE:
@@ -675,13 +686,13 @@ SPKHOME
 
 SAY_SLOWER/SAY_FASTER
   Decrease/increase the speech rate
-  (see :ref:`Speech Rate <preference-speech-rate>`). Driver-dependent.
+  (see the :ref:`Rate <preference-speech-rate>` speech preference). Driver-dependent.
 
 .. _command-SAY_SOFTER-SAY_LOUDER:
 
 SAY_SOFTER/SAY_LOUDER
   Decrease/increase the speech volume
-  (see :ref:`Speech Volume <preference-speech-volume>`).
+  (see the :ref:`Volume <preference-speech-volume>` speech preference).
   Driver-dependent.
 
 .. _command-SPK_PUNCT_LEVEL:
@@ -742,7 +753,7 @@ CSRJMP_VERT
 
 PASTE
   Insert the current clipboard contents at the cursor
-  (see :ref:`Cut and Paste <cut>`).
+  (see :ref:`Copy and Paste <copy-and-paste>`).
 
 .. _command-CLIP_SHOW:
 
@@ -785,8 +796,8 @@ ROUTE
 .. _command-CLIP_NEW:
 
 CLIP_NEW
-  Anchor the start of a cut block at the routing key, replacing the
-  clipboard (see :ref:`Cut and Paste <cut>`).
+  Anchor the start of a copy region at the routing key, replacing the
+  clipboard (see :ref:`Copy and Paste <copy-and-paste>`).
 
 .. _command-CLIP_ADD:
 
@@ -797,7 +808,7 @@ CLIP_ADD
 .. _command-COPY_RECT:
 
 COPY_RECT
-  Anchor the end of the cut block at the routing key and append the
+  Anchor the end of the copy region at the routing key and append the
   rectangular region to the clipboard.
 
 .. _command-COPY_LINE:
@@ -939,21 +950,20 @@ often in user configurations:
   ``auto`` (the default) selects one based on the locale.
   Overridable with :ref:`-t <options-text-table>`.
 
+.. _configure-contraction-table:
+
+``contraction-table`` *file*
+  The :ref:`contraction table <table-contraction>` used when
+  contracted braille is selected (see the :ref:`Braille Variant
+  <preference-braille-variant>` preference).
+  Overridable with :ref:`-c <options-contraction-table>`.
+
 .. _configure-attributes-table:
 
 ``attributes-table`` *file*
   The :ref:`attributes table <table-attributes>` used when displaying
   screen-attribute information.
   Overridable with :ref:`-a <options-attributes-table>`.
-
-.. _configure-contraction-table:
-
-``contraction-table`` *file*
-  The :ref:`contraction table <table-contraction>` used when 6-dot
-  contracted braille is active (see the :ref:`SIXDOTS
-  <command-SIXDOTS>` command and the :ref:`Text Style
-  <preference-text-style>` preference).
-  Overridable with :ref:`-c <options-contraction-table>`.
 
 .. _configure-keyboard-table:
 
@@ -1015,15 +1025,15 @@ Tables:
 ``-t``\ *file* ``--text-table=``\ *file*
   :ref:`Text table <table-text>`. Default: locale-based.
 
+.. _options-contraction-table:
+
+``-c``\ *file* ``--contraction-table=``\ *file*
+  :ref:`Contraction table <table-contraction>` for contracted braille.
+
 .. _options-attributes-table:
 
 ``-a``\ *file* ``--attributes-table=``\ *file*
   :ref:`Attributes table <table-attributes>`.
-
-.. _options-contraction-table:
-
-``-c``\ *file* ``--contraction-table=``\ *file*
-  :ref:`Contraction table <table-contraction>` for 6-dot mode.
 
 .. _options-keyboard-table:
 
@@ -1173,10 +1183,10 @@ It's especially useful in conjunction with applications (like ``lynx``)
 wherein horizontal cursor motion must never be attempted.
 
 
-.. _cut:
+.. _copy-and-paste:
 
-Cut and Paste
--------------
+Copy and Paste
+--------------
 
 BRLTTY has its own clipboard for grabbing text from the screen and
 re-entering it at the cursor — handy for long file names, command
@@ -1227,7 +1237,7 @@ on a system where the ``gpm`` application has been installed,
 then it'll interact with the pointer (mouse).
 
 Moving the pointer drags the braille window
-(see the :ref:`Window Follows Pointer <preference-window-follows-pointer>` preference).
+(see the :ref:`Track Screen Pointer <preference-window-follows-pointer>` preference).
 Whenever the pointer is moved beyond the edge of the braille window,
 the braille window is dragged along (one character at a time).
 This gives the braille user another two-dimensional way
@@ -1292,7 +1302,7 @@ These events include:
 - When a lengthy command completes.
 - When a command cannot be executed.
 - When a mark is set.
-- When the start or end of the cut block is set.
+- When the start or end of the copy region is set.
 - When a feature is activated or deactivated.
 - When cursor tracking is turned on or off.
 - When the screen image is frozen or unfrozen.
@@ -1339,16 +1349,24 @@ since BRLTTY 6.5, and a handful that new users typically adjust early
 on.
 
 
-Selected Preferences
-~~~~~~~~~~~~~~~~~~~~
+Noteworthy Preferences
+~~~~~~~~~~~~~~~~~~~~~~
 
-.. _preference-text-style:
+.. _preference-braille-variant:
 
-Text Style
-  Display screen content using all eight dots (``8-dot``) or only dots
-  1 through 6 (``6-dot``). When 6-dot mode is in effect and a
-  contraction table has been selected, contracted braille is shown.
-  Also changeable via the :ref:`SIXDOTS <command-SIXDOTS>` command.
+Braille Variant
+  Show screen content as ``Computer Braille`` (one cell per
+  character, as defined by the :ref:`text table <table-text>`) or as
+  ``Contracted Braille`` (using the :ref:`contraction table
+  <table-contraction>`). Also changeable via the
+  :ref:`CONTRACTED <command-CONTRACTED>` command.
+
+.. _preference-computer-braille-cell-type:
+
+Computer Braille Cell Type
+  Show computer braille using all eight dots (``8-dot``) or only dots
+  1 through 6 (``6-dot``). Also changeable via the
+  :ref:`COMPBRL6 <command-COMPBRL6>` command.
 
 .. _preference-skip-identical-lines:
 
@@ -1359,7 +1377,7 @@ Skip Identical Lines
 
 .. _preference-sliding-window:
 
-Sliding Window
+Sliding Braille Window
   When cursor tracking would otherwise push the cursor off the edge
   of the braille window, slide the window so the cursor stays nearer
   the centre instead of jumping by full window widths. Also
@@ -1367,20 +1385,20 @@ Sliding Window
 
 .. _preference-show-cursor:
 
-Show Cursor
+Show Screen Cursor
   Whether to show the screen cursor on the braille display. Also
   changeable via the :ref:`CSRVIS <command-CSRVIS>` command.
 
 .. _preference-cursor-style:
 
-Cursor Style
+Screen Cursor Style
   Represent the cursor with all eight dots (a solid block) or with
   just dots 7 and 8 (an underline). Also changeable via the
   :ref:`CSRSIZE <command-CSRSIZE>` command.
 
 .. _preference-blinking-cursor:
 
-Blinking Cursor
+Blinking Screen Cursor
   Make the cursor alternately visible and invisible at a fixed rate.
   Also changeable via the :ref:`CSRBLINK <command-CSRBLINK>` command.
 
@@ -1403,7 +1421,7 @@ Blinking Capitals
   Make capital letters blink so they stand out. Also changeable via
   the :ref:`CAPBLINK <command-CAPBLINK>` command.
 
-Autorepeat
+Autorepeat Enabled
   While the key combination for an autorepeatable command remains
   pressed, repeat the command at a regular interval after an initial
   delay. Whether key-release events are reliable enough to support
@@ -1412,7 +1430,7 @@ Autorepeat
 
 .. _preference-window-follows-pointer:
 
-Window Follows Pointer
+Track Screen Pointer
   When the mouse pointer moves, drag the braille window along with
   it. Only available when GPM support is built in.
 
@@ -1445,7 +1463,7 @@ Alert Messages
 
 .. _preference-sayline-mode:
 
-Say-Line Mode
+Say Line Mode
   When the :ref:`SAY_LINE <command-SAY_LINE>` command runs, either
   discard pending speech (``Immediate``, the default) or queue the
   new line behind it (``Enqueue``).
@@ -1458,15 +1476,17 @@ Autospeak
 
 .. _preference-speech-rate:
 
-Speech Rate
-  Adjust the speech rate (``0`` slowest, ``20`` fastest).
+Rate
+  Adjust the speech rate, from ``-10`` (slowest) to ``10`` (fastest);
+  ``0`` is the default.
   Driver-dependent; also changeable via the
   :ref:`SAY_SLOWER/SAY_FASTER <command-SAY_SLOWER-SAY_FASTER>` commands.
 
 .. _preference-speech-volume:
 
-Speech Volume
-  Adjust the speech volume (``0`` softest, ``20`` loudest).
+Volume
+  Adjust the speech volume, from ``0%`` (softest) to ``200%``;
+  ``100%`` is the default.
   Driver-dependent; also changeable via the
   :ref:`SAY_SOFTER/SAY_LOUDER <command-SAY_SOFTER-SAY_LOUDER>` commands.
 
@@ -1491,18 +1511,18 @@ Text Table
   and the :ref:`-t <options-text-table>` command line option. This
   preference isn't saved.
 
+Contraction Table
+  Select the contraction table at runtime. See
+  :ref:`Contraction Tables <table-contraction>` and the
+  :ref:`-c <options-contraction-table>` command line option. This
+  preference isn't saved.
+
 .. _preference-attributes-table:
 
 Attributes Table
   Select the attributes table at runtime. See
   :ref:`Attributes Tables <table-attributes>` and the
   :ref:`-a <options-attributes-table>` command line option. This
-  preference isn't saved.
-
-Contraction Table
-  Select the contraction table at runtime. See
-  :ref:`Contraction Tables <table-contraction>` and the
-  :ref:`-c <options-contraction-table>` command line option. This
   preference isn't saved.
 
 .. _preference-keyboard-table:
@@ -1654,7 +1674,7 @@ in order to show the precise column layout.
     Cursor tracking (see the :ref:`CSRTRK <command-CSRTRK>` command).
 
   Dot 8
-    Sliding window (see the :ref:`SLIDEWIN <command-SLIDEWIN>` command).
+    Sliding braille window (see the :ref:`SLIDEWIN <command-SLIDEWIN>` command).
 
 *vt*
   The number (counting from 1) of the current virtual terminal.
@@ -1767,7 +1787,7 @@ one directive per line,
 ``UTF-8`` encoding,
 blank lines and ``#``-comment lines ignored —
 and they can be split across subtables
-(``*.tti``, ``*.ati``, ``*.cti``, ``*.kti``)
+(``*.tti``, ``*.cti``, ``*.ati``, ``*.kti``)
 pulled in with an ``include`` directive.
 This chapter explains what each kind of table is for
 and how to select one at runtime.
@@ -1782,6 +1802,7 @@ Text Tables
 -----------
 
 Files named ``*.ttb`` are text tables.
+They can usually be found in the ``/etc/brltty/Text/`` directory.
 They tell BRLTTY how to translate each character on the screen
 into its corresponding 8-dot computer-braille dot pattern.
 Because the mapping between characters and dots
@@ -1809,12 +1830,56 @@ See ``Documents/README.TextTables`` for the text-table file format
 and the directive reference.
 
 
+.. _table-contraction:
+
+Contraction Tables
+------------------
+
+Files named ``*.ctb`` are contraction tables.
+They can usually be found in the ``/etc/brltty/Contraction/`` directory.
+Where a text table maps one character to one braille cell,
+a contraction table encodes the shorthand conventions
+used by literary braille:
+common letter sequences, whole words, and punctuation patterns
+each map to shorter sequences of cells.
+This is what lets far more reading fit on a small display.
+The shorthand is historically called "grade 2" braille
+(as opposed to uncontracted "grade 1");
+rules differ per language,
+so contraction tables, like text tables, come one per locale.
+
+Contracted braille is displayed when both conditions hold:
+
+- a contraction table has been selected —
+  see the :ref:`-c <options-contraction-table>` command line option
+  and the :ref:`contraction-table <configure-contraction-table>` configuration file directive,
+  and
+- contracted braille is selected —
+  via the :ref:`Braille Variant <preference-braille-variant>` preference
+  or the :ref:`CONTRACTED <command-CONTRACTED>` command.
+
+Contraction support isn't compiled in
+if the ``--disable-contracted-braille`` build option was used.
+
+The following contraction tables are provided:
+
+.. csv-table::
+   :header-rows: 1
+   :file: ../../contraction-table.csv
+
+See ``Documents/README.ContractionTables`` for
+the contraction-table file format,
+the opcode reference,
+and the character-class machinery.
+
+
 .. _table-attributes:
 
 Attributes Tables
 -----------------
 
 Files named ``*.atb`` are attributes tables.
+They can usually be found in the ``/etc/brltty/Attributes/`` directory.
 Instead of showing the text on the screen,
 they let you display its *visual* attributes —
 foreground and background colour, intensity, blink —
@@ -1839,49 +1904,6 @@ See ``Documents/README.AttributesTables`` for the attributes-table
 file format and the directive reference.
 
 
-.. _table-contraction:
-
-Contraction Tables
-------------------
-
-Files named ``*.ctb`` are contraction tables.
-Where a text table maps one character to one braille cell,
-a contraction table encodes the shorthand conventions
-used by literary braille:
-common letter sequences, whole words, and punctuation patterns
-each map to shorter sequences of cells.
-This is what lets far more reading fit on a small display.
-The shorthand is historically called "grade 2" braille
-(as opposed to uncontracted "grade 1");
-rules differ per language,
-so contraction tables, like text tables, come one per locale.
-
-Contracted braille is displayed when both conditions hold:
-
-- a contraction table has been selected —
-  see the :ref:`-c <options-contraction-table>` command line option
-  and the :ref:`contraction-table <configure-contraction-table>` configuration file directive,
-  and
-- 6-dot braille mode is active —
-  toggle it with the :ref:`SIXDOTS <command-SIXDOTS>` command,
-  or set the starting state via the
-  :ref:`Text Style <preference-text-style>` preference.
-
-Contraction support isn't compiled in
-if the ``--disable-contracted-braille`` build option was used.
-
-The following contraction tables are provided:
-
-.. csv-table::
-   :header-rows: 1
-   :file: ../../contraction-table.csv
-
-See ``Documents/README.ContractionTables`` for
-the contraction-table file format,
-the opcode reference,
-and the character-class machinery.
-
-
 .. _table-key:
 
 Key Tables
@@ -1899,18 +1921,20 @@ A key table becomes interesting when you want to remap keys,
 adapt a newer display to an older driver,
 or use your computer keyboard as braille input.
 
-There are two naming conventions:
+There are two kinds of key tables:
 
-- **Braille display key tables** have names of the form
-  ``brl-``\ *xx*\ ``-``\ *model*\ ``.ktb``,
+- **Braille display key tables** can usually be found in the
+  ``/etc/brltty/Input/``\ *xx*\ ``/`` directory,
   where *xx* is the two-letter
-  :ref:`driver identification code <drivers>`
-  and *model* identifies the display.
+  :ref:`driver identification code <drivers>`.
+  The name of each one identifies the model(s) it is for,
+  and the driver selects which one to use.
 
-- **Keyboard tables** have names of the form
-  ``kbd-``\ *kind*\ ``.ktb``
+- **Keyboard tables** can usually be found in the
+  ``/etc/brltty/Keyboard/`` directory,
   and drive the ordinary computer keyboard
   when BRLTTY is monitoring it.
+  The name of each one describes the kind of keyboard it is for.
 
 The keyboard tables shipped with BRLTTY are:
 
@@ -2003,8 +2027,8 @@ Reading the source documentation
 For implementation questions or driver-specific behaviour the source
 tree carries a family of topic READMEs in ``Documents/``: ``Bluetooth``,
 ``Devices``, ``Customize``, ``Profiles``, ``Polling``, ``Systemd``,
-``X11``, ``CommandReference``, ``TextTables``, ``AttributesTables``,
-``ContractionTables``, ``KeyTables``, ``BrailleDots``, and others.
+``X11``, ``CommandReference``, ``TextTables``, ``ContractionTables``,
+``AttributesTables``, ``KeyTables``, ``BrailleDots``, and others.
 ``Documents/brltty.conf`` is the heavily-commented configuration
 template — the fastest reference for any directive's syntax. The
 BrlAPI manual covers the application interface separately.
@@ -2032,17 +2056,6 @@ BRLTTY supports the following speech synthesizers:
    :file: ../../speech-driver.csv
 
 
-.. _drivers:
-
-Driver Identification Codes
-===========================
-
-
-.. csv-table::
-   :header-rows: 1
-   :file: ../../driver-code.csv
-
-
 .. _screen:
 
 Supported Screen Drivers
@@ -2061,6 +2074,17 @@ sessions and is the default fallback on systems without a native
 driver — ``screen`` must be patched (see the ``Patches``
 subdirectory) and running. The ``tx`` driver, used by
 :ref:`brltty-tmux <utility-brltty-tmux>`, watches a tmux session.
+
+
+.. _drivers:
+
+Driver Identification Codes
+===========================
+
+
+.. csv-table::
+   :header-rows: 1
+   :file: ../../driver-code.csv
 
 
 Operand Syntax

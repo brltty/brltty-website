@@ -74,7 +74,7 @@ Contents
 
   * Cursor Routing
 
-  * Cut and Paste
+  * Copy and Paste
 
   * Pointer (Mouse) Support via GPM
 
@@ -84,7 +84,7 @@ Contents
 
     * The Preferences Menu
 
-    * Selected Preferences
+    * Noteworthy Preferences
 
   * The Status Display
 
@@ -98,9 +98,9 @@ Contents
 
   * Text Tables
 
-  * Attributes Tables
-
   * Contraction Tables
+
+  * Attributes Tables
 
   * Key Tables
 
@@ -118,9 +118,9 @@ Contents
 
 * Supported Speech Synthesizers
 
-* Driver Identification Codes
-
 * Supported Screen Drivers
+
+* Driver Identification Codes
 
 * Operand Syntax
 
@@ -163,11 +163,11 @@ on and off, and trigger BRLTTY's various commands.
 Headline features include cursor tracking and routing, contracted
 braille (English and French ship in the box; many more languages are
 covered by add-on tables), screen freezing for leisurely review,
-attribute review, cut-and-paste, configurable cursor and blink styles,
-an interactive preferences menu, an on-line learn mode for discovering
-commands, optional speech output, and a programmable API for client
-applications. See Getting Started for installation and first steps,
-and Getting Help for the mailing list and issue tracker.
+attribute review, copy-and-paste, configurable cursor and blink
+styles, an interactive preferences menu, an on-line learn mode for
+discovering commands, optional speech output, and a programmable API
+for client applications. See Getting Started for installation and
+first steps, and Getting Help for the mailing list and issue tracker.
 
 Linux is the primary platform. Other platforms are supported with
 varying degrees of completeness — see "Documents/README.Android",
@@ -429,7 +429,7 @@ PRPROMPT/NXPROMPT
    Previous/next command prompt.
 
 PRSEARCH/NXSEARCH
-   Search backward/forward for the clipboard contents (see Cut and
+   Search backward/forward for the clipboard contents (see Copy and
    Paste). Wraps at the screen edge; not case-sensitive.
 
 The PRINDENT/NXINDENT and PRDIFCHAR/NXDIFCHAR commands also move
@@ -501,15 +501,14 @@ DISPMD
    highlighted item. Per virtual terminal.
 
 SIXDOTS
-   Show characters using 6-dot rather than 8-dot braille; dots 7 and 8
-   remain available for the cursor representation and attribute
-   underline. If a contraction table is in effect (see the -c option),
-   it is used. Also changeable via the Text Style preference.
+   Switch between 8-dot computer braille and 6-dot contracted braille.
+   The CONTRACTED and COMPBRL6 commands change each of these
+   separately.
 
 SLIDEWIN
    When cursor tracking is on, slide the window horizontally so the
    cursor stays near the centre, instead of jumping in window-sized
-   steps. Also changeable via the Sliding Window preference.
+   steps. Also changeable via the Sliding Braille Window preference.
 
 SKPIDLNS
    Skip past lines whose content matches the current line. Affects
@@ -522,7 +521,8 @@ SKPBLNKWINS
 
 CSRVIS
    Show the cursor by superimposing a dot pattern on its character.
-   Initially **on**. Also changeable via the Show Cursor preference.
+   Initially **on**. Also changeable via the Show Screen Cursor
+   preference.
 
 CSRHIDE
    Hide the cursor (overrides CSRVIS for the current virtual terminal)
@@ -535,12 +535,12 @@ CSRTRK
 
 CSRSIZE
    Represent the cursor as a solid block (all eight dots) rather than
-   as an underline (dots 7 and 8). Also changeable via the Cursor
-   Style preference.
+   as an underline (dots 7 and 8). Also changeable via the Screen
+   Cursor Style preference.
 
 CSRBLINK
    Blink the cursor representation. Also changeable via the Blinking
-   Cursor preference.
+   Screen Cursor preference.
 
 ATTRVIS
    Underline highlighted characters with combinations of dots 7 and 8:
@@ -578,6 +578,14 @@ AUTOSPEAK
    Automatically speak the new line on vertical motion, characters as
    they're typed or deleted, and the character to which the cursor
    moves.
+
+CONTRACTED
+   Switch between computer braille and contracted braille (see the
+   Braille Variant preference).
+
+COMPBRL6
+   Switch computer braille between 8-dot and 6-dot cells (see the
+   Computer Braille Cell Type preference).
 
 ASPK_EMP_LINE
    Toggle whether AUTOSPEAK announces empty lines (rather than
@@ -634,7 +642,7 @@ Speech Controls
 ~~~~~~~~~~~~~~~
 
 SAY_LINE
-   Speak the current line. The Say-Line Mode preference controls
+   Speak the current line. The Say Line Mode preference controls
    whether pending speech is interrupted first.
 
 SAY_ABOVE
@@ -650,12 +658,12 @@ SPKHOME
    Go to where the speech cursor is.
 
 SAY_SLOWER/SAY_FASTER
-   Decrease/increase the speech rate (see Speech Rate). Driver-
-   dependent.
+   Decrease/increase the speech rate (see the Rate speech preference).
+   Driver-dependent.
 
 SAY_SOFTER/SAY_LOUDER
-   Decrease/increase the speech volume (see Speech Volume). Driver-
-   dependent.
+   Decrease/increase the speech volume (see the Volume speech
+   preference). Driver-dependent.
 
 SPK_PUNCT_LEVEL
    Cycle the punctuation level — *none*, *some*, *most*, *all* —
@@ -703,7 +711,7 @@ CSRJMP_VERT
    key variant in that it doesn't simulate horizontal arrows.
 
 PASTE
-   Insert the current clipboard contents at the cursor (see Cut and
+   Insert the current clipboard contents at the cursor (see Copy and
    Paste).
 
 CLIP_SHOW
@@ -732,14 +740,14 @@ ROUTE
    Routing), by simulating arrow-key presses.
 
 CLIP_NEW
-   Anchor the start of a cut block at the routing key, replacing the
-   clipboard (see Cut and Paste).
+   Anchor the start of a copy region at the routing key, replacing the
+   clipboard (see Copy and Paste).
 
 CLIP_ADD
    Like CLIP_NEW, but keep the existing clipboard contents.
 
 COPY_RECT
-   Anchor the end of the cut block at the routing key and append the
+   Anchor the end of the copy region at the routing key and append the
    rectangular region to the clipboard.
 
 COPY_LINE
@@ -837,14 +845,13 @@ often in user configurations:
    The text table (character-to-braille mapping). "auto" (the default)
    selects one based on the locale. Overridable with -t.
 
+"contraction-table" *file*
+   The contraction table used when contracted braille is selected (see
+   the Braille Variant preference). Overridable with -c.
+
 "attributes-table" *file*
    The attributes table used when displaying screen-attribute
    information. Overridable with -a.
-
-"contraction-table" *file*
-   The contraction table used when 6-dot contracted braille is active
-   (see the SIXDOTS command and the Text Style preference).
-   Overridable with -c.
 
 "keyboard-table" *file*|"auto"
    The key table mapping keyboard keys to BRLTTY commands. The default
@@ -889,11 +896,11 @@ Tables:
 "-t"*file* "--text-table="*file*
    Text table. Default: locale-based.
 
+"-c"*file* "--contraction-table="*file*
+   Contraction table for contracted braille.
+
 "-a"*file* "--attributes-table="*file*
    Attributes table.
-
-"-c"*file* "--contraction-table="*file*
-   Contraction table for 6-dot mode.
 
 "-k"*file* "--keyboard-table="*file*
    Key table mapping keyboard keys to commands.
@@ -1019,8 +1026,8 @@ applications (like "lynx") wherein horizontal cursor motion must never
 be attempted.
 
 
-Cut and Paste
--------------
+Copy and Paste
+--------------
 
 BRLTTY has its own clipboard for grabbing text from the screen and re-
 entering it at the cursor — handy for long file names, command lines,
@@ -1064,7 +1071,7 @@ If BRLTTY is configured with the "--enable-gpm" build option on a
 system where the "gpm" application has been installed, then it'll
 interact with the pointer (mouse).
 
-Moving the pointer drags the braille window (see the Window Follows
+Moving the pointer drags the braille window (see the Track Screen
 Pointer preference). Whenever the pointer is moved beyond the edge of
 the braille window, the braille window is dragged along (one character
 at a time). This gives the braille user another two-dimensional way to
@@ -1147,7 +1154,7 @@ These events include:
 
 * When a mark is set.
 
-* When the start or end of the cut block is set.
+* When the start or end of the copy region is set.
 
 * When a feature is activated or deactivated.
 
@@ -1197,35 +1204,38 @@ since BRLTTY 6.5, and a handful that new users typically adjust early
 on.
 
 
-Selected Preferences
-~~~~~~~~~~~~~~~~~~~~
+Noteworthy Preferences
+~~~~~~~~~~~~~~~~~~~~~~
 
-Text Style
-   Display screen content using all eight dots ("8-dot") or only dots
-   1 through 6 ("6-dot"). When 6-dot mode is in effect and a
-   contraction table has been selected, contracted braille is shown.
-   Also changeable via the SIXDOTS command.
+Braille Variant
+   Show screen content as "Computer Braille" (one cell per character,
+   as defined by the text table) or as "Contracted Braille" (using the
+   contraction table). Also changeable via the CONTRACTED command.
+
+Computer Braille Cell Type
+   Show computer braille using all eight dots ("8-dot") or only dots 1
+   through 6 ("6-dot"). Also changeable via the COMPBRL6 command.
 
 Skip Identical Lines
    When moving up or down by one line, skip past lines whose content
    matches the current line. Also changeable via the SKPIDLNS command.
 
-Sliding Window
+Sliding Braille Window
    When cursor tracking would otherwise push the cursor off the edge
    of the braille window, slide the window so the cursor stays nearer
    the centre instead of jumping by full window widths. Also
    changeable via the SLIDEWIN command.
 
-Show Cursor
+Show Screen Cursor
    Whether to show the screen cursor on the braille display. Also
    changeable via the CSRVIS command.
 
-Cursor Style
+Screen Cursor Style
    Represent the cursor with all eight dots (a solid block) or with
    just dots 7 and 8 (an underline). Also changeable via the CSRSIZE
    command.
 
-Blinking Cursor
+Blinking Screen Cursor
    Make the cursor alternately visible and invisible at a fixed rate.
    Also changeable via the CSRBLINK command.
 
@@ -1241,14 +1251,14 @@ Blinking Capitals
    Make capital letters blink so they stand out. Also changeable via
    the CAPBLINK command.
 
-Autorepeat
+Autorepeat Enabled
    While the key combination for an autorepeatable command remains
    pressed, repeat the command at a regular interval after an initial
    delay. Whether key-release events are reliable enough to support
    this depends on the braille display driver. Also changeable via the
    AUTOREPEAT command.
 
-Window Follows Pointer
+Track Screen Pointer
    When the mouse pointer moves, drag the braille window along with
    it. Only available when GPM support is built in.
 
@@ -1273,7 +1283,7 @@ Alert Messages
    the -M command line option). Suppressed if a tune or alert dots
    fire for the same event.
 
-Say-Line Mode
+Say Line Mode
    When the SAY_LINE command runs, either discard pending speech
    ("Immediate", the default) or queue the new line behind it
    ("Enqueue").
@@ -1284,13 +1294,15 @@ Autospeak
    deleted, and the character the cursor is moved to. Also changeable
    via the AUTOSPEAK command.
 
-Speech Rate
-   Adjust the speech rate ("0" slowest, "20" fastest). Driver-
-   dependent; also changeable via the SAY_SLOWER/SAY_FASTER commands.
+Rate
+   Adjust the speech rate, from "-10" (slowest) to "10" (fastest); "0"
+   is the default. Driver-dependent; also changeable via the
+   SAY_SLOWER/SAY_FASTER commands.
 
-Speech Volume
-   Adjust the speech volume ("0" softest, "20" loudest). Driver-
-   dependent; also changeable via the SAY_SOFTER/SAY_LOUDER commands.
+Volume
+   Adjust the speech volume, from "0%" (softest) to "200%"; "100%" is
+   the default. Driver-dependent; also changeable via the
+   SAY_SOFTER/SAY_LOUDER commands.
 
 Punctuation Level
    How much punctuation the speech synthesizer reads aloud. The
@@ -1308,13 +1320,13 @@ Text Table
    Select the text table at runtime. See Text Tables and the -t
    command line option. This preference isn't saved.
 
-Attributes Table
-   Select the attributes table at runtime. See Attributes Tables and
-   the -a command line option. This preference isn't saved.
-
 Contraction Table
    Select the contraction table at runtime. See Contraction Tables and
    the -c command line option. This preference isn't saved.
+
+Attributes Table
+   Select the attributes table at runtime. See Attributes Tables and
+   the -a command line option. This preference isn't saved.
 
 Keyboard Table
    Select the keyboard table at runtime. See Key Tables and the -k
@@ -1465,7 +1477,7 @@ in order to show the precise column layout.
       Cursor tracking (see the CSRTRK command).
 
    Dot 8
-      Sliding window (see the SLIDEWIN command).
+      Sliding braille window (see the SLIDEWIN command).
 
 *vt*
    The number (counting from 1) of the current virtual terminal.
@@ -1566,7 +1578,7 @@ Tables
 BRLTTY's behaviour is customised through four kinds of plain-text
 table files. They all share the same basic syntax — one directive per
 line, "UTF-8" encoding, blank lines and "#"-comment lines ignored —
-and they can be split across subtables ("*.tti", "*.ati", "*.cti",
+and they can be split across subtables ("*.tti", "*.cti", "*.ati",
 "*.kti") pulled in with an "include" directive. This chapter explains
 what each kind of table is for and how to select one at runtime. For
 the exact directive syntax — the reference material you need in order
@@ -1577,11 +1589,12 @@ to from each section.
 Text Tables
 -----------
 
-Files named "*.ttb" are text tables. They tell BRLTTY how to translate
-each character on the screen into its corresponding 8-dot computer-
-braille dot pattern. Because the mapping between characters and dots
-varies from language to language (and even between conventions within
-a language), BRLTTY ships one text table per locale.
+Files named "*.ttb" are text tables. They can usually be found in the
+"/etc/brltty/Text/" directory. They tell BRLTTY how to translate each
+character on the screen into its corresponding 8-dot computer-braille
+dot pattern. Because the mapping between characters and dots varies
+from language to language (and even between conventions within a
+language), BRLTTY ships one text table per locale.
 
 A text table is selected automatically at startup based on your
 locale, falling back to the North American Braille Computer Code
@@ -1783,42 +1796,11 @@ See "Documents/README.TextTables" for the text-table file format and
 the directive reference.
 
 
-Attributes Tables
------------------
-
-Files named "*.atb" are attributes tables. Instead of showing the text
-on the screen, they let you display its *visual* attributes —
-foreground and background colour, intensity, blink — as braille dot
-patterns. Attributes mode is toggled on and off with the DISPMD
-command; an attributes table controls how the eight "VGA" attribute
-bits map to the eight dots of a braille cell.
-
-The attributes tables shipped with BRLTTY are:
-
-+----------------------------------------------------+----------------------------------------------------+
-| name                                               | description                                        |
-|====================================================|====================================================|
-| invleft_right                                      | inverse foreground colour in the left column and   |
-|                                                    | background colour in the right column              |
-+----------------------------------------------------+----------------------------------------------------+
-| left_right                                         | foreground colour in the left column and           |
-|                                                    | background colour in the right column              |
-+----------------------------------------------------+----------------------------------------------------+
-| upper_lower                                        | foreground colour in the upper square and          |
-|                                                    | background colour in the lower square              |
-+----------------------------------------------------+----------------------------------------------------+
-
-To select one, use the -a command line option, the attributes-table
-configuration file directive, or the Attributes Table preference.
-
-See "Documents/README.AttributesTables" for the attributes-table file
-format and the directive reference.
-
-
 Contraction Tables
 ------------------
 
-Files named "*.ctb" are contraction tables. Where a text table maps
+Files named "*.ctb" are contraction tables. They can usually be found
+in the "/etc/brltty/Contraction/" directory. Where a text table maps
 one character to one braille cell, a contraction table encodes the
 shorthand conventions used by literary braille: common letter
 sequences, whole words, and punctuation patterns each map to shorter
@@ -1832,8 +1814,8 @@ Contracted braille is displayed when both conditions hold:
 * a contraction table has been selected — see the -c command line
   option and the contraction-table configuration file directive, and
 
-* 6-dot braille mode is active — toggle it with the SIXDOTS command,
-  or set the starting state via the Text Style preference.
+* contracted braille is selected — via the Braille Variant preference
+  or the CONTRACTED command.
 
 Contraction support isn't compiled in if the "--disable-contracted-
 braille" build option was used.
@@ -1920,6 +1902,39 @@ See "Documents/README.ContractionTables" for the contraction-table
 file format, the opcode reference, and the character-class machinery.
 
 
+Attributes Tables
+-----------------
+
+Files named "*.atb" are attributes tables. They can usually be found
+in the "/etc/brltty/Attributes/" directory. Instead of showing the
+text on the screen, they let you display its *visual* attributes —
+foreground and background colour, intensity, blink — as braille dot
+patterns. Attributes mode is toggled on and off with the DISPMD
+command; an attributes table controls how the eight "VGA" attribute
+bits map to the eight dots of a braille cell.
+
+The attributes tables shipped with BRLTTY are:
+
++----------------------------------------------------+----------------------------------------------------+
+| name                                               | description                                        |
+|====================================================|====================================================|
+| invleft_right                                      | inverse foreground colour in the left column and   |
+|                                                    | background colour in the right column              |
++----------------------------------------------------+----------------------------------------------------+
+| left_right                                         | foreground colour in the left column and           |
+|                                                    | background colour in the right column              |
++----------------------------------------------------+----------------------------------------------------+
+| upper_lower                                        | foreground colour in the upper square and          |
+|                                                    | background colour in the lower square              |
++----------------------------------------------------+----------------------------------------------------+
+
+To select one, use the -a command line option, the attributes-table
+configuration file directive, or the Attributes Table preference.
+
+See "Documents/README.AttributesTables" for the attributes-table file
+format and the directive reference.
+
+
 Key Tables
 ----------
 
@@ -1931,14 +1946,17 @@ supported model, so plugging in a display "just works". A key table
 becomes interesting when you want to remap keys, adapt a newer display
 to an older driver, or use your computer keyboard as braille input.
 
-There are two naming conventions:
+There are two kinds of key tables:
 
-* **Braille display key tables** have names of the form
-  "brl-"*xx*"-"*model*".ktb", where *xx* is the two-letter driver
-  identification code and *model* identifies the display.
+* **Braille display key tables** can usually be found in the
+  "/etc/brltty/Input/"*xx*"/" directory, where *xx* is the two-letter
+  driver identification code. The name of each one identifies the
+  model(s) it is for, and the driver selects which one to use.
 
-* **Keyboard tables** have names of the form "kbd-"*kind*".ktb" and
-  drive the ordinary computer keyboard when BRLTTY is monitoring it.
+* **Keyboard tables** can usually be found in the
+  "/etc/brltty/Keyboard/" directory, and drive the ordinary computer
+  keyboard when BRLTTY is monitoring it. The name of each one
+  describes the kind of keyboard it is for.
 
 The keyboard tables shipped with BRLTTY are:
 
@@ -2030,8 +2048,8 @@ Reading the source documentation
 For implementation questions or driver-specific behaviour the source
 tree carries a family of topic READMEs in "Documents/": "Bluetooth",
 "Devices", "Customize", "Profiles", "Polling", "Systemd", "X11",
-"CommandReference", "TextTables", "AttributesTables",
-"ContractionTables", "KeyTables", "BrailleDots", and others.
+"CommandReference", "TextTables", "ContractionTables",
+"AttributesTables", "KeyTables", "BrailleDots", and others.
 "Documents/brltty.conf" is the heavily-commented configuration
 template — the fastest reference for any directive's syntax. The
 BrlAPI manual covers the application interface separately.
@@ -2254,6 +2272,51 @@ BRLTTY supports the following speech synthesizers:
 +---------------------------+---------------------------+---------------------------+---------------------------+
 
 
+Supported Screen Drivers
+========================
+
+BRLTTY supports the following screen drivers:
+
++-----------------------------------+-----------------------------------+-----------------------------------+
+| code                              | name                              | usage                             |
+|===================================|===================================|===================================|
+| a2                                | AtSpi2                            | X11 desktop via AT-SPI 2          |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| an                                | Android                           | Android operating system          |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| as                                | AtSpi                             | X11 desktop via AT-SPI 1          |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| em                                | TerminalEmulator                  | terminal emulator with shared     |
+|                                   |                                   | memory segment                    |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| hu                                | Hurd                              | The Hurd operating system         |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| lx                                | Linux                             | Linux operating system            |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| mo                                | MacOS                             | MacOS operating system via its    |
+|                                   |                                   | accessibility API                 |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| pb                                | PcBios                            | MS-DOS operating system           |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| sc                                | Screen                            | screen (patched) terminal         |
+|                                   |                                   | multiplexer                       |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| tx                                | Tmux                              | tmux terminal multiplexer         |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| vw                                | FileViewer                        | file viewer                       |
++-----------------------------------+-----------------------------------+-----------------------------------+
+| wn                                | Windows                           | Microsoft Windows operating       |
+|                                   |                                   | system                            |
++-----------------------------------+-----------------------------------+-----------------------------------+
+
+The native driver for your operating system ("lx" on Linux, "hd" on
+Hurd, "wn" on Windows, "an" on Android) is selected automatically. The
+"sc" driver provides access to "screen" sessions and is the default
+fallback on systems without a native driver — "screen" must be patched
+(see the "Patches" subdirectory) and running. The "tx" driver, used by
+brltty-tmux, watches a tmux session.
+
+
 Driver Identification Codes
 ===========================
 
@@ -2384,51 +2447,6 @@ Driver Identification Codes
 +-----------------------------------+-----------------------------------+-----------------------------------+
 | xs                                | ExternalSpeech                    | speech                            |
 +-----------------------------------+-----------------------------------+-----------------------------------+
-
-
-Supported Screen Drivers
-========================
-
-BRLTTY supports the following screen drivers:
-
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| code                              | name                              | usage                             |
-|===================================|===================================|===================================|
-| a2                                | AtSpi2                            | X11 desktop via AT-SPI 2          |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| an                                | Android                           | Android operating system          |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| as                                | AtSpi                             | X11 desktop via AT-SPI 1          |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| em                                | TerminalEmulator                  | terminal emulator with shared     |
-|                                   |                                   | memory segment                    |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| hu                                | Hurd                              | The Hurd operating system         |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| lx                                | Linux                             | Linux operating system            |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| mo                                | MacOS                             | MacOS operating system via its    |
-|                                   |                                   | accessibility API                 |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| pb                                | PcBios                            | MS-DOS operating system           |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| sc                                | Screen                            | screen (patched) terminal         |
-|                                   |                                   | multiplexer                       |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| tx                                | Tmux                              | tmux terminal multiplexer         |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| vw                                | FileViewer                        | file viewer                       |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| wn                                | Windows                           | Microsoft Windows operating       |
-|                                   |                                   | system                            |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-
-The native driver for your operating system ("lx" on Linux, "hd" on
-Hurd, "wn" on Windows, "an" on Android) is selected automatically. The
-"sc" driver provides access to "screen" sessions and is the default
-fallback on systems without a native driver — "screen" must be patched
-(see the "Patches" subdirectory) and running. The "tx" driver, used by
-brltty-tmux, watches a tmux session.
 
 
 Operand Syntax
